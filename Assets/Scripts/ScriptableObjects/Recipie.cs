@@ -9,7 +9,7 @@ public class Recipie : ScriptableObject
     public int occuranceFrequency;
     //Change to Ingrediant Object once it's made
     private const int INGREDIANT_MAX_AMMOUNT = 4;
-    public UnityEngine.Object[] ingrediants = new UnityEngine.Object[INGREDIANT_MAX_AMMOUNT];
+    public Ingrediant[] ingrediants = new Ingrediant[INGREDIANT_MAX_AMMOUNT];
 
     void OnValidate(){
         if (ingrediants.Length != INGREDIANT_MAX_AMMOUNT) {
