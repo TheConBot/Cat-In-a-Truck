@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 33872213213294070}
   - component: {fileID: 64579297572933540}
   - component: {fileID: 23321941847704504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
