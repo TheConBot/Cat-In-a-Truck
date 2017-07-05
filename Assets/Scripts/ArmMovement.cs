@@ -44,11 +44,12 @@ public class ArmMovement : MonoBehaviour {
 
     // this converts the mouse position to the equivalent world pos
     // i literally have no idea what that 10 is for, but uh leave it
-    worldPawPos = cam.ScreenToWorldPoint(new Vector3(camPawPos.x, camPawPos.y, 10));
+    worldPawPos = cam.ScreenToWorldPoint(new Vector3(camPawPos.x, camPawPos.y, (pawZ + -cam.transform.position.z)));
 
     // this sets the world position of the paw
     // pawZ is being set in GetPawZ, or neutral
-    pawTransform.position = new Vector3(worldPawPos.x, worldPawPos.y, pawZ);
+    // pawTransform.position = new Vector3(worldPawPos.x, worldPawPos.y, pawZ);
+    pawTransform.position = worldPawPos;
   }
 
   private float GetPawZ() {
