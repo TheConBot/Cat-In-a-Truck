@@ -420,7 +420,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304958222}
-  m_LocalRotation: {x: 0.5833286, y: 0, z: 0, w: 0.8122363}
+  m_LocalRotation: {x: 0.58332866, y: 0, z: 0, w: 0.81223625}
   m_LocalPosition: {x: 0, y: -1.58, z: -5.5}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children:
@@ -568,6 +568,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1997714644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1997714645}
+  m_Layer: 0
+  m_Name: PawAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997714645
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997714644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.27, y: 1.05, z: -15.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136624644
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +608,7 @@ GameObject:
   m_Layer: 8
   m_Name: PawContainer
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -609,5 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dead8cd9f9da4ca5ae3e9939549a4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pawAnchor: {fileID: 1997714645}
+  pawArm: {fileID: 2136624645}
   startingPawZ: 0
   neutralPawZOffset: 1
