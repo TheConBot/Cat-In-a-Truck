@@ -1,18 +1,24 @@
-﻿public class SolidIngrediant : Ingrediant {
+﻿using UnityEngine;
 
-    public bool isCut;
+public class SolidIngrediant : Ingrediant {
 
+    private bool isCut;
+    public bool IsCut {
+        get {
+            return isCut;
+        }
+    }
     public enum CookState {
         Raw,
         Fried,
         Steamed,
         Ruined
     }
-
-    private CookState cookState;
+    [HideInInspector]
+    public CookState cookState;
 
     public virtual void Cut() {
-        if (isCut) {
+        if (IsCut) {
             return;
         }
         isCut = true;

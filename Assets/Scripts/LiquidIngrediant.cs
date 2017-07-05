@@ -1,4 +1,6 @@
-﻿public class LiquidIngrediant : Ingrediant {
+﻿using UnityEngine;
 
+public class LiquidIngrediant : Ingrediant {
 
+    
 }

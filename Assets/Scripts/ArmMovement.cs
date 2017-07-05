@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ArmMovement : MonoBehaviour {
 
@@ -31,13 +29,13 @@ public class ArmMovement : MonoBehaviour {
     pawZ = (Input.GetMouseButton(0)) ? GetPawZ() : GetPawZ() - neutralPawZOffset;
 
     // this matches the paw to the mouse cursor (generally)
-    GetWorldPawPosition();
+    SetWorldPawPosition();
 
     // ArmRotateY();
     pawArm.eulerAngles = new Vector3(ArmRotateY(), ArmRotateX(), pawArm.rotation.z);
   }
 
-  private void GetWorldPawPosition() {
+  private void SetWorldPawPosition() {
     // get input mouse position
     camPawPos.x = Input.mousePosition.x;
     camPawPos.y = Input.mousePosition.y;
