@@ -28,13 +28,19 @@ public class ArmMovement : MonoBehaviour {
     // if the left mouse button is being held down
     // move the paw foward to the object it is over
     // if it's not, move the paw back to neutral
-    pawZ = (Input.GetMouseButton(0)) ? GetPawZ() : GetPawZ() - neutralPawZOffset;
+    float getPawZ = GetPawZ();
+    pawZ = (Input.GetMouseButton(0)) ? getPawZ : getPawZ - neutralPawZOffset;
 
     // this matches the paw to the mouse cursor (generally)
     GetWorldPawPosition();
 
     // ArmRotateY();
     pawArm.eulerAngles = new Vector3(ArmRotateY(), ArmRotateX(), pawArm.rotation.z);
+
+    // get item clicked
+    if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
+      // click action things here!!!
+    }
   }
 
   private void GetWorldPawPosition() {
@@ -43,7 +49,7 @@ public class ArmMovement : MonoBehaviour {
     camPawPos.y = Input.mousePosition.y;
 
     // this converts the mouse position to the equivalent world pos
-    // i literally have no idea what that 10 is for, but uh leave it
+    // the z is relative to the camera, so you have to offset it by the z position of the cam
     worldPawPos = cam.ScreenToWorldPoint(new Vector3(camPawPos.x, camPawPos.y, (pawZ + -cam.transform.position.z)));
 
     // this sets the world position of the paw
@@ -61,10 +67,9 @@ public class ArmMovement : MonoBehaviour {
     int layerMask = 1 << 8;
     layerMask = ~layerMask;
 
-    // if the mouse is clicking on anything (within 100 units)
+    // if the mouse is hovering over anything (within 100 units)
     if (Physics.Raycast(ray, out hit, 100, layerMask)) {
-      // hey you hit something! this is where most of the selection code will go
-      Debug.Log(hit.transform.gameObject.name + ", point z " + hit.point.z);
+      // hey you hit something!
       return hit.point.z;
     } else {
       // didn't hit anything, so just return the neutral paw Z
