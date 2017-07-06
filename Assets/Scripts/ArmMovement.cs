@@ -16,7 +16,7 @@ public class ArmMovement : MonoBehaviour {
   [SerializeField]
   private float neutralPawZOffset;
 
-  public GameObject heldIngredient { get; private set; }
+  public Ingredient heldIngredient { get; private set; }
 
   private void Start() {
     pawTransform = gameObject.GetComponent<Transform>();
@@ -46,18 +46,27 @@ public class ArmMovement : MonoBehaviour {
       if (container is StorageContainer) {
         if (heldIngredient == null) {
           heldIngredient = container.PickUpIngredient(0);
-          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
-        } else {
-          Debug.Log("already holding " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("picked up " + heldIngredient.GetComponent<Ingredient>().displayName);
         }
-      } else if (container is CookingContainer) {
+        else {
+          Debug.Log("already holding " + heldIngredient.GetComponent<Ingredient>().displayName);
+        }
+      }
+      else if (container is CookingContainer) {
         if (heldIngredient != null) {
-          clicked.transform.gameObject.GetComponent<CookingContainer>().AddToContainer(heldIngredient);
-          Debug.Log("placed " + heldIngredient.GetComponent<Ingrediant>().displayName);
-          heldIngredient = null;
-        } else {
+          if (heldIngredient is SolidIngredient) {
+            SolidIngredient solidIngredient = heldIngredient.GetComponent<SolidIngredient>();
+            clicked.transform.gameObject.GetComponent<CookingContainer>().AddToContainer(solidIngredient);
+            Debug.Log("placed " + heldIngredient.GetComponent<Ingredient>().displayName);
+            heldIngredient = null;
+          }
+          else {
+            Debug.LogWarning("Cannot cook Liquid Ingredient");
+          }
+        }
+        else {
           heldIngredient = container.PickUpIngredient(0);
-          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("picked up " + heldIngredient.GetComponent<Ingredient>().displayName);
         }
       }
 
@@ -87,7 +96,8 @@ public class ArmMovement : MonoBehaviour {
     if (clicked.collider != null) {
       // hey you hit something!
       return clicked.point.z;
-    } else {
+    }
+    else {
       // didn't hit anything, so just return the neutral paw Z
       return startingPawZ;
     }
@@ -106,7 +116,8 @@ public class ArmMovement : MonoBehaviour {
     if (Physics.Raycast(ray, out hit, 100, layerMask)) {
       // hey you hit something!
       return hit;
-    } else {
+    }
+    else {
       return hit;
     }
 

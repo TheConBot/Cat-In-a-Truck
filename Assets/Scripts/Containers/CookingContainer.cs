@@ -13,14 +13,13 @@ public class CookingContainer : Container {
     [Range(1, 60)]
     public float cookTime, collectTime;
 
-    public void AddToContainer(GameObject newIngredient) {
-        SolidIngrediant newSolidIngredient = newIngredient.GetComponent<SolidIngrediant>();
+    public void AddToContainer(SolidIngredient newIngredient) {
         int ingredientAmount = IngredientsInContainer();
-        if (newSolidIngredient == null) {
+        if (newIngredient == null) {
             Debug.LogWarning("Cannot cook a non-solid ingredient");
             return;
         }
-        else if (!CanCookIngredient(newSolidIngredient)) {
+        else if (!CanCookIngredient(newIngredient)) {
             Debug.LogWarning("Cannot cook an ingredient that has already been cooked or cut.");
             return;
         }
@@ -29,20 +28,20 @@ public class CookingContainer : Container {
             return;
         }
         ingredientsToHold[ingredientAmount] = newIngredient;
-        StartCoroutine(CookFood(newSolidIngredient));
+        StartCoroutine(CookFood(newIngredient));
     }
 
-    private bool CanCookIngredient(SolidIngrediant ingredient) {
+    private bool CanCookIngredient(SolidIngredient ingredient) {
         if(cookOption == CookOptions.Cut && ingredient.IsCut) {
             return false;
         }
-        else if(ingredient.cookState != SolidIngrediant.CookState.Raw) {
+        else if(ingredient.cookState != SolidIngredient.CookState.Raw) {
             return false;
         }
         return true;
     }
 
-    private IEnumerator CookFood(SolidIngrediant ingredient) {
+    private IEnumerator CookFood(SolidIngredient ingredient) {
         Debug.Log("Cooking Ingredient: " + ingredient.DisplayName + ", Cook Time: " + cookTime + ", Cook Method: " + cookOption);
         yield return new WaitForSeconds(cookTime);
         switch (cookOption) {
@@ -58,7 +57,7 @@ public class CookingContainer : Container {
         }
         Debug.Log("Cooking Complete! Collect your " + ingredient.DisplayName);
         yield return new WaitForSeconds(collectTime);
-        ingredient.cookState = SolidIngrediant.CookState.Ruined;
+        ingredient.cookState = SolidIngredient.CookState.Ruined;
         Debug.Log("You burnt the " + ingredient.DisplayName);
         yield return null;
     }

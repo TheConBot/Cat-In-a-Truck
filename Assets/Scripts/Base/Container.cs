@@ -2,15 +2,16 @@
 using System.Linq;
 
 public abstract class Container : MonoBehaviour {
-    protected GameObject[] ingredientsToHold;
+    protected Ingredient[] ingredientsToHold;
     [Range(1, 5), SerializeField]
     protected int containerSize;
 
     private void Awake() {
-        ingredientsToHold = new GameObject[containerSize];
+        ingredientsToHold = new Ingredient[containerSize];
     }
 
-    public GameObject PickUpIngredient(int index) {
+    public Ingredient PickUpIngredient(int index) {
+
         return ingredientsToHold[index];
     }
 
