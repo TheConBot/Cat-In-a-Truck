@@ -16,6 +16,7 @@ public class ArmMovement : MonoBehaviour {
   [SerializeField]
   private float neutralPawZOffset;
 
+  private Ingredient lastHeldIngredient;
   public Ingredient heldIngredient { get; private set; }
 
   private void Start() {
@@ -71,6 +72,14 @@ public class ArmMovement : MonoBehaviour {
 
 
       // click action things here!!!
+    }
+
+
+    if (heldIngredient != lastHeldIngredient) {
+      if (heldIngredient != null) {
+        heldIngredient.gameObject.SetActive(true);
+        heldIngredient.gameObject.transform.position = pawTransform.position;
+      }
     }
   }
 
