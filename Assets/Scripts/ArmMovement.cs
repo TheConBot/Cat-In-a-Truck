@@ -16,7 +16,7 @@ public class ArmMovement : MonoBehaviour {
   [SerializeField]
   private float neutralPawZOffset;
 
-  public GameObject heldIngredient { get; private set; }
+  public Ingredient heldIngredient { get; private set; }
 
   private void Start() {
     pawTransform = gameObject.GetComponent<Transform>();
@@ -46,18 +46,18 @@ public class ArmMovement : MonoBehaviour {
       if (container is StorageContainer) {
         if (heldIngredient == null) {
           heldIngredient = container.PickUpIngredient(0);
-          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("picked up " + heldIngredient.displayName);
         } else {
-          Debug.Log("already holding " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("already holding " + heldIngredient.displayName);
         }
       } else if (container is CookingContainer) {
         if (heldIngredient != null) {
           clicked.transform.gameObject.GetComponent<CookingContainer>().AddToContainer(heldIngredient);
-          Debug.Log("placed " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("placed " + heldIngredient.displayName);
           heldIngredient = null;
         } else {
           heldIngredient = container.PickUpIngredient(0);
-          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          Debug.Log("picked up " + heldIngredient.displayName);
         }
       }
 

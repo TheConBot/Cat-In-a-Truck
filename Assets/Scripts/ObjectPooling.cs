@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPooling : MonoBehaviour {
 
   [SerializeField]
-  private Ingrediant ingredientToSpawn = null;
+  private Ingredient ingredientToSpawn = null;
   private List<GameObject> objectPool;
   [SerializeField]
   private int numberToSpawn = 5;

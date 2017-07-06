@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Ingrediant : MonoBehaviour {
+public abstract class Ingredient : MonoBehaviour {
 
     protected int cookQuality;
     [SerializeField]
