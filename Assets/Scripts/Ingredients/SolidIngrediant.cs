@@ -1,18 +1,24 @@
-﻿public class SolidIngrediant : Ingrediant {
+﻿using UnityEngine;
 
-    public bool isCut;
+public class SolidIngrediant : Ingrediant {
 
+    private bool isCut;
+    public bool IsCut {
+        get {
+            return isCut;
+        }
+    }
     public enum CookState {
         Raw,
         Fried,
         Steamed,
         Ruined
     }
-
-    private CookState cookState;
+    [HideInInspector]
+    public CookState cookState;
 
     public virtual void Cut() {
-        if (isCut) {
+        if (IsCut) {
             return;
         }
         isCut = true;
@@ -20,6 +26,7 @@
 
     public virtual void Fry() {
         if (cookState != CookState.Raw) {
+            Debug.LogError("You should not be seeing this! Trying to Fry object that you shouldnt be able to.");
             return;
         }
         cookState = CookState.Fried;
@@ -27,6 +34,7 @@
 
     public virtual void Steam() {
         if (cookState != CookState.Raw) {
+            Debug.LogError("You should not be seeing this! Trying to Steam object you shouldnt be able to.");
             return;
         }
         cookState = CookState.Steamed;

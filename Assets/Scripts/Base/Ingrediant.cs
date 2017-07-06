@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Ingrediant : MonoBehaviour {
 
-    private int cookQuality;
-    private string displayName;
+    protected int cookQuality;
+    [SerializeField]
+    protected string displayName;
 
     public string DisplayName {
         get {
