@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LiquidsContainer : MonoBehaviour {
+public class LiquidsContainer : StorageContainer {
 
     private float currentStirTime;
     public float GetStirTime {
