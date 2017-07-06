@@ -40,8 +40,9 @@ public class ArmMovement : MonoBehaviour {
     // get item clicked
     if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
       RaycastHit clicked = GetClickedObject();
-      if (clicked.gameObject.tag == "IngredientContainer") {
-        heldIngredient = GetComponent<IngredientContainer>().PickUpIngredient();
+      Container container = null;
+      if ((container = clicked.transform.gameObject.GetComponent<Container>()) != null) {
+        heldIngredient = container.IngredientsInContainer();
       }
       // click action things here!!!
     }

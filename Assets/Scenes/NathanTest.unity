@@ -690,10 +690,11 @@ GameObject:
   - component: {fileID: 1586009689}
   - component: {fileID: 1586009688}
   - component: {fileID: 1586009687}
-  - component: {fileID: 1586009692}
+  - component: {fileID: 1586009694}
+  - component: {fileID: 1586009693}
   m_Layer: 0
   m_Name: CarrotContainer
-  m_TagString: Untagged
+  m_TagString: IngredientContainer
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -777,7 +778,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1586009692
+--- !u!114 &1586009693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -785,10 +786,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586009686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423687b865fe84e36932065c32ad1966, type: 3}
+  m_Script: {fileID: 11500000, guid: 005301295d60ff24cbd9269cf818ccf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 1414974981703136, guid: 503699c67aa9c41cea582bc9c909f869, type: 2}
+  containerSize: 1
+--- !u!114 &1586009694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586009686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17db0c65ffd704ca2b6c75a630f1c320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientToSpawn: {fileID: 114973378354843762, guid: e04ea290055342e4d8bfa3ef062af8da,
+    type: 2}
+  numberToSpawn: 5
 --- !u!1 &1997714644
 GameObject:
   m_ObjectHideFlags: 0
