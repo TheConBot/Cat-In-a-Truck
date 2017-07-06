@@ -4,7 +4,7 @@ public abstract class Ingrediant : MonoBehaviour {
 
     protected int cookQuality;
     [SerializeField]
-    protected string displayName;
+    public string displayName;
 
     public string DisplayName {
         get {

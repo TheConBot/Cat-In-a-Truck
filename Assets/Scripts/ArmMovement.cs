@@ -40,10 +40,29 @@ public class ArmMovement : MonoBehaviour {
     // get item clicked
     if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
       RaycastHit clicked = GetClickedObject();
-      Container container = null;
-      if ((container = clicked.transform.gameObject.GetComponent<Container>()) != null) {
-        heldIngredient = container.IngredientsInContainer();
+
+      // check if it's a container
+      var container = clicked.transform.gameObject.GetComponent<Container>();
+      if (container is StorageContainer) {
+        if (heldIngredient == null) {
+          heldIngredient = container.PickUpIngredient(0);
+          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
+        } else {
+          Debug.Log("already holding " + heldIngredient.GetComponent<Ingrediant>().displayName);
+        }
+      } else if (container is CookingContainer) {
+        if (heldIngredient != null) {
+          clicked.transform.gameObject.GetComponent<CookingContainer>().AddToContainer(heldIngredient);
+          Debug.Log("placed " + heldIngredient.GetComponent<Ingrediant>().displayName);
+          heldIngredient = null;
+        } else {
+          heldIngredient = container.PickUpIngredient(0);
+          Debug.Log("picked up " + heldIngredient.GetComponent<Ingrediant>().displayName);
+        }
       }
+
+
+
       // click action things here!!!
     }
   }
