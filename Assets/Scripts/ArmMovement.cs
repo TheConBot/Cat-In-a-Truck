@@ -65,7 +65,7 @@ public class ArmMovement : MonoBehaviour {
           }
         }
         else {
-          heldIngredient = container.PickUpIngredient(0);
+          heldIngredient = container.PickUpIngredient(container.FirstValidIndex());
           Debug.Log("picked up " + heldIngredient.GetComponent<Ingredient>().displayName);
         }
       }
