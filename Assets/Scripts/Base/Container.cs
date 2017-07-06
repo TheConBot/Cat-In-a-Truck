@@ -10,6 +10,10 @@ public abstract class Container : MonoBehaviour {
         ingredientsToHold = new GameObject[containerSize];
     }
 
+    public GameObject PickUpIngredient(int index) {
+        return ingredientsToHold[index];
+    }
+
     protected int IngredientsInContainer() {
         return ingredientsToHold.Count(s => s != null);
     }
