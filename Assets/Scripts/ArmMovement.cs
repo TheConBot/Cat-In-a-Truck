@@ -18,6 +18,8 @@ public class ArmMovement : MonoBehaviour {
   [SerializeField]
   private float neutralPawZOffset;
 
+  public GameObject heldIngredient { get; private set; }
+
   private void Start() {
     pawTransform = gameObject.GetComponent<Transform>();
     cam = Camera.main;
@@ -39,6 +41,10 @@ public class ArmMovement : MonoBehaviour {
 
     // get item clicked
     if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
+      RaycastHit clicked = GetClickedObject();
+      if (clicked.gameObject.tag == "IngredientContainer") {
+        heldIngredient = GetComponent<IngredientContainer>().PickUpIngredient();
+      }
       // click action things here!!!
     }
   }
@@ -59,6 +65,17 @@ public class ArmMovement : MonoBehaviour {
   }
 
   private float GetPawZ() {
+    RaycastHit clicked = GetClickedObject();
+    if (clicked.collider != null) {
+      // hey you hit something!
+      return clicked.point.z;
+    } else {
+      // didn't hit anything, so just return the neutral paw Z
+      return startingPawZ;
+    }
+  }
+
+  private RaycastHit GetClickedObject() {
     // get the ray from the mouse to world
     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     RaycastHit hit;
@@ -70,11 +87,11 @@ public class ArmMovement : MonoBehaviour {
     // if the mouse is hovering over anything (within 100 units)
     if (Physics.Raycast(ray, out hit, 100, layerMask)) {
       // hey you hit something!
-      return hit.point.z;
+      return hit;
     } else {
-      // didn't hit anything, so just return the neutral paw Z
-      return startingPawZ;
+      return hit;
     }
+
   }
 
   // this might be removed later if i can find a better way to do this
