@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class SolidIngrediant : Ingredient {
-
+public class SolidIngredient : Ingredient {
     private bool isCut;
     public bool IsCut {
         get {

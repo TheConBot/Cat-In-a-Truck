@@ -1,4 +1,4 @@
-﻿ng UnityEngine;
+﻿using UnityEngine;
 
 public class ArmMovement : MonoBehaviour {
 
@@ -50,7 +50,11 @@ public class ArmMovement : MonoBehaviour {
         } else {
           Debug.Log("already holding " + heldIngredient.displayName);
         }
-      } else if (container is CookingContainer) {
+        else {
+          Debug.Log("already holding " + heldIngredient.GetComponent<Ingredient>().displayName);
+        }
+      }
+      else if (container is CookingContainer) {
         if (heldIngredient != null) {
           if (heldIngredient is SolidIngredient) {
             SolidIngredient solidIngredient = heldIngredient.GetComponent<SolidIngredient>();
@@ -94,7 +98,8 @@ public class ArmMovement : MonoBehaviour {
     if (clicked.collider != null) {
       // hey you hit something!
       return clicked.point.z;
-    } else {
+    }
+    else {
       // didn't hit anything, so just return the neutral paw Z
       return startingPawZ;
     }
@@ -113,7 +118,8 @@ public class ArmMovement : MonoBehaviour {
     if (Physics.Raycast(ray, out hit, 100, layerMask)) {
       // hey you hit something!
       return hit;
-    } else {
+    }
+    else {
       return hit;
     }
 

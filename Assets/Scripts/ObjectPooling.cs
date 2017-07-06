@@ -6,11 +6,11 @@ public class ObjectPooling : MonoBehaviour {
 
   [SerializeField]
   private Ingredient ingredientToSpawn = null;
-  private List<GameObject> objectPool;
+  private List<Ingredient> objectPool;
   [SerializeField]
   private int numberToSpawn = 5;
 
-  public List<GameObject> ObjectPool {
+  public List<Ingredient> ObjectPool {
       get {
           return objectPool;
       }
@@ -21,10 +21,10 @@ public class ObjectPooling : MonoBehaviour {
 	}
 
   private void Pool() {
-    objectPool = new List<GameObject>();
+    objectPool = new List<Ingredient>();
     for (int i = 0; i < numberToSpawn; i++) {
-      GameObject obj = Instantiate(ingredientToSpawn).gameObject;
-      obj.SetActive(false);
+      Ingredient obj = Instantiate(ingredientToSpawn);
+      obj.gameObject.SetActive(false);
       obj.transform.SetParent(transform);
       objectPool.Add(obj);
     }
