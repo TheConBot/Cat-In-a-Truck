@@ -65,9 +65,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4970069012927176}
-  - component: {fileID: 136907336757138358}
   - component: {fileID: 23048020178767614}
   - component: {fileID: 33094633232122716}
+  - component: {fileID: 136901500872152816}
   m_Layer: 8
   m_Name: PawArm
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310761599270838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.58, z: -5.01}
+  m_LocalPosition: {x: 0, y: 4.74, z: -6.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970069012927176}
@@ -123,13 +123,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728242261125380}
-  m_LocalRotation: {x: 0.58332866, y: 0, z: 0, w: 0.81223625}
-  m_LocalPosition: {x: 0, y: -1.58, z: -5.5}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalRotation: {x: -0.15126085, y: 0, z: 0, w: 0.9884939}
+  m_LocalPosition: {x: 0, y: -0.78, z: -2.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4099782473789600}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 71.37, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -17.4, y: 0, z: 0}
 --- !u!23 &23048020178767614
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   pawArm: {fileID: 4099782473789600}
   startingPawZ: 0
   neutralPawZOffset: 1
---- !u!136 &136907336757138358
+--- !u!136 &136901500872152816
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -193,7 +193,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.39
+  m_Height: 6.63
+  m_Direction: 2
+  m_Center: {x: 0.022786126, y: 0.00000047683716, z: -0.47675204}
