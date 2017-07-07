@@ -15,7 +15,6 @@ public class ArmMovement : MonoBehaviour {
     [SerializeField]
     private float neutralPawZOffset;
 
-    private Ingredient lastHeldIngredient;
     public Ingredient heldIngredient { get; private set; }
     public bool HoldingIngredient {
         get {
@@ -52,30 +51,19 @@ public class ArmMovement : MonoBehaviour {
             // click action things here!!!
         }
 
-
-        if (heldIngredient != lastHeldIngredient) {
-            // is there a held ingredient? if so, set it to be active
-            if (heldIngredient != null) {
-                Debug.Log("holding new object, " + heldIngredient);
-                heldIngredient.gameObject.SetActive(true);
-            }
-
-            lastHeldIngredient = heldIngredient;
-        }
-
         if (heldIngredient != null) {
           heldIngredient.gameObject.transform.position = pawTransform.position;
         }
     }
 
     private void InteractWithContainer(Container container) {
-        if (!HoldingIngredient) {
+        if (!HoldingIngredient && !container.IsContainerEmpty) {
             heldIngredient = container.TakeFromContainer();
         }
         else if(!container.IsContainerEmpty) {
             Debug.LogWarning("Already holding " + heldIngredient.DisplayName + " and the " + container.DisplayName + " already contains " + container.GetIngredientInContainer.DisplayName + ".");
         }
-        else if(container is CookingContainer && heldIngredient) {
+        else if(HoldingIngredient && container is CookingContainer) {
             var cookingContainer = container as CookingContainer;
             if(heldIngredient is SolidIngredient) {
                 var solidIngredient = heldIngredient as SolidIngredient;
