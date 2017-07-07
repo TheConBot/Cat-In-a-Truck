@@ -1,21 +1,37 @@
 ﻿using UnityEngine;
-using System.Linq;
 
 public abstract class Container : MonoBehaviour {
-    protected Ingredient[] ingredientsToHold;
-    [Range(1, 5), SerializeField]
-    protected int containerSize;
+    private Ingredient ingredientInContainer;
+    public Ingredient GetIngredientInContainer {
+        get {
+            return ingredientInContainer;
+        }
+    }
+    public bool IsContainerEmpty {
+        get {
+            return ingredientInContainer == null;
+        }
+    }
+    [SerializeField]
+    private string displayName;
 
-    private void Awake() {
-        ingredientsToHold = new Ingredient[containerSize];
+    public string DisplayName {
+        get {
+            return displayName;
+        }
     }
 
-    public Ingredient PickUpIngredient(int index) {
-        return ingredientsToHold[index];
+    protected Ingredient TakeFromContainer() {
+        var ingredient = ingredientInContainer;
+        ingredientInContainer = null;
+        return ingredient;
     }
 
-    protected int IngredientsInContainer() {
-        return ingredientsToHold.Count(s => s != null);
+    protected void AddToContainer(Ingredient ingredient) {
+        if(ingredientInContainer != null) {
+            return;
+        }
+        ingredientInContainer = ingredient;
     }
 }
 
@@ -25,6 +41,10 @@ public abstract class StorageContainer : Container {
 
     private void Start() {
         ingredientPool = GetComponent<ObjectPooling>();
-        ingredientsToHold[0] = ingredientPool.ObjectPool[0];
+        AddToContainer(ingredientPool.ObjectPool[0]);
+    }
+
+    public Ingredient TakeFromStorageContainer() {
+        return TakeFromContainer();
     }
 }

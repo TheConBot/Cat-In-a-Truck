@@ -20,11 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4472607834385776}
   - component: {fileID: 114101138037857588}
-  - component: {fileID: 114122089259404078}
   m_Layer: 0
   m_Name: Broccolli Ingrediant
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54,31 +53,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Broccolli
   cookState: 0
---- !u!114 &114122089259404078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1590205235019428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7c8868f8969ac4e87e9174ce8b0d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToHold: {fileID: 114101138037857588}
-  onClickEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114101138037857588}
-        m_MethodName: 437574
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4f626a6563742c20556e697479456e67696e65
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
-    m_CallsDirty: 1
