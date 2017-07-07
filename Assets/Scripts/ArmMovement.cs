@@ -129,6 +129,7 @@ public class ArmMovement : MonoBehaviour {
 
       lastHeldIngredient = heldIngredient;
     }
+  }
 
     private float GetPawZ() {
         RaycastHit clicked = GetClickedObject();
