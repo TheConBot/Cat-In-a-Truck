@@ -24,6 +24,7 @@ public abstract class Container : MonoBehaviour {
     virtual public Ingredient TakeFromContainer() {
         var ingredient = ingredientInContainer;
         ingredientInContainer = null;
+        ingredient.gameObject.SetActive(true);
         Debug.Log("Took the " + ingredient.DisplayName + " from the " + DisplayName);
         return ingredient;
     }
