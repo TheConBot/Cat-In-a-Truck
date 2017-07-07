@@ -1,41 +1,50 @@
 ﻿using UnityEngine;
-using System.Linq;
-using System;
 
 public abstract class Container : MonoBehaviour {
-  protected Ingredient[] ingredientsToHold;
-  [Range(1, 5), SerializeField]
-  protected int containerSize;
+    private Ingredient ingredientInContainer;
+    public Ingredient GetIngredientInContainer {
+        get {
+            return ingredientInContainer;
+        }
+    }
+    public bool IsContainerEmpty {
+        get {
+            return ingredientInContainer == null;
+        }
+    }
+    [SerializeField]
+    private string displayName;
 
-  private void Awake() {
-    ingredientsToHold = new Ingredient[containerSize];
-  }
+    public string DisplayName {
+        get {
+            return displayName;
+        }
+    }
 
-  public Ingredient PickUpIngredient(int index) {
-    var ingredient = ingredientsToHold[index];
-    ingredientsToHold[index] = null;
-    return ingredient;
-  }
+    protected Ingredient TakeFromContainer() {
+        var ingredient = ingredientInContainer;
+        ingredientInContainer = null;
+        return ingredient;
+    }
 
-  protected int IngredientsInContainer() {
-    return ingredientsToHold.Count(s => s != null);
-  }
-
-  public int FirstNullIndex() {
-    return Array.FindIndex(ingredientsToHold, i => i == null);
-  }
-
-  public int FirstValidIndex() {
-    return Array.FindIndex(ingredientsToHold, i => i != null);
-  }
+    protected void AddToContainer(Ingredient ingredient) {
+        if(ingredientInContainer != null) {
+            return;
+        }
+        ingredientInContainer = ingredient;
+    }
 }
 
 [RequireComponent(typeof(ObjectPooling))]
 public abstract class StorageContainer : Container {
-  protected ObjectPooling ingredientPool;
+    protected ObjectPooling ingredientPool;
 
-  private void Start() {
-    ingredientPool = GetComponent<ObjectPooling>();
-    ingredientsToHold[0] = ingredientPool.ObjectPool[0];
-  }
+    private void Start() {
+        ingredientPool = GetComponent<ObjectPooling>();
+        AddToContainer(ingredientPool.ObjectPool[0]);
+    }
+
+    public Ingredient TakeFromStorageContainer() {
+        return TakeFromContainer();
+    }
 }
