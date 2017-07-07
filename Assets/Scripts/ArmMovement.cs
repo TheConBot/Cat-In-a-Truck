@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class ArmMovement : MonoBehaviour {
-
     [SerializeField]
     private Transform pawAnchor;
     [SerializeField]
@@ -55,10 +54,17 @@ public class ArmMovement : MonoBehaviour {
 
 
         if (heldIngredient != lastHeldIngredient) {
+            // is there a held ingredient? if so, set it to be active
             if (heldIngredient != null) {
+                Debug.Log("holding new object, " + heldIngredient);
                 heldIngredient.gameObject.SetActive(true);
-                heldIngredient.gameObject.transform.position = pawTransform.position;
             }
+
+            lastHeldIngredient = heldIngredient;
+        }
+
+        if (heldIngredient != null) {
+          heldIngredient.gameObject.transform.position = pawTransform.position;
         }
     }
 
@@ -93,11 +99,9 @@ public class ArmMovement : MonoBehaviour {
         // the z is relative to the camera, so you have to offset it by the z position of the cam
         worldPawPos = cam.ScreenToWorldPoint(new Vector3(camPawPos.x, camPawPos.y, (pawZ + -cam.transform.position.z)));
 
-        // this sets the world position of the paw
-        // pawZ is being set in GetPawZ, or neutral
-        // pawTransform.position = new Vector3(worldPawPos.x, worldPawPos.y, pawZ);
-        pawTransform.position = worldPawPos;
-    }
+        transform.position = worldPawPos;
+
+      }
 
     private float GetPawZ() {
         RaycastHit clicked = GetClickedObject();
