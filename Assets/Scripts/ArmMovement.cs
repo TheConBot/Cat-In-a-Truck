@@ -58,6 +58,8 @@ public class ArmMovement : MonoBehaviour {
                 heldIngredient.gameObject.SetActive(true);
                 heldIngredient.gameObject.transform.position = pawTransform.position;
             }
+
+            lastHeldIngredient = heldIngredient;
         }
     }
 
@@ -121,15 +123,9 @@ public class ArmMovement : MonoBehaviour {
         // the z is relative to the camera, so you have to offset it by the z position of the cam
         worldPawPos = cam.ScreenToWorldPoint(new Vector3(camPawPos.x, camPawPos.y, (pawZ + -cam.transform.position.z)));
 
-    if (heldIngredient != lastHeldIngredient) {
-      if (heldIngredient != null) {
-        heldIngredient.gameObject.SetActive(true);
-        heldIngredient.gameObject.transform.position = pawTransform.position;
-      }
+        transform.position = worldPawPos;
 
-      lastHeldIngredient = heldIngredient;
-    }
-  }
+      }
 
     private float GetPawZ() {
         RaycastHit clicked = GetClickedObject();
