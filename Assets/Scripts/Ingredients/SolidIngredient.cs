@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class SolidIngredient : Ingredient {
+
     private bool isCut;
     public bool IsCut {
         get {
@@ -37,5 +38,10 @@ public class SolidIngredient : Ingredient {
             return;
         }
         cookState = CookState.Steamed;
+    }
+
+    private void OnEnable() {
+        cookState = CookState.Raw;
+        isCut = false;
     }
 }

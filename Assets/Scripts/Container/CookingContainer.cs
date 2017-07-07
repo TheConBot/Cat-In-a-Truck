@@ -15,9 +15,9 @@ public class CookingContainer : Container {
     [Range(1, 60)]
     public float cookTime = 10, collectTime = 5;
 
-    override public void AddToContainer(SolidIngredient ingredient) {
+    override public void AddToContainer(Ingredient ingredient) {
         base.AddToContainer(ingredient);
-        StartCoroutine(CookFood(ingredient));
+        StartCoroutine(CookFood(ingredient as SolidIngredient));
     }
 
     override public Ingredient TakeFromContainer() {
@@ -26,11 +26,11 @@ public class CookingContainer : Container {
     }
 
     public bool CanUseCookingContainer(SolidIngredient ingredient) {
-        if(cookOption == CookOptions.Cut && ingredient.IsCut) {
+        if (cookOption == CookOptions.Cut && ingredient.IsCut) {
             Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been cut.");
             return false;
         }
-        else if(cookOption != CookOptions.Cut && ingredient.cookState != SolidIngredient.CookState.Raw){
+        else if (cookOption != CookOptions.Cut && ingredient.cookState != SolidIngredient.CookState.Raw) {
             Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been " + ingredient.cookState + ".");
             return false;
         }
@@ -51,7 +51,7 @@ public class CookingContainer : Container {
                 ingredient.Steam();
                 break;
         }
-        Debug.Log("Cooking Complete! " + ingredient.DisplayName + " is " + ingredient.cookState + " and " + (ingredient.IsCut ? "Cut":"Not Cut") + ". Collect your " + ingredient.DisplayName + ".");
+        Debug.Log("Cooking Complete! " + ingredient.DisplayName + " is " + ingredient.cookState + " and " + (ingredient.IsCut ? "Cut" : "Not Cut") + ". Collect your " + ingredient.DisplayName + ".");
         if (collectTimeEnabled) {
             Debug.Log("Collect Time: " + collectTime);
             yield return new WaitForSeconds(collectTime);

@@ -1,5 +1,3 @@
-﻿using UnityEngine;
-
-public class LiquidIngredient : Ingredient {
+﻿public class LiquidIngredient : Ingredient {
 
 }

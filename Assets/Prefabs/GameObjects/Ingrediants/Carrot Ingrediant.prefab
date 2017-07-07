@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4012041176703734}
-  - component: {fileID: 114973378354843762}
+  - component: {fileID: 114179046976422714}
   m_Layer: 0
   m_Name: Carrot Ingrediant
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114973378354843762
+--- !u!114 &114179046976422714
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1426428820591234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8678fcc0c970ed4fa9bbedbd1025f98, type: 3}
+  m_Script: {fileID: 11500000, guid: 0941430a61b959d40abe708318927f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Carrot

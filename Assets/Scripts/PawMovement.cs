@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ArmMovement : MonoBehaviour {
+public class PawMovement : MonoBehaviour {
     [SerializeField]
     private Transform pawAnchor;
     [SerializeField]
@@ -38,8 +38,7 @@ public class ArmMovement : MonoBehaviour {
         // this matches the paw to the mouse cursor (generally)
         SetWorldPawPosition();
 
-        // ArmRotateY();
-        pawArm.eulerAngles = new Vector3(ArmRotateY(), ArmRotateX(), pawArm.rotation.z);
+        pawArm.eulerAngles = new Vector3(-GetPawRotation(pawAnchor.transform.position.y), GetPawRotation(pawAnchor.transform.position.x), pawArm.rotation.z);
 
         // get item clicked
         if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
@@ -50,7 +49,6 @@ public class ArmMovement : MonoBehaviour {
             }
             // click action things here!!!
         }
-
         if (heldIngredient != null) {
           heldIngredient.gameObject.transform.position = pawTransform.position;
         }
@@ -59,21 +57,29 @@ public class ArmMovement : MonoBehaviour {
     private void InteractWithContainer(Container container) {
         if (!HoldingIngredient && !container.IsContainerEmpty) {
             heldIngredient = container.TakeFromContainer();
+            heldIngredient.transform.SetParent(transform);
+            heldIngredient.transform.localPosition = Vector3.zero;
         }
         else if(!container.IsContainerEmpty) {
             Debug.LogWarning("Already holding " + heldIngredient.DisplayName + " and the " + container.DisplayName + " already contains " + container.GetIngredientInContainer.DisplayName + ".");
         }
-        else if(HoldingIngredient && container is CookingContainer) {
-            var cookingContainer = container as CookingContainer;
-            if(heldIngredient is SolidIngredient) {
-                var solidIngredient = heldIngredient as SolidIngredient;
-                if (cookingContainer.CanUseCookingContainer(solidIngredient)) {
-                    cookingContainer.AddToContainer(solidIngredient);
-                    heldIngredient = null;
+        else if(HoldingIngredient) {
+            if (container is CookingContainer) {
+                var cookingContainer = container as CookingContainer;
+                if (heldIngredient is SolidIngredient) {
+                    var solidIngredient = heldIngredient as SolidIngredient;
+                    if (cookingContainer.CanUseCookingContainer(solidIngredient)) {
+                        cookingContainer.AddToContainer(solidIngredient);
+                        heldIngredient = null;
+                    }
+                }
+                else {
+                    Debug.LogWarning("Cannot cook liquid ingredients.");
                 }
             }
-            else {
-                Debug.LogWarning("Cannot cook liquid ingredients.");
+            else if(container is TrashContainer) {
+                container.AddToContainer(heldIngredient);
+                heldIngredient = null;
             }
         }
     }
@@ -108,12 +114,8 @@ public class ArmMovement : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // ignore the eighth layer ("PawIgnore")
-        int layerMask = 1 << 8;
-        layerMask = ~layerMask;
-
         // if the mouse is hovering over anything (within 100 units)
-        if (Physics.Raycast(ray, out hit, 100, layerMask)) {
+        if (Physics.Raycast(ray, out hit, 100)) {
             // hey you hit something!
             return hit;
         }
@@ -123,10 +125,7 @@ public class ArmMovement : MonoBehaviour {
 
     }
 
-    // this might be removed later if i can find a better way to do this
-    // for now, this sets the arm position to be centered between the arm anchor (behind camera)
-    // and the paw itself! then, scales it to be that length. THEN has to tile the texture properly.
-    private float ArmRotateY() {
+    private float GetPawRotation(float anchorAxis) {
         //
         //     /|
         //    /x|
@@ -140,24 +139,10 @@ public class ArmMovement : MonoBehaviour {
         // x = angle that the arm has to be rotated
 
         float h = Vector3.Distance(transform.position, pawAnchor.position);
-        float o = transform.position.y - pawAnchor.position.y;
-        // float a = Mathf.Abs(transform.position.z - pawAnchor.position.z);
+        float o = transform.position.y - anchorAxis;
 
         float x = Mathf.Sin(o / h);
         x *= 100;
-        // x = 90 - x;
-
-        return -x;
-    }
-
-    private float ArmRotateX() {
-        float h = Vector3.Distance(transform.position, pawAnchor.position);
-        float o = transform.position.x - pawAnchor.position.x;
-        // float a = Mathf.Abs(transform.position.z - pawAnchor.position.z);
-
-        float x = Mathf.Sin(o / h);
-        x *= 100;
-        // x = 90 - x;
 
         return x;
     }

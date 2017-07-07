@@ -34,22 +34,7 @@ public abstract class Container : MonoBehaviour {
             return;
         }
         ingredientInContainer = ingredient;
-    }
-
-    virtual public void AddToContainer(SolidIngredient ingredient) {
-        if (ingredientInContainer != null) {
-            return;
-        }
-        ingredientInContainer = ingredient;
-    }
-}
-
-[RequireComponent(typeof(ObjectPooling))]
-public abstract class StorageContainer : Container {
-    protected ObjectPooling ingredientPool;
-
-    private void Start() {
-        ingredientPool = GetComponent<ObjectPooling>();
-        AddToContainer(ingredientPool.ObjectPool[0]);
+        ingredientInContainer.transform.SetParent(transform);
+        ingredientInContainer.transform.localPosition = Vector3.zero;
     }
 }

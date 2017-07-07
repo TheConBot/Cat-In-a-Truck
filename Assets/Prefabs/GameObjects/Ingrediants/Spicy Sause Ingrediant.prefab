@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107715292205604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451ddc6a61107244d95b2079eee788a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9286550c093cb7a4ba2899e6122d2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Spicy Sause
