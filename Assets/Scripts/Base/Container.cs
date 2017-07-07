@@ -21,14 +21,22 @@ public abstract class Container : MonoBehaviour {
         }
     }
 
-    protected Ingredient TakeFromContainer() {
+    virtual public Ingredient TakeFromContainer() {
         var ingredient = ingredientInContainer;
         ingredientInContainer = null;
+        Debug.Log("Took the " + ingredient.DisplayName + " from the " + DisplayName);
         return ingredient;
     }
 
-    protected void AddToContainer(Ingredient ingredient) {
+    virtual public void AddToContainer(Ingredient ingredient) {
         if(ingredientInContainer != null) {
+            return;
+        }
+        ingredientInContainer = ingredient;
+    }
+
+    virtual public void AddToContainer(SolidIngredient ingredient) {
+        if (ingredientInContainer != null) {
             return;
         }
         ingredientInContainer = ingredient;
@@ -42,9 +50,5 @@ public abstract class StorageContainer : Container {
     private void Start() {
         ingredientPool = GetComponent<ObjectPooling>();
         AddToContainer(ingredientPool.ObjectPool[0]);
-    }
-
-    public Ingredient TakeFromStorageContainer() {
-        return TakeFromContainer();
     }
 }

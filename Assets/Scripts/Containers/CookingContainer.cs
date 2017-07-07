@@ -15,27 +15,26 @@ public class CookingContainer : Container {
     [Range(1, 60)]
     public float cookTime = 10, collectTime = 5;
 
-    public void AddToCookingContainer(SolidIngredient ingredient) {
-        AddToContainer(ingredient);
+    override public void AddToContainer(SolidIngredient ingredient) {
+        base.AddToContainer(ingredient);
         StartCoroutine(CookFood(ingredient));
     }
 
-    public Ingredient TakeFromCookingContainer() {
+    override public Ingredient TakeFromContainer() {
         StopAllCoroutines();
-        return TakeFromContainer();
+        return base.TakeFromContainer();
     }
 
-    public int CanUseCookingContainer(SolidIngredient ingredient) {
-        if (!IsContainerEmpty) {
-            return 1;
-        }
-        else if(cookOption == CookOptions.Cut && ingredient.IsCut) {
-            return 2;
+    public bool CanUseCookingContainer(SolidIngredient ingredient) {
+        if(cookOption == CookOptions.Cut && ingredient.IsCut) {
+            Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been cut.");
+            return false;
         }
         else if(cookOption != CookOptions.Cut && ingredient.cookState != SolidIngredient.CookState.Raw){
-            return 3;
+            Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been " + ingredient.cookState + ".");
+            return false;
         }
-        return 0;
+        return true;
     }
 
     private IEnumerator CookFood(SolidIngredient ingredient) {

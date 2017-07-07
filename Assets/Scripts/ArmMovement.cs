@@ -63,52 +63,23 @@ public class ArmMovement : MonoBehaviour {
     }
 
     private void InteractWithContainer(Container container) {
-        //Interactions with Storage Container
-        if (container is StorageContainer) {
-            StorageContainer storageContainer = container.GetComponent<StorageContainer>();
-            if (!HoldingIngredient) {
-                heldIngredient = storageContainer.TakeFromStorageContainer();
-                Debug.Log("Took the " + heldIngredient.DisplayName + " from the " + container.DisplayName);
-            }
-            else {
-                Debug.LogWarning("Already holding " + heldIngredient.DisplayName + ".");
-            }
+        if (!HoldingIngredient) {
+            heldIngredient = container.TakeFromContainer();
         }
-        //Interactions with Cooking Container
-        else if (container is CookingContainer) {
-            CookingContainer cookingContainer = container.GetComponent<CookingContainer>();
-            if (HoldingIngredient) {
-                if (heldIngredient is SolidIngredient) {
-                    SolidIngredient solidIngredient = heldIngredient.GetComponent<SolidIngredient>();
-                    int canCookReturnCode = cookingContainer.CanUseCookingContainer(solidIngredient);
-                    switch (canCookReturnCode) {
-                        case 0:
-                            cookingContainer.AddToCookingContainer(solidIngredient);
-                            heldIngredient = null;
-                            break;
-                        case 1:
-                            Debug.LogWarning(container.DisplayName + " already contains " + container.GetIngredientInContainer.DisplayName + ".");
-                            break;
-                        case 2:
-                            Debug.LogWarning(solidIngredient.DisplayName + " has already been cut.");
-                            break;
-                        case 3:
-                            Debug.LogWarning(solidIngredient.DisplayName + " has already been " + solidIngredient.cookState + ".");
-                            break;
-                    }
-                }
-                else {
-                    Debug.LogWarning("Cannot cook liquid ingredients.");
+        else if(!container.IsContainerEmpty) {
+            Debug.LogWarning("Already holding " + heldIngredient.DisplayName + " and the " + container.DisplayName + " already contains " + container.GetIngredientInContainer.DisplayName + ".");
+        }
+        else if(container is CookingContainer && heldIngredient) {
+            var cookingContainer = container as CookingContainer;
+            if(heldIngredient is SolidIngredient) {
+                var solidIngredient = heldIngredient as SolidIngredient;
+                if (cookingContainer.CanUseCookingContainer(solidIngredient)) {
+                    cookingContainer.AddToContainer(solidIngredient);
+                    heldIngredient = null;
                 }
             }
             else {
-                heldIngredient = cookingContainer.TakeFromCookingContainer();
-                if (HoldingIngredient) {
-                    Debug.Log("Took the " + heldIngredient.DisplayName + " from the " + container.DisplayName + ".");
-                }
-                else {
-                    Debug.LogWarning(container.DisplayName + " is empty. Cannot take any ingredients.");
-                }
+                Debug.LogWarning("Cannot cook liquid ingredients.");
             }
         }
     }
