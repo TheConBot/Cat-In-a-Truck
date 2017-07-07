@@ -17,14 +17,9 @@ public class StoreHighScores : MonoBehaviour {
   [SerializeField]
   private Text topScoresText;
 
-  private void Start() {
-    // StoreHighScore("nathan", 420, "normal");
-
-    GetHighScores();
-  }
-
   public void HighScoreEntry() {
     StoreHighScore(nameEntry.text, 123, "normal");
+    GetHighScores();
   }
 
   private void StoreHighScore(string name, int score, string text) {
@@ -59,21 +54,16 @@ public class StoreHighScores : MonoBehaviour {
           string[] splitLine = Regex.Split(sLine, @"(?=,{)");
           foreach (string line in splitLine) {
             string _line = line;
-            Debug.Log("before: " + _line);
             if (_line[0] == ',') {
               _line = _line.Substring(1);
             }
-            Debug.Log("after: " + _line);
             var jsonObj = JsonUtility.FromJson<PlayerInfo>(_line);
-            Debug.Log("got " + jsonObj.name + ", " + jsonObj.score);
             highScores.Add(jsonObj);
           }
         }
         Debug.Log(i + " : " + sLine);
       }
     }
-
-    // {"dreamlo":{"leaderboard":{"entry":[{"name":"nathan","score":"420","seconds":"0","text":"normal","date":"7/7/2017 7:18:49 PM"},{"name":"gggggood","score":"123","seconds":"0","text":"normal","date":"7/7/2017 7:53:20 PM"}]}}}
 
     if (json) {
       DisplayTopScores();
