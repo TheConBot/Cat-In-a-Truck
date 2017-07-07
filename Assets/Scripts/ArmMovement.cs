@@ -54,12 +54,17 @@ public class ArmMovement : MonoBehaviour {
 
 
         if (heldIngredient != lastHeldIngredient) {
+            // is there a held ingredient? if so, set it to be active
             if (heldIngredient != null) {
+                Debug.Log("holding new object, " + heldIngredient);
                 heldIngredient.gameObject.SetActive(true);
-                heldIngredient.gameObject.transform.position = pawTransform.position;
             }
 
             lastHeldIngredient = heldIngredient;
+        }
+
+        if (heldIngredient != null) {
+          heldIngredient.gameObject.transform.position = pawTransform.position;
         }
     }
 
