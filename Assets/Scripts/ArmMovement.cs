@@ -16,7 +16,7 @@ public class ArmMovement : MonoBehaviour {
   [SerializeField]
   private float neutralPawZOffset;
 
-  private Ingredient lastHeldIngredient;
+  private Ingredient lastHeldIngredient = null;
   public Ingredient heldIngredient { get; private set; }
 
   private void Start() {
@@ -80,6 +80,8 @@ public class ArmMovement : MonoBehaviour {
         heldIngredient.gameObject.SetActive(true);
         heldIngredient.gameObject.transform.position = pawTransform.position;
       }
+
+      lastHeldIngredient = heldIngredient;
     }
   }
 
