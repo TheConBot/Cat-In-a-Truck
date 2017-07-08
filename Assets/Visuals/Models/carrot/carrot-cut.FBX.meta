@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 3d19372ce4f77e941b7a46014d29f0d7
+timeCreated: 1499376158
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Carrot Chunk
+    100002: Carrot Chunk001
+    100004: Carrot Chunk002
+    100006: Carrot Chunk003
+    100008: Carrot Chunk004
+    100010: Carrot Chunk005
+    100012: Carrot Chunk006
+    100014: Carrot Chunk007
+    100016: Carrot Chunk008
+    100018: Carrot Chunk009
+    100020: Carrot Chunk011
+    100022: Carrot Chunk012
+    100024: Carrot Leaf
+    100026: Carrot Leaf001
+    100028: Carrot Leaf002
+    100030: Carrot Leaf003
+    100032: Carrot Leaf004
+    100034: Carrot Leaf005
+    100036: Carrot Leaf006
+    100038: //RootNode
+    400000: Carrot Chunk
+    400002: Carrot Chunk001
+    400004: Carrot Chunk002
+    400006: Carrot Chunk003
+    400008: Carrot Chunk004
+    400010: Carrot Chunk005
+    400012: Carrot Chunk006
+    400014: Carrot Chunk007
+    400016: Carrot Chunk008
+    400018: Carrot Chunk009
+    400020: Carrot Chunk011
+    400022: Carrot Chunk012
+    400024: Carrot Leaf
+    400026: Carrot Leaf001
+    400028: Carrot Leaf002
+    400030: Carrot Leaf003
+    400032: Carrot Leaf004
+    400034: Carrot Leaf005
+    400036: Carrot Leaf006
+    400038: //RootNode
+    2300000: Carrot Chunk
+    2300002: Carrot Chunk001
+    2300004: Carrot Chunk002
+    2300006: Carrot Chunk003
+    2300008: Carrot Chunk004
+    2300010: Carrot Chunk005
+    2300012: Carrot Chunk006
+    2300014: Carrot Chunk007
+    2300016: Carrot Chunk008
+    2300018: Carrot Chunk009
+    2300020: Carrot Chunk011
+    2300022: Carrot Chunk012
+    2300024: Carrot Leaf
+    2300026: Carrot Leaf001
+    2300028: Carrot Leaf002
+    2300030: Carrot Leaf003
+    2300032: Carrot Leaf004
+    2300034: Carrot Leaf005
+    2300036: Carrot Leaf006
+    3300000: Carrot Chunk
+    3300002: Carrot Chunk001
+    3300004: Carrot Chunk002
+    3300006: Carrot Chunk003
+    3300008: Carrot Chunk004
+    3300010: Carrot Chunk005
+    3300012: Carrot Chunk006
+    3300014: Carrot Chunk007
+    3300016: Carrot Chunk008
+    3300018: Carrot Chunk009
+    3300020: Carrot Chunk011
+    3300022: Carrot Chunk012
+    3300024: Carrot Leaf
+    3300026: Carrot Leaf001
+    3300028: Carrot Leaf002
+    3300030: Carrot Leaf003
+    3300032: Carrot Leaf004
+    3300034: Carrot Leaf005
+    3300036: Carrot Leaf006
+    4300000: Carrot Chunk
+    4300002: Carrot Chunk001
+    4300004: Carrot Chunk002
+    4300006: Carrot Chunk003
+    4300008: Carrot Chunk004
+    4300010: Carrot Chunk005
+    4300012: Carrot Chunk006
+    4300014: Carrot Chunk007
+    4300016: Carrot Chunk008
+    4300018: Carrot Chunk009
+    4300020: Carrot Chunk011
+    4300022: Carrot Chunk012
+    4300024: Carrot Leaf
+    4300026: Carrot Leaf001
+    4300028: Carrot Leaf002
+    4300030: Carrot Leaf003
+    4300032: Carrot Leaf004
+    4300034: Carrot Leaf005
+    4300036: Carrot Leaf006
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
