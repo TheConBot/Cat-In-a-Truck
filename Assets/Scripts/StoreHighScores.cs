@@ -23,6 +23,9 @@ public class StoreHighScores : MonoBehaviour {
   }
 
   private void StoreHighScore(string name, int score, string text) {
+    if (name.IndexOf("*") != -1) {
+      name = name.Replace("*", "");
+    }
     string url = urlBase + HighScoresAPIKey.privateKey +  "/add/" + name + "/" + score + "/0/" + text;
     GetResponse(url);
   }
