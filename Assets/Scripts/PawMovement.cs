@@ -38,7 +38,7 @@ public class PawMovement : MonoBehaviour {
         // this matches the paw to the mouse cursor (generally)
         SetWorldPawPosition();
 
-        pawArm.eulerAngles = new Vector3(-GetPawRotation(pawAnchor.transform.position.y), GetPawRotation(pawAnchor.transform.position.x), pawArm.rotation.z);
+        pawArm.eulerAngles = new Vector3(-GetPawRotation('y'), GetPawRotation('x'), pawArm.rotation.z);
 
         // get item clicked
         if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
@@ -127,7 +127,7 @@ public class PawMovement : MonoBehaviour {
 
     }
 
-    private float GetPawRotation(float anchorAxis) {
+    private float GetPawRotation(char axis) {
         //
         //     /|
         //    /x|
@@ -141,7 +141,12 @@ public class PawMovement : MonoBehaviour {
         // x = angle that the arm has to be rotated
 
         float h = Vector3.Distance(transform.position, pawAnchor.position);
-        float o = transform.position.y - anchorAxis;
+        float o = 0;
+        if (axis == 'x') {
+            o = transform.position.x - pawAnchor.transform.position.x;
+        } else if (axis == 'y') {
+            o = transform.position.y - pawAnchor.transform.position.y;
+        }
 
         float x = Mathf.Sin(o / h);
         x *= 100;
