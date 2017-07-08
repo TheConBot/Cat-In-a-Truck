@@ -43,11 +43,13 @@ public class PawMovement : MonoBehaviour {
         // get item clicked
         if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
             RaycastHit clickedCollider = GetClickedObject();
-            Container clickedContainer = clickedCollider.transform.gameObject.GetComponent<Container>();
-            if (clickedContainer != null) {
-                InteractWithContainer(clickedContainer);
+            if (clickedCollider.collider != null) {
+                Container clickedContainer = clickedCollider.transform.gameObject.GetComponent<Container>();
+                if (clickedContainer != null) {
+                    InteractWithContainer(clickedContainer);
+                }
+                // click action things here!!!
             }
-            // click action things here!!!
         }
         if (heldIngredient != null) {
           heldIngredient.gameObject.transform.position = pawTransform.position;

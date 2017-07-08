@@ -218,11 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd014e0edf301434b91ba3ff2a4e2c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: 
-  cookOption: 0
-  collectTimeEnabled: 0
-  cookTime: 6
-  collectTime: 9
 --- !u!1 &390402319
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,13 +300,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390402319}
-  m_LocalRotation: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
-  m_LocalPosition: {x: 0, y: 5.75, z: -10}
+  m_LocalRotation: {x: 0.095845714, y: 0, z: 0, w: 0.99539626}
+  m_LocalPosition: {x: 0, y: 7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 8, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
 --- !u!1 &1180667948
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005301295d60ff24cbd9269cf818ccf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: 
 --- !u!114 &1586009694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,8 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db0c65ffd704ca2b6c75a630f1c320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientToSpawn: {fileID: 114973378354843762, guid: e04ea290055342e4d8bfa3ef062af8da,
-    type: 2}
+  ingredientToSpawn: {fileID: 0}
   numberToSpawn: 5
 --- !u!1001 &1685318476
 Prefab:
@@ -743,3 +736,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c516c20da74e443c98775da2f0302814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameEntry: {fileID: 0}
+  topScoresText: {fileID: 0}
