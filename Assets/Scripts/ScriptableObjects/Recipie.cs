@@ -6,15 +6,15 @@ public class Recipie : ScriptableObject
 {
     public string displayName;
     [Range(1, 5)]
-    public int occuranceFrequency;
+    public int occuranceFrequency = 1;
     //Change to Ingrediant Object once it's made
-    private const int INGREDIANT_MAX_AMMOUNT = 4;
-    public Ingredient[] ingredients = new Ingredient[INGREDIANT_MAX_AMMOUNT];
+    private const int INGREDIENT_MAX_AMOUNT = 4;
+    public Ingredient[] ingredients = new Ingredient[INGREDIENT_MAX_AMOUNT];
 
     void OnValidate(){
-        if (ingredients.Length != INGREDIANT_MAX_AMMOUNT) {
+        if (ingredients.Length != INGREDIENT_MAX_AMOUNT) {
          Debug.LogWarning("Don't change the 'ingredients' field's array size!");
-         Array.Resize(ref ingredients, INGREDIANT_MAX_AMMOUNT);
+         Array.Resize(ref ingredients, INGREDIENT_MAX_AMOUNT);
         }
     }
 }

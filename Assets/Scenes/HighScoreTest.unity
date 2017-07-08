@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 995776320}
   - component: {fileID: 995776324}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HighScoreCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 2011380306}
   - component: {fileID: 2011380305}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MainContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
