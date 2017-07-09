@@ -51,8 +51,6 @@ public class RecipeGenerator : EditorWindow {
     for (int i = 0; i < numberToGen; i++) {
       System.Random randomLiquidIngredient = new System.Random();
       System.Random randomSolidIngredient = new System.Random();
-      System.Random randomCutState = new System.Random();
-      System.Random randomCookState = new System.Random();
 
       int amountOfIngredients = randomAmountOfIngredients.Next(3, 4);
       int liquidIngredient = randomLiquidIngredient.Next(0, liquidIngredients.Count);
@@ -68,20 +66,26 @@ public class RecipeGenerator : EditorWindow {
 
       // set solid ingredients
       for (int j = 0; j < amountOfIngredients - 1; j++) {
-        SolidIngredient _ingredient = solidIngredients[randomSolidIngredient.Next(0, solidIngredients.Count)];
+        int randSolidIngredient = randomSolidIngredient.Next(0, solidIngredients.Count);
+        //SolidIngredient _ingredient = (SolidIngredient)PrefabUtility.InstantiatePrefab(solidIngredients[randSolidIngredient]);
+        SolidIngredient _ingredient = solidIngredients[randSolidIngredient];
+        Debug.Log("randSolidIngredient: " + randSolidIngredient + ", cookState: " + _ingredient.cookState + ", item: " + i + ", ingredient: " + j);
+        System.Random randomCutState = new System.Random();
+        System.Random randomCookState = new System.Random();
 
         if (randomCutState.Next(0, 1) == 1) {
           _ingredient.Cut();
         }
 
-        int cookState = randomCookState.Next(0, 2);
-        if (cookState == 1) {
+        int randCookState = randomCookState.Next(0, 2);
+        if (randCookState == 1) {
           _ingredient.Fry();
-        } else if (cookState == 2) {
+        } else if (randCookState == 2) {
           _ingredient.Steam();
         }
 
         recipe.ingredients[j] = _ingredient;
+        _ingredient = null;
       }
 
       AssetDatabase.CreateAsset(recipe, savePath + "/" + recipe.displayName + "-" + i + ".asset");
