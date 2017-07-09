@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundTime: 4
   maxRecipieIngrediants: 4
+  ticketTime: 30

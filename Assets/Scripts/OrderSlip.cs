@@ -18,15 +18,14 @@ public class OrderSlip : MonoBehaviour {
         foodBoat.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
-        ticketUIView.title = foodBoat.GetComponentInChildren<Text>();
-        ticketUIView.timer = foodBoat.GetComponentInChildren<Image>();
   }
 
     public void TakeOrder() {
         recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
         foodBoat.Recipie = recipie;
-        ticketUIView.SetTitle(recipie.displayName);
         foodBoat.gameObject.SetActive(true);
+        ticketUIView = foodBoat.GetComponentInChildren<TicketUIView>();
+        ticketUIView.SetTitle(recipie.displayName);
         SetActiveSoft(false);
         StartCoroutine(TicketCountdown());
     }
