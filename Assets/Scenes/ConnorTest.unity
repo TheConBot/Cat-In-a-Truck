@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Plate 1
-  recipie: {fileID: 11400000, guid: 88a0e81a9bd83e94ea6f8bd376e9e2f8, type: 2}
+  recipie: {fileID: 0}
 --- !u!65 &1511739124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -378,9 +378,55 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -1.61
       objectReference: {fileID: 0}
+    - target: {fileID: 1970726167622426, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Ticket-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250237899094526, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Ticket-4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105000717500134, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Ticket-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440170130130192, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Ticket-1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1850979452 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1440170130130192, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1850979451}
+--- !u!65 &1850979453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850979452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33368745, y: 0.18527931, z: 0.052558046}
+  m_Center: {x: -0.01180091, y: 0.00000035675495, z: 0.014516978}
+--- !u!114 &1850979454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850979452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77106b02e8b2fca46b79bfefcaee085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipie: {fileID: 0}
+  foodBoat: {fileID: 1511739119}
 --- !u!1001 &2005724602
 Prefab:
   m_ObjectHideFlags: 0
