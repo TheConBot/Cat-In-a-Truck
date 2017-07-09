@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using System;
 
 public class PlateContainer : Container {
     [SerializeField]
@@ -15,30 +12,68 @@ public class PlateContainer : Container {
         }
     }
 
+    private void OnEnable()
+    {
+        requiredIngredients = new List<Ingredient>(recipie.ingredients);
+        requiredIngredients.RemoveAll(s => s == null);
+        foreach(Ingredient ingredient in requiredIngredients)
+        {
+            if(ingredient is SolidIngredient)
+            {
+                SolidIngredient solidIngredient = ingredient as SolidIngredient;
+                Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
+            }
+            else if(ingredient is LiquidIngredient)
+            {
+                LiquidIngredient liquidIngredient = ingredient as LiquidIngredient;
+                Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
+            }
+        }
+    }
+
     override public void AddToContainer(Ingredient ingredient)
     {
-        var requiredIngredient = GetMatchingIngredient(ingredient);
+        var requiredIngredient = GetMatchingRequiredIngredient(ingredient);
+        ingredient.transform.SetParent(transform);
+        ingredient.transform.localPosition = Vector3.zero;
         if (requiredIngredient != null)
         {
             requiredIngredients.Remove(requiredIngredient);
-            if(requiredIngredients.Count == 0)
+            Debug.Log("Correct! " + requiredIngredients.Count + " left!");
+            if (requiredIngredients.Count == 0)
             {
+                Debug.Log("You got them all!");
                 //TODO Cash in the plate for money!
             }
         }
         else
         {
+            Debug.Log("Wrong!");
             //TODO Oops they messed up punish the player and remove the plate!
         }
     }
 
-    private Ingredient GetMatchingIngredient(Ingredient ingredient)
+    private Ingredient GetMatchingRequiredIngredient(Ingredient ingredient)
     {
         foreach (var requiredIngredient in requiredIngredients)
         {
-            //This might not work, might need to compare strings..
-            if (ingredient == requiredIngredient) {
-                return requiredIngredient;
+            if(ingredient is SolidIngredient && requiredIngredient is SolidIngredient)
+            {
+                SolidIngredient solidIngredient = ingredient as SolidIngredient;
+                SolidIngredient requiredSolidIngredient = requiredIngredient as SolidIngredient;
+                if(solidIngredient.GetSolidType == requiredSolidIngredient.GetSolidType && solidIngredient.GetCookState == requiredSolidIngredient.GetCookState && solidIngredient.IsCut == requiredSolidIngredient.IsCut)
+                {
+                    return requiredIngredient;
+                }
+            }
+            else if(ingredient is LiquidIngredient && requiredIngredient is LiquidIngredient)
+            {
+                LiquidIngredient liquidIngredient = ingredient as LiquidIngredient;
+                LiquidIngredient requiredLiquidIngredient = requiredIngredient as LiquidIngredient;
+                if(liquidIngredient.GetLiquidType == requiredLiquidIngredient.GetLiquidType)
+                {
+                    return requiredIngredient;
+                }
             }
         }
         return null;

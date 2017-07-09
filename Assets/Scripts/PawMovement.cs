@@ -79,7 +79,7 @@ public class PawMovement : MonoBehaviour {
                     Debug.LogWarning("Cannot cook liquid ingredients.");
                 }
             }
-            else if(container is TrashContainer) {
+            else if(!(container is StorageContainer)) {
                 container.AddToContainer(heldIngredient);
                 heldIngredient = null;
             }

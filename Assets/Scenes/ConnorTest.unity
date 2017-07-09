@@ -198,6 +198,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
+--- !u!1 &1511739119 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1873407029092672, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1850979451}
+--- !u!114 &1511739121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511739119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Plate 1
+  recipie: {fileID: 11400000, guid: d0524b219bd0a4f4fa3e4a3588ae62ca, type: 2}
+--- !u!65 &1511739124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511739119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8695114, y: 1.5137883, z: 0.5198432}
+  m_Center: {x: 0.15301071, y: -0.11755736, z: -0.046760473}
 --- !u!1001 &1536530727
 Prefab:
   m_ObjectHideFlags: 0

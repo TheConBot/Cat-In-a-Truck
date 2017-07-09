@@ -30,8 +30,8 @@ public class CookingContainer : Container {
             Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been cut.");
             return false;
         }
-        else if (cookOption != CookOptions.Cut && ingredient.cookState != SolidIngredient.CookState.Raw) {
-            Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been " + ingredient.cookState + ".");
+        else if (cookOption != CookOptions.Cut && ingredient.GetCookState != SolidIngredient.CookState.Raw) {
+            Debug.LogWarning("Cannot use " + DisplayName + ". " + ingredient.DisplayName + " has already been " + ingredient.GetCookState + ".");
             return false;
         }
         return true;
@@ -51,12 +51,12 @@ public class CookingContainer : Container {
                 ingredient.Steam();
                 break;
         }
-        Debug.Log("Cooking Complete! " + ingredient.DisplayName + " is " + ingredient.cookState + " and " + (ingredient.IsCut ? "Cut" : "Not Cut") + ". Collect your " + ingredient.DisplayName + ".");
+        Debug.Log("Cooking Complete! " + ingredient.DisplayName + " is " + ingredient.GetCookState + " and " + (ingredient.IsCut ? "Cut" : "Not Cut") + ". Collect your " + ingredient.DisplayName + ".");
         if (collectTimeEnabled) {
             Debug.Log("Collect Time: " + collectTime);
             yield return new WaitForSeconds(collectTime);
-            ingredient.cookState = SolidIngredient.CookState.Ruined;
-            Debug.Log("Oh No! " + ingredient.DisplayName + " is " + ingredient.cookState + ".");
+            ingredient.Ruin();
+            Debug.Log("Oh No! " + ingredient.DisplayName + " is " + ingredient.GetCookState + ".");
         }
         yield return null;
     }

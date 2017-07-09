@@ -8,6 +8,28 @@ public class SolidIngredient : Ingredient {
             return isCut;
         }
     }
+
+    public SolidType GetSolidType {
+        get {
+            return solidType;
+        }
+    }
+
+    public CookState GetCookState {
+        get {
+            return cookState;
+        }
+    }
+
+    public enum SolidType
+    {
+        Broccoli,
+        Carrot,
+        Chicken,
+        Fish
+    }
+    [SerializeField]
+    private SolidType solidType;
     public enum CookState {
         Raw,
         Fried,
@@ -15,33 +37,39 @@ public class SolidIngredient : Ingredient {
         Ruined
     }
     [HideInInspector]
-    public CookState cookState;
+    private CookState cookState;
 
-    public virtual void Cut() {
+    private void OnEnable()
+    {
+        cookState = CookState.Raw;
+        isCut = false;
+    }
+
+    public void Cut() {
         if (IsCut) {
             return;
         }
         isCut = true;
     }
 
-    public virtual void Fry() {
-        if (cookState != CookState.Raw) {
+    public void Fry() {
+        if (GetCookState != CookState.Raw) {
             Debug.LogError("You should not be seeing this! Trying to Fry object that you shouldnt be able to.");
             return;
         }
         cookState = CookState.Fried;
     }
 
-    public virtual void Steam() {
-        if (cookState != CookState.Raw) {
+    public void Steam() {
+        if (GetCookState != CookState.Raw) {
             Debug.LogError("You should not be seeing this! Trying to Steam object you shouldnt be able to.");
             return;
         }
         cookState = CookState.Steamed;
     }
 
-    private void OnEnable() {
-        cookState = CookState.Raw;
-        isCut = false;
+    public void Ruin()
+    {
+        cookState = CookState.Ruined;
     }
 }
