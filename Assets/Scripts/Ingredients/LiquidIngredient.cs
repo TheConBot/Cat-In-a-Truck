@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 public class LiquidIngredient : Ingredient {
-    public enum LiquidType
-    {
+    public enum LiquidType {
         Sweet,
         Spicy
     }
@@ -12,6 +11,12 @@ public class LiquidIngredient : Ingredient {
     public LiquidType GetLiquidType {
         get {
             return liquidType;
+        }
+    }
+
+    public override string DisplayName {
+        get {
+            return liquidType + " Sause";
         }
     }
 }

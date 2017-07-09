@@ -2,11 +2,9 @@
 
 public abstract class Ingredient : MonoBehaviour {
 
-    [SerializeField]
-    private string displayName;
-    public string DisplayName {
+    virtual public string DisplayName {
         get {
-            return displayName;
+            return "No Name Found!";
         }
     }
 }
