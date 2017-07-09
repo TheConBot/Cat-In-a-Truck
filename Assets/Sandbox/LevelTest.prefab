@@ -91,13 +91,15 @@ GameObject:
   - component: {fileID: 33489576158217058}
   - component: {fileID: 23556909549847026}
   - component: {fileID: 95936892903427948}
+  - component: {fileID: 65312825090275116}
+  - component: {fileID: 114958362264483676}
   m_Layer: 0
   m_Name: food-boat (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1096631343346304
 GameObject:
   m_ObjectHideFlags: 1
@@ -142,8 +144,10 @@ GameObject:
   - component: {fileID: 4428591239908944}
   - component: {fileID: 33631471541427778}
   - component: {fileID: 23839379771778972}
+  - component: {fileID: 65233313832683804}
+  - component: {fileID: 114641198493319178}
   m_Layer: 0
-  m_Name: Ticket 2
+  m_Name: Ticket-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,13 +306,15 @@ GameObject:
   - component: {fileID: 33439224399713930}
   - component: {fileID: 23954085018635706}
   - component: {fileID: 95704790976689006}
+  - component: {fileID: 65522287591665324}
+  - component: {fileID: 114773631444373816}
   m_Layer: 0
   m_Name: food-boat (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1231220561420270
 GameObject:
   m_ObjectHideFlags: 1
@@ -326,6 +332,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1245836033115600
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4426219374389112}
+  m_Layer: 0
+  m_Name: FoodLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1250237899094526
 GameObject:
   m_ObjectHideFlags: 1
@@ -336,8 +357,10 @@ GameObject:
   - component: {fileID: 4784331382994052}
   - component: {fileID: 33949642762274792}
   - component: {fileID: 23202752247045150}
+  - component: {fileID: 65659018032711840}
+  - component: {fileID: 114583758115582366}
   m_Layer: 0
-  m_Name: Ticket 1
+  m_Name: Ticket-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,8 +651,10 @@ GameObject:
   - component: {fileID: 4183642936676314}
   - component: {fileID: 33668349174696802}
   - component: {fileID: 23074296134723406}
+  - component: {fileID: 65896737497109702}
+  - component: {fileID: 114127919757709414}
   m_Layer: 0
-  m_Name: Ticket 3
+  m_Name: Ticket-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,13 +1203,15 @@ GameObject:
   - component: {fileID: 33513836073522072}
   - component: {fileID: 23019331788474422}
   - component: {fileID: 95176572489725918}
+  - component: {fileID: 65309464328678022}
+  - component: {fileID: 114829675264573604}
   m_Layer: 0
   m_Name: food-boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1875887437329934
 GameObject:
   m_ObjectHideFlags: 1
@@ -1213,13 +1240,15 @@ GameObject:
   - component: {fileID: 33808506171181290}
   - component: {fileID: 23258028642360716}
   - component: {fileID: 95518671581798354}
+  - component: {fileID: 65632379140312304}
+  - component: {fileID: 114867512467399528}
   m_Layer: 0
   m_Name: food-boat (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1899109477799830
 GameObject:
   m_ObjectHideFlags: 1
@@ -1334,8 +1363,10 @@ GameObject:
   - component: {fileID: 4172364311229826}
   - component: {fileID: 33069984429838924}
   - component: {fileID: 23938711964925868}
+  - component: {fileID: 65879596416368424}
+  - component: {fileID: 114096006509091982}
   m_Layer: 0
-  m_Name: Ticket
+  m_Name: Ticket-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1785,6 +1816,19 @@ Transform:
   m_Father: {fileID: 4321192734714638}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4426219374389112
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245836033115600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.094, y: 0.06, z: -0.242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4901006179593360}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4427462224388070
 Transform:
   m_ObjectHideFlags: 1
@@ -2040,7 +2084,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321959921777546}
   m_LocalRotation: {x: 0.007586817, y: -0.41752714, z: -0.01650789, w: 0.90848285}
-  m_LocalPosition: {x: -1.23, y: 2.63, z: -1.32}
+  m_LocalPosition: {x: -1.23, y: 2.63, z: -1.61}
   m_LocalScale: {x: 1.521718, y: 1.521718, z: 1.521718}
   m_Children:
   - {fileID: 4645765613007962}
@@ -2278,7 +2322,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 7.32, y: 2.44, z: -0.47}
   m_LocalScale: {x: 1.0541421, y: 1.054142, z: 1.054142}
-  m_Children: []
+  m_Children:
+  - {fileID: 4426219374389112}
   m_Father: {fileID: 4214809885850556}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -4446,6 +4491,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 2.11, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65233313832683804
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105000717500134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33368734, y: 0.18527931, z: 0.05255805}
+  m_Center: {x: -0.011801026, y: -0.00000010467113, z: 0.014516948}
 --- !u!65 &65277988838866976
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4458,6 +4515,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 2.11, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65309464328678022
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873407029092672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8695114, y: 1.5137883, z: 0.5198432}
+  m_Center: {x: 0.15301071, y: -0.11755736, z: -0.046760473}
 --- !u!65 &65311687099659360
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4470,6 +4539,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000006, y: 0.00000045578216, z: 10.000001}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65312825090275116
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057984098649646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8695114, y: 1.5137883, z: 0.5198432}
+  m_Center: {x: 0.15301071, y: -0.11755736, z: -0.046760473}
 --- !u!65 &65366697242124944
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4482,6 +4563,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.316368, y: 3.008032, z: 0.2515164}
   m_Center: {x: 0.00000011920929, y: 0, z: 0}
+--- !u!65 &65522287591665324
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208131421865292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8695114, y: 1.5137883, z: 0.5198432}
+  m_Center: {x: 0.15301071, y: -0.11755736, z: -0.046760473}
 --- !u!65 &65567352284884984
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4494,6 +4587,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65632379140312304
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879481738990986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8695114, y: 1.5137883, z: 0.5198432}
+  m_Center: {x: 0.15301071, y: -0.11755736, z: -0.046760473}
+--- !u!65 &65659018032711840
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250237899094526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3336874, y: 0.1852793, z: 0.052558057}
+  m_Center: {x: -0.011801147, y: -0.00000017826703, z: 0.014516947}
 --- !u!65 &65757358847795130
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4554,6 +4671,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1.0000004}
   m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940698}
+--- !u!65 &65879596416368424
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970726167622426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3336874, y: 0.18527931, z: 0.052558053}
+  m_Center: {x: -0.011801029, y: 0.000000059906576, z: 0.014516918}
+--- !u!65 &65896737497109702
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440170130130192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33368745, y: 0.18527931, z: 0.052558046}
+  m_Center: {x: -0.01180091, y: 0.00000035675495, z: 0.014516978}
 --- !u!65 &65928452550647028
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4837,6 +4978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Brocolli Container
+  childLocation: {fileID: 0}
 --- !u!114 &114077331278735324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4889,6 +5031,19 @@ MonoBehaviour:
   ingredientToSpawn: {fileID: 114853195923881426, guid: fc7d77d4d1f06f845a4604da22163d10,
     type: 2}
   numberToSpawn: 5
+--- !u!114 &114096006509091982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970726167622426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77106b02e8b2fca46b79bfefcaee085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipie: {fileID: 0}
+  foodBoat: {fileID: 114773631444373816}
 --- !u!114 &114096251806241902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4910,6 +5065,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114127919757709414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440170130130192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77106b02e8b2fca46b79bfefcaee085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipie: {fileID: 0}
+  foodBoat: {fileID: 114829675264573604}
 --- !u!114 &114187347282099044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4922,6 +5090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Fish Container
+  childLocation: {fileID: 0}
 --- !u!114 &114195764405679586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4988,6 +5157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Frying Pan
+  childLocation: {fileID: 0}
   cookOption: 1
   collectTimeEnabled: 1
   cookTime: 10
@@ -5018,6 +5188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Carrot Container
+  childLocation: {fileID: 0}
 --- !u!114 &114386673875156024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5058,6 +5229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Sweet Sause Pot
+  childLocation: {fileID: 0}
 --- !u!114 &114422179303180238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5140,6 +5312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Chicken Container
+  childLocation: {fileID: 0}
 --- !u!114 &114540615227387458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5167,6 +5340,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 2
+--- !u!114 &114583758115582366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250237899094526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77106b02e8b2fca46b79bfefcaee085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipie: {fileID: 0}
+  foodBoat: {fileID: 114867512467399528}
 --- !u!114 &114603746388704916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5179,6 +5365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Cutting Board
+  childLocation: {fileID: 4426219374389112}
   cookOption: 0
   collectTimeEnabled: 0
   cookTime: 5
@@ -5210,6 +5397,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114641198493319178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105000717500134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77106b02e8b2fca46b79bfefcaee085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipie: {fileID: 0}
+  foodBoat: {fileID: 114958362264483676}
 --- !u!114 &114670397942072444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5285,6 +5485,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114773631444373816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208131421865292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Plate 2
+  childLocation: {fileID: 0}
 --- !u!114 &114783256991783786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5297,6 +5510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Trash
+  childLocation: {fileID: 0}
 --- !u!114 &114829327021339062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5309,6 +5523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Spicy Sause Pot
+  childLocation: {fileID: 0}
+--- !u!114 &114829675264573604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873407029092672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Plate 1
+  childLocation: {fileID: 0}
 --- !u!114 &114835296456237234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5379,6 +5607,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 2
+--- !u!114 &114867512467399528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879481738990986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Plate 4
+  childLocation: {fileID: 0}
 --- !u!114 &114887372659536788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5418,6 +5659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Steam Cooker
+  childLocation: {fileID: 0}
   cookOption: 2
   collectTimeEnabled: 1
   cookTime: 17
@@ -5483,6 +5725,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.64
   m_Text: Fish Bitch grand slam cool food
+--- !u!114 &114958362264483676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057984098649646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Plate 3
+  childLocation: {fileID: 0}
 --- !u!114 &114990090462795666
 MonoBehaviour:
   m_ObjectHideFlags: 1
