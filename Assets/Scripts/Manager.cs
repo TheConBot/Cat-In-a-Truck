@@ -13,16 +13,39 @@ public class Manager : SingletonMonoBehaviour<Manager> {
 		set {
 			roundTime = value; 
 		}
-	}	
+	}
 
-    public Difficulty difficultySetting;
+    private int roundScore;
+    public int RoundScore {
+        get {
+            return roundScore;
+        }
 
-	public enum GameState{
+        set {
+            roundScore = value;
+        }
+    }
+
+    private Difficulty difficultySetting;
+    public Difficulty DifficultySetting {
+        get {
+            return difficultySetting;
+        }
+
+        set {
+            difficultySetting = value;
+        }
+    }
+
+    public enum GameState{
 		TitleScreen,
 		Playing,
 		NewHighscore
 	}
-	[HideInInspector]
-	public GameState currentState;
-
+	private GameState currentState;
+    public GameState CurrentState {
+        get {
+            return currentState;
+        }
+    }
 }

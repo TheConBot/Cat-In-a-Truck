@@ -5,6 +5,8 @@ public class PlateContainer : Container {
     [SerializeField]
     private Recipie recipie;
     private List<RecipieIngredient> requiredIngredients;
+    private int scoreToGive;
+    public const int SCORE_PER_INGREDIENT = 100;
 
     public Recipie Recipie {
         set {
@@ -29,6 +31,7 @@ public class PlateContainer : Container {
                 Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
             }
         }
+        scoreToGive = 0;
     }
 
     override public void AddToContainer(Ingredient ingredient)
@@ -39,17 +42,18 @@ public class PlateContainer : Container {
         if (requiredIngredient != null)
         {
             requiredIngredients.Remove(requiredIngredient);
+            scoreToGive += SCORE_PER_INGREDIENT;
             Debug.Log("Correct! " + requiredIngredients.Count + " left!");
             if (requiredIngredients.Count == 0)
             {
                 Debug.Log("You got them all!");
-                //TODO Cash in the plate for money!
+                Manager.instance.RoundScore += scoreToGive;
             }
         }
         else
         {
             Debug.Log("Wrong!");
-            //TODO Oops they messed up punish the player and remove the plate!
+            gameObject.SetActive(false);
         }
     }
 

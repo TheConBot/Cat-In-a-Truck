@@ -45,8 +45,12 @@ public class PawMovement : MonoBehaviour {
             RaycastHit clickedCollider = GetClickedObject();
             if (clickedCollider.collider != null) {
                 Container clickedContainer = clickedCollider.transform.gameObject.GetComponent<Container>();
+                OrderSlip orderSlip = null;
                 if (clickedContainer != null) {
                     InteractWithContainer(clickedContainer);
+                }
+                else if((orderSlip = clickedCollider.transform.GetComponent<OrderSlip>()) != null) {
+                    orderSlip.TakeOrder();
                 }
                 // click action things here!!!
             }
