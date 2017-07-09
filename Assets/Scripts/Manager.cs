@@ -29,12 +29,16 @@ public class Manager : SingletonMonoBehaviour<Manager> {
     [SerializeField]
     private Difficulty difficultySetting;
     public Difficulty DifficultySetting {
-        set {
-            difficultySetting = value;
-        }
+      get {
+        return difficultySetting;
+      }
+
+      set {
+        difficultySetting = value;
+      }
     }
 
-    public enum GameState{
+  public enum GameState{
 		TitleScreen,
 		Playing,
 		NewHighscore
@@ -46,7 +50,7 @@ public class Manager : SingletonMonoBehaviour<Manager> {
         }
     }
 
-    override public void Awake() {
+  override public void Awake() {
         base.Awake();
         recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
     }

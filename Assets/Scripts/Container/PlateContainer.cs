@@ -42,8 +42,9 @@ public class PlateContainer : Container {
                 Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
             }
         }
-        //Stuff that needs to stay
-        scoreToGive = 0;
+
+    //Stuff that needs to stay
+    scoreToGive = 0;
     }
 
     private void OnDisable() {

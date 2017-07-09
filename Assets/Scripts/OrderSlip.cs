@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class OrderSlip : MonoBehaviour {
     [HideInInspector]
     public Recipie recipie;
     public PlateContainer foodBoat;
+
+    private TicketUIView ticketUIView;
 
     private MeshRenderer slipMesh;
     private BoxCollider slipCollider;
@@ -15,12 +18,14 @@ public class OrderSlip : MonoBehaviour {
         foodBoat.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
-    }
+  }
 
     public void TakeOrder() {
         recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
         foodBoat.Recipie = recipie;
         foodBoat.gameObject.SetActive(true);
+        ticketUIView = foodBoat.GetComponentInChildren<TicketUIView>();
+        ticketUIView.SetTitle(recipie.displayName);
         SetActiveSoft(false);
         StartCoroutine(TicketCountdown());
     }
@@ -36,9 +41,11 @@ public class OrderSlip : MonoBehaviour {
     }
 
     public IEnumerator TicketCountdown() {
-        ticketTimer = 30;
+        float initialTime = Manager.instance.DifficultySetting.ticketTime;
+        ticketTimer = initialTime;
         while(ticketTimer > 0) {
             yield return new WaitForSeconds(Time.deltaTime);
+            ticketUIView.SetTimer(ticketTimer, initialTime);
             ticketTimer -= Time.deltaTime;
         }
         foodBoat.RemoveChildrenFromPlate();
