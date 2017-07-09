@@ -4,25 +4,10 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-public class RecipeGenerator : EditorWindow {
+public class RecipeGenerator {
 
     private string savePath = "Assets/Data/Recipies";
     private int numberToGen = 10;
-
-    [MenuItem("Tools/Create Recipies")]
-    private static void ShowRecipeWindow() {
-        GetWindow<RecipeGenerator>(false, "Item Generator", true);
-    }
-
-    private void OnGUI() {
-        GUILayout.Label("Options", EditorStyles.boldLabel);
-        numberToGen = EditorGUILayout.IntField("Number to Generate", numberToGen);
-        savePath = EditorGUILayout.TextField("Items Folder Path", savePath);
-        GUILayout.FlexibleSpace();
-        if (GUILayout.Button("Generate Recipies")) {
-            GenerateRecipies();
-        }
-    }
 
     private void GenerateRecipies() {
         System.Random randomAmountOfIngredients = new System.Random();
@@ -38,7 +23,7 @@ public class RecipeGenerator : EditorWindow {
 
             Recipie recipe = null;
 
-            recipe = CreateInstance<Recipie>();
+            recipe = ScriptableObject.CreateInstance<Recipie>();
 
             recipe.displayName = "Fish Bitch";
 
@@ -58,7 +43,7 @@ public class RecipeGenerator : EditorWindow {
                 recipe.ingredients[j] = _ingredient;
             }
 
-            AssetDatabase.CreateAsset(recipe, savePath + "/" + recipe.displayName + "-" + i + ".asset");
+            Manager.instance.recipies.Add(recipe);
 
         }
     }

@@ -12,6 +12,15 @@ public class RecipeVisualGenerator : MonoBehaviour {
   [SerializeField]
   private List<GameObject> steps;
 
+  [SerializeField]
+  private List<Sprite> solidSprites;
+
+  [SerializeField]
+  private List<Sprite> liquidSprites;
+
+  [SerializeField]
+  private Sprite cutSprite;
+
   private void Start() {
     steps = StoreSteps();
   }
@@ -32,6 +41,9 @@ public class RecipeVisualGenerator : MonoBehaviour {
     titleText.text = r.displayName;
 
     for (int i = 0; i < r.ingredients.Length; i++) {
+      if (r.ingredients[i] is SolidRecipieIngredient) {
+
+      }
       steps[i].SetActive(true);
     }
   }
