@@ -48,4 +48,9 @@ public class Manager : SingletonMonoBehaviour<Manager> {
             return currentState;
         }
     }
+
+    override public void Awake() {
+        base.Awake();
+        recipies = RecipeGenerator.GenerateRecipies();
+    }
 }

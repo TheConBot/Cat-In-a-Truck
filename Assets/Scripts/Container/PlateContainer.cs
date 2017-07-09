@@ -2,7 +2,6 @@
 using UnityEngine;
 
 public class PlateContainer : Container {
-    [SerializeField]
     private Recipie recipie;
     private List<RecipieIngredient> requiredIngredients;
     private int scoreToGive;
@@ -16,6 +15,10 @@ public class PlateContainer : Container {
 
     private void OnEnable()
     {
+        if(recipie == null) {
+            Debug.LogWarning("No Recipie attatched to " + DisplayName + ".");
+            return;
+        }
         requiredIngredients = new List<RecipieIngredient>(recipie.ingredients);
         requiredIngredients.RemoveAll(s => s == null);
         foreach(RecipieIngredient ingredient in requiredIngredients)
@@ -48,6 +51,7 @@ public class PlateContainer : Container {
             {
                 Debug.Log("You got them all!");
                 Manager.instance.RoundScore += scoreToGive;
+                gameObject.SetActive(false);
             }
         }
         else
