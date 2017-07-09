@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 1031117898}
   - component: {fileID: 1031117897}
   - component: {fileID: 1031117896}
+  - component: {fileID: 1031117900}
   m_Layer: 5
   m_Name: CookBook
   m_TagString: Untagged
@@ -551,6 +552,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1031117900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031117895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a1645ee339d4ac1a8ba58cd5656755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  stepPanelContainer: {fileID: 0}
+  steps: []
+  solidSprites:
+  - {fileID: 21300000, guid: c5be26cd834814f45984d4d54f520ed3, type: 3}
+  - {fileID: 21300000, guid: 8a127070114e204419973dd369e85066, type: 3}
+  - {fileID: 21300000, guid: 9a79f11447c8c7b489de44488dd86999, type: 3}
+  - {fileID: 21300000, guid: a5c812fdcbba00442aa3008a39175f01, type: 3}
+  liquidSprites:
+  - {fileID: 21300000, guid: beef0fd6f50ce9d44be70843017c06bc, type: 3}
+  - {fileID: 21300000, guid: 95145d8d991f0414db7359d7c1d54ce8, type: 3}
+  cookstateSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: c506199e07216e64099aa3732e233334, type: 3}
+  - {fileID: 21300000, guid: 42d7dd87076807f40b01e154e5165801, type: 3}
+  cutSprite: {fileID: 21300000, guid: 3a445cbbf090f5c4aa83e21094973eef, type: 3}
 --- !u!1 &1106754387
 GameObject:
   m_ObjectHideFlags: 0
