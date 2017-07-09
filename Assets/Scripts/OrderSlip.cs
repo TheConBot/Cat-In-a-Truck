@@ -10,7 +10,9 @@ public class OrderSlip : MonoBehaviour {
     }
 
     public void TakeOrder() {
-        recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
+        int rand = Random.Range(0, Manager.instance.recipies.Count);
+        Debug.Log(rand);
+        recipie = Manager.instance.recipies[rand];
         foodBoat.GetComponent<PlateContainer>().Recipie = recipie;
         foodBoat.gameObject.SetActive(true);
         gameObject.SetActive(false);

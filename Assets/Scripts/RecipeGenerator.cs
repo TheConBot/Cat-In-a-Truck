@@ -44,6 +44,19 @@ public static class RecipeGenerator {
             recipies.Add(recipe);
 
         }
+        //Debug all of the recipies
+        foreach (Recipie recipie in recipies) {
+            foreach (RecipieIngredient ingredient in recipie.ingredients) {
+                if (ingredient is SolidRecipieIngredient) {
+                    SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
+                    Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
+                }
+                else if (ingredient is LiquidRecipieIngredient) {
+                    LiquidRecipieIngredient liquidIngredient = ingredient as LiquidRecipieIngredient;
+                    Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
+                }
+            }
+        }
         return recipies;
     }
 }
