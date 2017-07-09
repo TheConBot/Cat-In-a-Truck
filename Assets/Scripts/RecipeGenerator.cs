@@ -19,7 +19,7 @@ public class RecipeGenerator {
             System.Random randomCookState = new System.Random();
 
             int amountOfIngredients = randomAmountOfIngredients.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT);
-            int liquidIngredient = randomLiquidIngredient.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
+            int liquidIngredient = randomLiquidIngredient.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length + 1);
 
             Recipie recipe = null;
 
@@ -32,10 +32,10 @@ public class RecipeGenerator {
 
             // set solid ingredients
             for (int j = 0; j < amountOfIngredients - 1; j++) {
-                int randSolidIngredient = randomSolidIngredient.Next(0, Enum.GetNames(typeof(SolidIngredient.SolidType)).Length);
+                int randSolidIngredient = randomSolidIngredient.Next(0, Enum.GetNames(typeof(SolidIngredient.SolidType)).Length + 1);
                 int randCookState = randomCookState.Next(0, 2);
                 bool cut = false; ;
-                if (randomCutState.Next(0, 1) == 1) {
+                if (randomCutState.Next(0, 2) == 1) {
                     cut = true;
                 }
                 SolidRecipieIngredient _ingredient = new SolidRecipieIngredient((SolidIngredient.SolidType)randSolidIngredient, (SolidIngredient.CookState)randCookState, cut);
