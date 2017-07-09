@@ -14,8 +14,8 @@ public class SolidIngredient : Ingredient {
         Steamed,
         Ruined
     }
-    [HideInInspector]
-    public CookState cookState;
+    //[HideInInspector]
+    public CookState cookState = CookState.Raw;
 
     public virtual void Cut() {
         if (IsCut) {
