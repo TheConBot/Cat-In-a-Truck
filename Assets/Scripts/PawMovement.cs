@@ -14,6 +14,7 @@ public class PawMovement : MonoBehaviour {
     private float startingPawZ;
     [SerializeField]
     private float neutralPawZOffset;
+    public Transform childLocation;
 
     public Ingredient heldIngredient { get; private set; }
     public bool HoldingIngredient {
@@ -63,7 +64,12 @@ public class PawMovement : MonoBehaviour {
     private void InteractWithContainer(Container container) {
         if (!HoldingIngredient && !container.IsContainerEmpty) {
             heldIngredient = container.TakeFromContainer();
-            heldIngredient.transform.SetParent(transform);
+            if (childLocation == null) {
+                heldIngredient.transform.SetParent(transform);
+            }
+            else {
+                heldIngredient.transform.SetParent(childLocation);
+            }
             heldIngredient.transform.localPosition = Vector3.zero;
         }
         else if(!container.IsContainerEmpty) {

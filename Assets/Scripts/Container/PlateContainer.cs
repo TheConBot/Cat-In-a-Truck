@@ -62,7 +62,12 @@ public class PlateContainer : Container {
     override public void AddToContainer(Ingredient ingredient)
     {
         var requiredIngredient = GetMatchingRequiredIngredient(ingredient);
-        ingredient.transform.SetParent(transform);
+        if (childLocation == null) {
+            ingredient.transform.SetParent(transform);
+        }
+        else {
+            ingredient.transform.SetParent(childLocation);
+        }
         ingredient.transform.localPosition = Vector3.zero;
         if (requiredIngredient != null)
         {
