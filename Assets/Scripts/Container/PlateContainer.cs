@@ -53,8 +53,10 @@ public class PlateContainer : Container {
 
     public void RemoveChildrenFromPlate() {
         foreach (Transform child in transform) {
-            child.gameObject.SetActive(false);
-            child.SetParent(Manager.instance.transform);
+            if (transform.GetComponent<Ingredient>() != null) {
+                child.gameObject.SetActive(false);
+                child.SetParent(Manager.instance.transform);
+            }
         }
     }
 
