@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour {
+public class Manager : SingletonMonoBehaviour<Manager> {
 
 	public List<Recipie> recipies;
 
