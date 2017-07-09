@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 4592728071609474}
   - component: {fileID: 33933078401288932}
   - component: {fileID: 23115413142411016}
+  - component: {fileID: 65311687099659360}
   m_Layer: 0
   m_Name: Cabinets
   m_TagString: Untagged
@@ -4172,6 +4173,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.36, y: 2.11, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65311687099659360
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461215334638658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.000006, y: 0.00000045578216, z: 10.000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65366697242124944
 BoxCollider:
