@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be639e522ff210146a9eb3d79095e337, type: 3}
+  m_Name: Fish Bitch-1
+  m_EditorClassIdentifier: 
+  displayName: Fish Bitch
+  occuranceFrequency: 1
+  ingredients:
+  - {fileID: 114101138037857588, guid: 9a6df1d094e5a93479cafd5ae8c85a6c, type: 2}
+  - {fileID: 114179046976422714, guid: e04ea290055342e4d8bfa3ef062af8da, type: 2}
+  - {fileID: 114528064889663236, guid: b9754a04759fc0a4b856311ccf633f3d, type: 2}
+  - {fileID: 0}
