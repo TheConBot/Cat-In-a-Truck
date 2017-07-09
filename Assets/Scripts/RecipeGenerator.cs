@@ -30,7 +30,7 @@ public static class RecipeGenerator {
 
             // set solid ingredients
             for (int j = 0; j < amountOfIngredients - 1; j++) {
-                int randSolidIngredient = randomSolidIngredient.Next(0, Enum.GetNames(typeof(SolidIngredient.SolidType)).Length + 1);
+                int randSolidIngredient = randomSolidIngredient.Next(0, Enum.GetNames(typeof(SolidIngredient.SolidType)).Length);
                 int randCookState = randomCookState.Next(0, 3);
                 bool cut = false; ;
                 if (randomCutState.Next(0, 2) == 1) {
