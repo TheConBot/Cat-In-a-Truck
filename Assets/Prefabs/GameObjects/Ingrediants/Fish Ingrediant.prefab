@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0941430a61b959d40abe708318927f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: Fish
   solidType: 3
+  cookState: 0

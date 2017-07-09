@@ -9,6 +9,12 @@ public class SolidIngredient : Ingredient {
         }
     }
 
+    public override string DisplayName {
+        get {
+            return solidType.ToString();
+        }
+    }
+
     public SolidType GetSolidType {
         get {
             return solidType;
@@ -36,7 +42,7 @@ public class SolidIngredient : Ingredient {
         Steamed,
         Ruined
     }
-    [HideInInspector]
+    [SerializeField]
     private CookState cookState;
 
     private void OnEnable()
@@ -71,5 +77,10 @@ public class SolidIngredient : Ingredient {
     public void Ruin()
     {
         cookState = CookState.Ruined;
+    }
+
+    public SolidIngredient(SolidType st)
+    {
+        solidType = st;
     }
 }

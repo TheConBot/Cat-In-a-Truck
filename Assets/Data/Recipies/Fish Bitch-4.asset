@@ -13,8 +13,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Fish Bitch
   occuranceFrequency: 1
-  ingredients:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 114528064889663236, guid: b9754a04759fc0a4b856311ccf633f3d, type: 2}
-  - {fileID: 0}

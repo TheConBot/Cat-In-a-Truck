@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlateContainer : Container {
     [SerializeField]
     private Recipie recipie;
-    private List<Ingredient> requiredIngredients;
+    private List<RecipieIngredient> requiredIngredients;
 
     public Recipie Recipie {
         set {
@@ -14,18 +14,18 @@ public class PlateContainer : Container {
 
     private void OnEnable()
     {
-        requiredIngredients = new List<Ingredient>(recipie.ingredients);
+        requiredIngredients = new List<RecipieIngredient>(recipie.ingredients);
         requiredIngredients.RemoveAll(s => s == null);
-        foreach(Ingredient ingredient in requiredIngredients)
+        foreach(RecipieIngredient ingredient in requiredIngredients)
         {
-            if(ingredient is SolidIngredient)
+            if(ingredient is SolidRecipieIngredient)
             {
-                SolidIngredient solidIngredient = ingredient as SolidIngredient;
+                SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
                 Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
             }
-            else if(ingredient is LiquidIngredient)
+            else if(ingredient is LiquidRecipieIngredient)
             {
-                LiquidIngredient liquidIngredient = ingredient as LiquidIngredient;
+                LiquidRecipieIngredient liquidIngredient = ingredient as LiquidRecipieIngredient;
                 Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
             }
         }
@@ -53,23 +53,23 @@ public class PlateContainer : Container {
         }
     }
 
-    private Ingredient GetMatchingRequiredIngredient(Ingredient ingredient)
+    private RecipieIngredient GetMatchingRequiredIngredient(Ingredient ingredient)
     {
         foreach (var requiredIngredient in requiredIngredients)
         {
-            if(ingredient is SolidIngredient && requiredIngredient is SolidIngredient)
+            if(ingredient is SolidIngredient && requiredIngredient is SolidRecipieIngredient)
             {
                 SolidIngredient solidIngredient = ingredient as SolidIngredient;
-                SolidIngredient requiredSolidIngredient = requiredIngredient as SolidIngredient;
+                SolidRecipieIngredient requiredSolidIngredient = requiredIngredient as SolidRecipieIngredient;
                 if(solidIngredient.GetSolidType == requiredSolidIngredient.GetSolidType && solidIngredient.GetCookState == requiredSolidIngredient.GetCookState && solidIngredient.IsCut == requiredSolidIngredient.IsCut)
                 {
                     return requiredIngredient;
                 }
             }
-            else if(ingredient is LiquidIngredient && requiredIngredient is LiquidIngredient)
+            else if(ingredient is LiquidIngredient && requiredIngredient is LiquidRecipieIngredient)
             {
                 LiquidIngredient liquidIngredient = ingredient as LiquidIngredient;
-                LiquidIngredient requiredLiquidIngredient = requiredIngredient as LiquidIngredient;
+                LiquidRecipieIngredient requiredLiquidIngredient = requiredIngredient as LiquidRecipieIngredient;
                 if(liquidIngredient.GetLiquidType == requiredLiquidIngredient.GetLiquidType)
                 {
                     return requiredIngredient;

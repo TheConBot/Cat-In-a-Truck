@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public abstract class Ingredient : MonoBehaviour {
+﻿public abstract class RecipieIngredient {
 
     virtual public string DisplayName {
         get {

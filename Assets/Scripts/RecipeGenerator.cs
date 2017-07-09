@@ -6,92 +6,62 @@ using System;
 
 public class RecipeGenerator : EditorWindow {
 
-  private string savePath = "Assets/Data/Recipies";
-  private int numberToGen = 10;
-  private int numberOfIngredients = 1;
-  [SerializeField]
-  private Ingredient[] ingredients = new Ingredient[1];
+    private string savePath = "Assets/Data/Recipies";
+    private int numberToGen = 10;
 
-  [MenuItem("Tools/Create Recipies")]
-  private static void ShowRecipeWindow() {
-    GetWindow<RecipeGenerator>(false, "Item Generator", true);
-  }
-
-  private void OnGUI() {
-    GUILayout.Label("Options", EditorStyles.boldLabel);
-    numberToGen = EditorGUILayout.IntField("Number to Generate", numberToGen);
-    numberOfIngredients = EditorGUILayout.IntField("Number of Ingredients", numberOfIngredients);
-    if (numberOfIngredients != ingredients.Length) {
-      ingredients = new Ingredient[numberOfIngredients];
-    }
-    for (int k = 0; k < numberOfIngredients; k++) {
-      ingredients[k] = (Ingredient)EditorGUILayout.ObjectField(ingredients[k], typeof (Ingredient), false);
-    }
-    savePath = EditorGUILayout.TextField("Items Folder Path", savePath);
-    GUILayout.FlexibleSpace();
-    if (GUILayout.Button("Generate Recipies")) {
-      GenerateRecipies();
-    }
-  }
-
-  private void GenerateRecipies() {
-    System.Random randomAmountOfIngredients = new System.Random();
-
-    List<SolidIngredient> solidIngredients = new List<SolidIngredient>();
-    List<LiquidIngredient> liquidIngredients = new List<LiquidIngredient>();
-
-    foreach (Ingredient ing in ingredients) {
-      if (ing is LiquidIngredient) {
-        liquidIngredients.Add(ing as LiquidIngredient);
-      } else {
-        solidIngredients.Add(ing as SolidIngredient);
-      }
+    [MenuItem("Tools/Create Recipies")]
+    private static void ShowRecipeWindow() {
+        GetWindow<RecipeGenerator>(false, "Item Generator", true);
     }
 
-    for (int i = 0; i < numberToGen; i++) {
-      System.Random randomLiquidIngredient = new System.Random();
-      System.Random randomSolidIngredient = new System.Random();
-
-      int amountOfIngredients = randomAmountOfIngredients.Next(3, 4);
-      int liquidIngredient = randomLiquidIngredient.Next(0, liquidIngredients.Count);
-
-      Recipie recipe = null;
-
-      recipe = CreateInstance<Recipie>();
-
-      recipe.displayName = "Fish Bitch";
-
-      // set liquid ingredient
-      recipe.ingredients[amountOfIngredients - 1] = liquidIngredients[liquidIngredient];
-
-      // set solid ingredients
-      for (int j = 0; j < amountOfIngredients - 1; j++) {
-        int randSolidIngredient = randomSolidIngredient.Next(0, solidIngredients.Count);
-        //SolidIngredient _ingredient = (SolidIngredient)PrefabUtility.InstantiatePrefab(solidIngredients[randSolidIngredient]);
-        SolidIngredient _ingredient = solidIngredients[randSolidIngredient];
-        Debug.Log("randSolidIngredient: " + randSolidIngredient + ", cookState: " + _ingredient.cookState + ", item: " + i + ", ingredient: " + j);
-        System.Random randomCutState = new System.Random();
-        System.Random randomCookState = new System.Random();
-
-        if (randomCutState.Next(0, 1) == 1) {
-          _ingredient.Cut();
+    private void OnGUI() {
+        GUILayout.Label("Options", EditorStyles.boldLabel);
+        numberToGen = EditorGUILayout.IntField("Number to Generate", numberToGen);
+        savePath = EditorGUILayout.TextField("Items Folder Path", savePath);
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("Generate Recipies")) {
+            GenerateRecipies();
         }
-
-        int randCookState = randomCookState.Next(0, 2);
-        if (randCookState == 1) {
-          _ingredient.Fry();
-        } else if (randCookState == 2) {
-          _ingredient.Steam();
-        }
-
-        recipe.ingredients[j] = _ingredient;
-        _ingredient = null;
-      }
-
-      AssetDatabase.CreateAsset(recipe, savePath + "/" + recipe.displayName + "-" + i + ".asset");
-
     }
-  }
+
+    private void GenerateRecipies() {
+        System.Random randomAmountOfIngredients = new System.Random();
+
+        for (int i = 0; i < numberToGen; i++) {
+            System.Random randomLiquidIngredient = new System.Random();
+            System.Random randomSolidIngredient = new System.Random();
+            System.Random randomCutState = new System.Random();
+            System.Random randomCookState = new System.Random();
+
+            int amountOfIngredients = randomAmountOfIngredients.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT);
+            int liquidIngredient = randomLiquidIngredient.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
+
+            Recipie recipe = null;
+
+            recipe = CreateInstance<Recipie>();
+
+            recipe.displayName = "Fish Bitch";
+
+            // set liquid ingredient
+            recipe.ingredients[amountOfIngredients - 1] = new LiquidRecipieIngredient((LiquidIngredient.LiquidType)liquidIngredient);
+
+            // set solid ingredients
+            for (int j = 0; j < amountOfIngredients - 1; j++) {
+                int randSolidIngredient = randomSolidIngredient.Next(0, Enum.GetNames(typeof(SolidIngredient.SolidType)).Length);
+                int randCookState = randomCookState.Next(0, 2);
+                bool cut = false; ;
+                if (randomCutState.Next(0, 1) == 1) {
+                    cut = true;
+                }
+                SolidRecipieIngredient _ingredient = new SolidRecipieIngredient((SolidIngredient.SolidType)randSolidIngredient, (SolidIngredient.CookState)randCookState, cut);
+
+                recipe.ingredients[j] = _ingredient;
+            }
+
+            AssetDatabase.CreateAsset(recipe, savePath + "/" + recipe.displayName + "-" + i + ".asset");
+
+        }
+    }
 
 
 
