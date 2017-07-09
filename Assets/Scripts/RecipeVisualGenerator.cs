@@ -65,18 +65,25 @@ public class RecipeVisualGenerator : MonoBehaviour {
       if (r.ingredients[i] is SolidRecipieIngredient) {
         SolidRecipieIngredient sri = r.ingredients[i] as SolidRecipieIngredient;
         images[imageIndex].sprite = solidSprites[(int)sri.GetSolidType];
+        images[imageIndex].gameObject.SetActive(true);
         imageIndex++;
 
         if (sri.IsCut) {
           images[imageIndex].sprite = cutSprite;
+          images[imageIndex].gameObject.SetActive(true);
           imageIndex++;
         }
 
-        images[imageIndex].sprite = cookstateSprites[(int)sri.GetCookState];
+        if ((int)sri.GetCookState > 0) {
+          images[imageIndex].sprite = cookstateSprites[(int)sri.GetCookState];
+          images[imageIndex].gameObject.SetActive(true);
+        }
 
       } else if (r.ingredients[i] is LiquidRecipieIngredient) {
         LiquidRecipieIngredient lri = r.ingredients[i] as LiquidRecipieIngredient;
+        Debug.Log(lri.GetLiquidType);
         images[imageIndex].sprite = liquidSprites[(int)lri.GetLiquidType];
+        images[imageIndex].gameObject.SetActive(true);
 
       }
 

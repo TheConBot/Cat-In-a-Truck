@@ -16,8 +16,8 @@ public static class RecipeGenerator {
             System.Random randomCutState = new System.Random();
             System.Random randomCookState = new System.Random();
 
-            int amountOfIngredients = randomAmountOfIngredients.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT);
-            int liquidIngredient = randomLiquidIngredient.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length + 1);
+            int amountOfIngredients = randomAmountOfIngredients.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT + 1);
+            int liquidIngredient = randomLiquidIngredient.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
 
             Recipie recipe = null;
 
