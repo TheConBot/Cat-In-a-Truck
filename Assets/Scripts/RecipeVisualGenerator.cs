@@ -27,6 +27,8 @@ public class RecipeVisualGenerator : MonoBehaviour {
 
   private void Start() {
     steps = StoreSteps();
+
+    CreateRecipeVisual(Manager.instance.recipies[0]);
   }
 
   private List<GameObject> StoreSteps() {
