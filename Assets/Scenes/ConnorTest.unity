@@ -215,7 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Plate 1
-  recipie: {fileID: 0}
 --- !u!65 &1511739124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -393,6 +392,10 @@ Prefab:
     - target: {fileID: 1440170130130192, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
       propertyPath: m_Name
       value: Ticket-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873407029092672, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}

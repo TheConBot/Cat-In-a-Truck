@@ -13,5 +13,6 @@ public class OrderSlip : MonoBehaviour {
         recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
         foodBoat.GetComponent<PlateContainer>().Recipie = recipie;
         foodBoat.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System;
 
-public class RecipeGenerator {
+public static class RecipeGenerator {
 
-    private string savePath = "Assets/Data/Recipies";
-    private int numberToGen = 10;
+    private static int numberToGen = 10;
 
-    private void GenerateRecipies() {
+    public static List<Recipie> GenerateRecipies() {
+        List<Recipie> recipies = new List<Recipie>();
         System.Random randomAmountOfIngredients = new System.Random();
 
         for (int i = 0; i < numberToGen; i++) {
@@ -43,12 +41,9 @@ public class RecipeGenerator {
                 recipe.ingredients[j] = _ingredient;
             }
 
-            Manager.instance.recipies.Add(recipe);
+            recipies.Add(recipe);
 
         }
+        return recipies;
     }
-
-
-
-
 }
