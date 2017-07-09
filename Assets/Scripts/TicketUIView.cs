@@ -14,7 +14,6 @@ public class TicketUIView : MonoBehaviour {
 
   public void SetTimer(float timeLeft, float startTime) {
     float fillAmount = (timeLeft / startTime);
-    Debug.Log(fillAmount);
     timer.fillAmount = fillAmount;
   }
 

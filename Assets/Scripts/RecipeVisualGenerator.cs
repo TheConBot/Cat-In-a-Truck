@@ -5,7 +5,13 @@ using UnityEngine.UI;
 public class RecipeVisualGenerator : MonoBehaviour {
 
   [SerializeField]
+  private CanvasGroup mainContainerGroup;
+
+  [SerializeField]
   private Text titleText;
+
+  [SerializeField]
+  private Text pageNumber;
 
   [SerializeField]
   private GameObject stepPanelContainer;
@@ -25,10 +31,13 @@ public class RecipeVisualGenerator : MonoBehaviour {
   [SerializeField]
   private Sprite cutSprite;
 
+  private int bookIndex = 0;
+
   private void Start() {
     steps = StoreSteps();
 
-    CreateRecipeVisual(Manager.instance.recipies[0]);
+    ToggleMenu(0);
+    IncrementRecipe(0);
   }
 
   private List<GameObject> StoreSteps() {
@@ -52,7 +61,27 @@ public class RecipeVisualGenerator : MonoBehaviour {
     return _images;
   }
 
-  // this is all pseudo-code until i fully see how the recipes are written!
+  public void IncrementRecipe(int index) {
+    bookIndex += index;
+    int count = Manager.instance.recipies.Count;
+    if (bookIndex < 0) {
+      bookIndex = count - 1;
+    } else if (bookIndex >= count) {
+      bookIndex = 0;
+    }
+
+    pageNumber.text = (bookIndex + 1) + "/" + count;
+    CreateRecipeVisual(Manager.instance.recipies[bookIndex]);
+  }
+
+  public void ToggleMenu(int open = -1) {
+    if (open == -1) {
+      open = (int)mainContainerGroup.alpha;
+    }
+    mainContainerGroup.alpha = open;
+    mainContainerGroup.interactable = (open == 1);
+    mainContainerGroup.blocksRaycasts = (open == 1);
+  }
 
   public void CreateRecipeVisual(Recipie r) {
     titleText.text = r.displayName;
