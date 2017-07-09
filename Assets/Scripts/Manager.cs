@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class Manager : SingletonMonoBehaviour<Manager> {
@@ -25,13 +26,9 @@ public class Manager : SingletonMonoBehaviour<Manager> {
             roundScore = value;
         }
     }
-
+    [SerializeField]
     private Difficulty difficultySetting;
     public Difficulty DifficultySetting {
-        get {
-            return difficultySetting;
-        }
-
         set {
             difficultySetting = value;
         }
@@ -42,7 +39,7 @@ public class Manager : SingletonMonoBehaviour<Manager> {
 		Playing,
 		NewHighscore
 	}
-	private GameState currentState;
+	private GameState currentState = GameState.TitleScreen;
     public GameState CurrentState {
         get {
             return currentState;
@@ -51,6 +48,15 @@ public class Manager : SingletonMonoBehaviour<Manager> {
 
     override public void Awake() {
         base.Awake();
-        recipies = RecipeGenerator.GenerateRecipies();
+        recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
+    }
+
+    private IEnumerator StartRoundTimer() {
+        roundTime = difficultySetting.roundTime;
+        while (roundTime > 0) {
+            yield return new WaitForSeconds(1);
+            roundTime--;
+        }
+        //TODO End round stuff here
     }
 }

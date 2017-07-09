@@ -11,6 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decaebbc096fbe9408770571bf384990, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
-  roundTime: 3
+  roundTime: 4
   maxRecipieIngrediants: 4
-  allowModifications: 1

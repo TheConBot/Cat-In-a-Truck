@@ -6,13 +6,14 @@ public static class RecipeGenerator {
 
     private static int numberToGen = 10;
 
-    public static List<Recipie> GenerateRecipies() {
+    public static List<Recipie> GenerateRecipies(int ingredientsPerRecipie) {
         List<Recipie> recipies = new List<Recipie>();
-        System.Random randomGenNumber = new System.Random();
+        System.Random randomGenNumber = new System.Random(42069666);
 
         for (int i = 0; i < numberToGen; i++) {
 
-            int amountOfIngredients = randomGenNumber.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT + 1);
+            //int amountOfIngredients = randomGenNumber.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT + 1);
+            int amountOfIngredients = ingredientsPerRecipie;
             int liquidIngredient = randomGenNumber.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
 
             Recipie recipe = null;
@@ -39,19 +40,6 @@ public static class RecipeGenerator {
 
             recipies.Add(recipe);
 
-        }
-        //Debug all of the recipies
-        foreach (Recipie recipie in recipies) {
-            foreach (RecipieIngredient ingredient in recipie.ingredients) {
-                if (ingredient is SolidRecipieIngredient) {
-                    SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
-                    Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
-                }
-                else if (ingredient is LiquidRecipieIngredient) {
-                    LiquidRecipieIngredient liquidIngredient = ingredient as LiquidRecipieIngredient;
-                    Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
-                }
-            }
         }
         return recipies;
     }

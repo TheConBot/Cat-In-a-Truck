@@ -11,6 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decaebbc096fbe9408770571bf384990, type: 3}
   m_Name: Medium
   m_EditorClassIdentifier: 
-  roundTime: 2
-  maxRecipieIngrediants: 4
-  allowModifications: 0
+  roundTime: 3
+  maxRecipieIngrediants: 3

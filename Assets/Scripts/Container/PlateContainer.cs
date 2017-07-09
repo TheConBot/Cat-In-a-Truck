@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlateContainer : Container {
     private Recipie recipie;
+    private OrderSlip linkedSlip;
     private List<RecipieIngredient> requiredIngredients;
     private int scoreToGive;
     public const int SCORE_PER_INGREDIENT = 100;
@@ -13,8 +14,15 @@ public class PlateContainer : Container {
         }
     }
 
+    public OrderSlip LinkedSlip {
+        set {
+            linkedSlip = value;
+        }
+    }
+
     private void OnEnable()
     {
+        //Debug Stuff
         if(recipie == null) {
             Debug.LogWarning("No Recipie attatched to " + DisplayName + ".");
             return;
@@ -34,7 +42,20 @@ public class PlateContainer : Container {
                 Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
             }
         }
+        //Stuff that needs to stay
         scoreToGive = 0;
+    }
+
+    private void OnDisable() {
+        linkedSlip.StopAllCoroutines();
+        linkedSlip.StartCoroutine(linkedSlip.TicketRespawn());
+    }
+
+    public void RemoveChildrenFromPlate() {
+        foreach (Transform child in transform) {
+            child.gameObject.SetActive(false);
+            child.SetParent(Manager.instance.transform);
+        }
     }
 
     override public void AddToContainer(Ingredient ingredient)

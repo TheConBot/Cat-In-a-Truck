@@ -44,6 +44,8 @@ public class SolidIngredient : Ingredient {
     }
     [SerializeField]
     private CookState cookState;
+    [SerializeField]
+    private GameObject wholeObject, cutObject;
 
     private void OnEnable()
     {
@@ -56,6 +58,8 @@ public class SolidIngredient : Ingredient {
             return;
         }
         isCut = true;
+        wholeObject.SetActive(false);
+        cutObject.SetActive(true);
     }
 
     public void Fry() {
