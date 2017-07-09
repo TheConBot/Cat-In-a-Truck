@@ -37,18 +37,25 @@ public class RecipeGenerator : EditorWindow {
   private void GenerateRecipies() {
     System.Random randomAmountOfIngredients = new System.Random();
 
-    List<Ingredient> solidIngredients = new List<Ingredient>();
-    List<Ingredient> liquidIngredients = new List<Ingredient>();
+    List<SolidIngredient> solidIngredients = new List<SolidIngredient>();
+    List<LiquidIngredient> liquidIngredients = new List<LiquidIngredient>();
 
     foreach (Ingredient ing in ingredients) {
       if (ing is LiquidIngredient) {
-        liquidIngredients.Add(ing);
+        liquidIngredients.Add(ing as LiquidIngredient);
       } else {
-        solidIngredients.Add(ing);
+        solidIngredients.Add(ing as SolidIngredient);
       }
     }
 
     for (int i = 0; i < numberToGen; i++) {
+      System.Random randomLiquidIngredient = new System.Random();
+      System.Random randomSolidIngredient = new System.Random();
+      System.Random randomCutState = new System.Random();
+      System.Random randomCookState = new System.Random();
+
+      int amountOfIngredients = randomAmountOfIngredients.Next(3, 4);
+      int liquidIngredient = randomLiquidIngredient.Next(0, liquidIngredients.Count);
 
       Recipie recipe = null;
 
@@ -56,16 +63,25 @@ public class RecipeGenerator : EditorWindow {
 
       recipe.displayName = "Fish Bitch";
 
-      int amountOfIngredients = randomAmountOfIngredients.Next(3, 4);
-
-      System.Random randomLiquidIngredient = new System.Random();
-      int liquidIngredient = randomLiquidIngredient.Next(0, liquidIngredients.Count);
-
+      // set liquid ingredient
       recipe.ingredients[amountOfIngredients - 1] = liquidIngredients[liquidIngredient];
 
-      System.Random randomSolidIngredient = new System.Random();
+      // set solid ingredients
       for (int j = 0; j < amountOfIngredients - 1; j++) {
-        recipe.ingredients[j] = solidIngredients[randomSolidIngredient.Next(0, solidIngredients.Count)];
+        SolidIngredient _ingredient = solidIngredients[randomSolidIngredient.Next(0, solidIngredients.Count)];
+
+        if (randomCutState.Next(0, 1) == 1) {
+          _ingredient.Cut();
+        }
+
+        int cookState = randomCookState.Next(0, 2);
+        if (cookState == 1) {
+          _ingredient.Fry();
+        } else if (cookState == 2) {
+          _ingredient.Steam();
+        }
+
+        recipe.ingredients[j] = _ingredient;
       }
 
       AssetDatabase.CreateAsset(recipe, savePath + "/" + recipe.displayName + "-" + i + ".asset");

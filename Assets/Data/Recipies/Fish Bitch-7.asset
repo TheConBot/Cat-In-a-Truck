@@ -14,7 +14,7 @@ MonoBehaviour:
   displayName: Fish Bitch
   occuranceFrequency: 1
   ingredients:
-  - {fileID: 114101138037857588, guid: 9a6df1d094e5a93479cafd5ae8c85a6c, type: 2}
   - {fileID: 114853195923881426, guid: fc7d77d4d1f06f845a4604da22163d10, type: 2}
-  - {fileID: 114528064889663236, guid: b9754a04759fc0a4b856311ccf633f3d, type: 2}
+  - {fileID: 114154021799972078, guid: 9b408ad0d32270a4fab1a5bdd3de5fc1, type: 2}
+  - {fileID: 114617875103411016, guid: 1907d97778342854491fd32280aaab17, type: 2}
   - {fileID: 0}
