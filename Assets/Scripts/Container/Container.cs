@@ -21,6 +21,8 @@ public abstract class Container : MonoBehaviour {
         }
     }
 
+    public Transform childLocation;
+
     virtual public Ingredient TakeFromContainer() {
         var ingredient = ingredientInContainer;
         ingredientInContainer = null;
@@ -34,7 +36,12 @@ public abstract class Container : MonoBehaviour {
             return;
         }
         ingredientInContainer = ingredient;
-        ingredientInContainer.transform.SetParent(transform);
+        if (childLocation == null) {
+            ingredientInContainer.transform.SetParent(transform);
+        }
+        else {
+            ingredientInContainer.transform.SetParent(childLocation);
+        }
         ingredientInContainer.transform.localPosition = Vector3.zero;
     }
 }

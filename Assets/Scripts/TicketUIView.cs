@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class TicketUIView : MonoBehaviour {
 
-  private Image timer;
-  private Text title;
+  public Image timer { private get; set; }
+  public Text title { private get; set; }
 
   public void Start() {
     timer = GetComponentInChildren<Image>();
