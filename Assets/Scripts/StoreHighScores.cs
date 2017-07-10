@@ -18,7 +18,7 @@ public class StoreHighScores : MonoBehaviour {
   private Text topScoresText;
 
   public void HighScoreEntry() {
-    StoreHighScore(nameEntry.text, 123, "normal");
+    StoreHighScore(nameEntry.text, Manager.instance.RoundScore, Manager.instance.DifficultySetting.ToString());
     GetHighScores();
   }
 
@@ -30,7 +30,7 @@ public class StoreHighScores : MonoBehaviour {
     GetResponse(url);
   }
 
-  private void GetHighScores() {
+  public void GetHighScores() {
     string url = urlBase + HighScoresAPIKey.privateKey +  "/json/10/";
     GetResponse(url, true);
   }
@@ -73,12 +73,12 @@ public class StoreHighScores : MonoBehaviour {
     }
   }
 
-  private void DisplayTopScores() {
-    topScoresText.text = "";
+  public void DisplayTopScores() {
+    topScoresText.text = "Top 10 Scores:\n";
     foreach (PlayerInfo info in highScores) {
-      topScoresText.text += info.name;
-      topScoresText.text += info.score;
-      topScoresText.text += info.text;
+      topScoresText.text += info.name + ": ";
+      topScoresText.text += info.score + " ";
+      topScoresText.text += "(" + info.text + ")";
       topScoresText.text += "\n";
       Debug.Log(info.name);
       Debug.Log(info.score);

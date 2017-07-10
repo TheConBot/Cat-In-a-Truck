@@ -68,6 +68,8 @@ public class Manager : SingletonMonoBehaviour<Manager> {
             yield return new WaitForSeconds(1);
             roundTime--;
         }
+
+        currentState = GameState.NewHighscore;
         //TODO End round stuff here
     }
 }

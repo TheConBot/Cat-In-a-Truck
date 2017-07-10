@@ -5,8 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuFunctions : MonoBehaviour {
 
+    [SerializeField]
+    private StoreHighScores hs;
+
+    private void Start() {
+        GetHighScores();
+    }
+
     public void LoadScene(string level) {
         SceneManager.LoadScene(level);
+    }
+
+    private void GetHighScores() {
+        hs.GetHighScores();
+        hs.DisplayTopScores();
     }
 
 }
