@@ -55,6 +55,7 @@ public class CookingContainer : Container {
 
 
         SetStatus("Cooking");
+        StartCoroutine(PlayAudio());
         float _cookTime = cookTime;
         while (_cookTime > 0) {
             yield return new WaitForSeconds(Time.deltaTime);
@@ -112,6 +113,11 @@ public class CookingContainer : Container {
         mainGroup.alpha = open;
         mainGroup.interactable = (open == 1);
         mainGroup.blocksRaycasts = (open == 1);
+    }
+
+    public IEnumerator PlayAudio() {
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return null;
     }
 
 
