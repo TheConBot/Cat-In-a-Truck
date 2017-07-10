@@ -4,7 +4,6 @@ using System;
 
 public static class RecipeGenerator {
 
-    private static int numberToGen = 10;
 
     private static string[] sauceSweetWords = { "Candied", "Charming", "Delectable", "Delicious", "Rich", "Savory", "Sweetened", "Piquant" };
     private static string[] sauceSpicyWords = { "Hot", "Fiery", "Volcanic", "Blazing", "Scorching", "Sultry", "Combustible", "Fierce" };
@@ -14,11 +13,10 @@ public static class RecipeGenerator {
     private static string[] broccoliWords = { "Crisp", "Healthy", "Tufted", "Fresh" };
     private static string[] flavorWords = { "Grand Slam", "Nor’easter", "Chef Special", "South of the Border", "Wicked Banger", "Nice n’ Easy", "Tender Trap", "Bad News", "Colon Coaster", "El Toro", "Desperado", "Big One" };
 
-    public static List<Recipie> GenerateRecipies(int ingredientsPerRecipie) {
+    public static List<Recipie> GenerateRecipies(int ingredientsPerRecipie, int recipieAmount) {
         List<Recipie> recipies = new List<Recipie>();
-        System.Random randomGenNumber = new System.Random(42069666);
-
-        for (int i = 0; i < numberToGen; i++) {
+        System.Random randomGenNumber = new System.Random();
+        for (int i = 0; i < recipieAmount; i++) {
 
             //int amountOfIngredients = randomGenNumber.Next(Recipie.INGREDIENT_MAX_AMOUNT - 1, Recipie.INGREDIENT_MAX_AMOUNT + 1);
             int amountOfIngredients = ingredientsPerRecipie;

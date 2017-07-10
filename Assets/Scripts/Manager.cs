@@ -70,7 +70,7 @@ public class Manager : MonoBehaviour {
     }
 
     public void GenerateRecipes() {
-        recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
+        recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants, difficultySetting.recipieAmount);
     }
 
     public void StartRound() {
@@ -82,6 +82,7 @@ public class Manager : MonoBehaviour {
 
     private IEnumerator StartRoundTimer() {
         roundTime = difficultySetting.roundTime * 60;
+        roundScore = 0;
         while (roundTime > 0) {
             yield return new WaitForSeconds(1);
             roundTime--;
