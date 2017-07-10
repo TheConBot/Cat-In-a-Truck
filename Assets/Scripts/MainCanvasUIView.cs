@@ -36,7 +36,7 @@ public class MainCanvasUIView : MonoBehaviour {
         float time = Manager.instance.RoundTime;
         float m = 0;
         float s = 0;
-        m = Mathf.Ceil(time / 60);
+        m = Mathf.Floor(time / 60);
         s = time % 60;
         string sStr = s + "";
         if (s < 10) {

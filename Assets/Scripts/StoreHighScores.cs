@@ -19,7 +19,7 @@ public class StoreHighScores : MonoBehaviour {
   private Text topScoresText;
 
   public void HighScoreEntry() {
-    StoreHighScore(nameEntry.text, Manager.instance.RoundScore, Manager.instance.DifficultySetting.ToString());
+    StoreHighScore(nameEntry.text, Manager.instance.RoundScore, Manager.instance.DifficultySetting.name);
     GetHighScores();
   }
 
