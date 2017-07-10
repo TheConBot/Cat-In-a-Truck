@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pot-short-diffuse
+  m_Name: SpicyPot
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 25452ff06267d184db243db272560f0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: fbed777584e34a744b031c4bdb2116c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,9 +60,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.81
+    - _Glossiness: 0.258
     - _GlossyReflections: 1
-    - _Metallic: 0.772
+    - _Metallic: 0.523
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
