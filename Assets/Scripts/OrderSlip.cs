@@ -18,7 +18,7 @@ public class OrderSlip : MonoBehaviour {
         foodBoat.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
-  }
+    }
 
     public void TakeOrder() {
         recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
