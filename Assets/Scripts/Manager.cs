@@ -45,6 +45,7 @@ public class Manager : MonoBehaviour {
     public Sprite[] cats;
     public AudioSource buzz;
     public AudioSource cash;
+    public AudioSource ten;
 
     public enum GameState {
         TitleScreen,
@@ -83,17 +84,25 @@ public class Manager : MonoBehaviour {
         }
     }
 
+    private void LoadScene(string sceneName) {
+        StopAllCoroutines();
+        SceneManager.LoadScene(sceneName);
+
+    }
+
     private IEnumerator StartRoundTimer() {
         roundTime = difficultySetting.roundTime * 60;
         roundScore = 0;
         while (roundTime > 0) {
             yield return new WaitForSeconds(1);
             roundTime--;
+            if(roundTime == 10) {
+                ten.Play();
+            }
         }
-
         currentState = GameState.NewHighscore;
         buzz.Play();
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("HighScore");
+        LoadScene("HighScore");
     }
 }

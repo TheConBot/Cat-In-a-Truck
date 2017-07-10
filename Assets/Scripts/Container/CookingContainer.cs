@@ -33,6 +33,7 @@ public class CookingContainer : Container {
 
     override public Ingredient TakeFromContainer() {
         StopAllCoroutines();
+        gameObject.GetComponent<AudioSource>().Stop();
         ToggleStatus(0);
         return base.TakeFromContainer();
     }
@@ -57,12 +58,13 @@ public class CookingContainer : Container {
         SetStatus("Cooking");
         StartCoroutine(PlayAudio());
         float _cookTime = cookTime;
+        Debug.Log(_cookTime);
         while (_cookTime > 0) {
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForEndOfFrame();
             SetTimer(_cookTime, cookTime);
             _cookTime -= Time.deltaTime;
         }
-
+        gameObject.GetComponent<AudioSource>().Stop();
         switch (cookOption) {
             case CookOptions.Cut:
                 ingredient.Cut();

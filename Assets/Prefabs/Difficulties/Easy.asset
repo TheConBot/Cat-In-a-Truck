@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decaebbc096fbe9408770571bf384990, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: 
-  roundTime: 2
+  roundTime: 1
   maxRecipieIngrediants: 2
+  recipieAmount: 5
   ticketTime: 60
