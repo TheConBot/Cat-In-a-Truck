@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4158e2f078ce55040859613a84c286d8
-  - enabled: 0
-    path: 
-    guid: d4851798785bad14da57a580a96d9309
-  - enabled: 0
-    path: Assets/Scenes/NathanTest.unity
-    guid: fb1cd278dcada8647ab8294ead42c636
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: d503924984a10364bb68a1e02ab79e19
   - enabled: 1
     path: Assets/Scenes/HighScore.unity
-    guid: 00000000000000000000000000000000
+    guid: 26705f58b26bc42cebce14bbbb25a0f1

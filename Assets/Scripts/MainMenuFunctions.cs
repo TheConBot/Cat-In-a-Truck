@@ -18,6 +18,10 @@ public class MainMenuFunctions : MonoBehaviour {
         SceneManager.LoadScene(level);
     }
 
+    public void QuitGame() {
+        Application.Quit();
+    }
+
     private void GetHighScores() {
         hs.GetHighScores();
         hs.DisplayTopScores();
