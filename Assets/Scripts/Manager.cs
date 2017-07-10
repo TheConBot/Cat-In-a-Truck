@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
 
@@ -84,6 +85,7 @@ public class Manager : MonoBehaviour {
         }
 
         currentState = GameState.NewHighscore;
-        //TODO End round stuff here
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("HighScore");
     }
 }

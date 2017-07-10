@@ -15,7 +15,7 @@ public class OrderSlip : MonoBehaviour {
 
     public SpriteRenderer cat;
 
-    private void Awake() {
+    private void Start() {
         foodBoat.LinkedSlip = this;
         foodBoat.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
