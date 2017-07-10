@@ -79,6 +79,8 @@ public class PlateContainer : Container {
             if (requiredIngredients.Count == 0)
             {
                 Debug.Log("You got them all!");
+                linkedSlip.audioSource.clip = linkedSlip.eatingSounds[linkedSlip.rand.Next(0, linkedSlip.eatingSounds.Length)];
+                linkedSlip.audioSource.Play();
                 Manager.instance.RoundScore += scoreToGive;
                 gameObject.SetActive(false);
             }

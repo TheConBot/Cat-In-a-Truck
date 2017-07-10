@@ -6706,7 +6706,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.71323526, g: 0, b: 0, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114044215054029652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6867,6 +6869,31 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114773631444373816}
   cat: {fileID: 212047487575404716}
+  eatingSounds:
+  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
+  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
+  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
+  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
+  hissingSounds:
+  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
+  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
+  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
+  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
+  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
+  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
+  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
+  meowingSounds:
+  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
+  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
+  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
+  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
+  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
+  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
+  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
+  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
+  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
+  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &114096251806241902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6900,7 +6927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.57048696, g: 0, b: 0.66176474, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114127919757709414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6915,6 +6944,31 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114829675264573604}
   cat: {fileID: 212731561887082898}
+  eatingSounds:
+  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
+  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
+  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
+  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
+  hissingSounds:
+  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
+  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
+  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
+  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
+  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
+  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
+  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
+  meowingSounds:
+  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
+  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
+  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
+  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
+  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
+  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
+  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
+  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
+  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
+  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &114136321014227204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6927,7 +6981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114155995206130370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6940,7 +6996,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.83823526, g: 0.78552675, b: 0.07396196, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114187347282099044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6978,8 +7036,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  GlowColor: {r: 0.87931037, g: 1, b: 0.125, a: 0}
+  NeutralColor: {r: 1, g: 1, b: 1, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 1
 --- !u!114 &114211506659721844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7032,7 +7092,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114273335531914300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7128,7 +7190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0, g: 0.7647059, b: 0.10020276, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114336386029156770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7302,8 +7366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  GlowColor: {r: 0.87931037, g: 1, b: 0.125, a: 0}
+  NeutralColor: {r: 1, g: 1, b: 1, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 1
 --- !u!114 &114422179303180238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7447,7 +7513,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.57048696, g: 0, b: 0.66176474, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114583758115582366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7462,6 +7530,31 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114867512467399528}
   cat: {fileID: 212796536423039122}
+  eatingSounds:
+  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
+  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
+  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
+  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
+  hissingSounds:
+  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
+  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
+  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
+  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
+  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
+  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
+  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
+  meowingSounds:
+  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
+  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
+  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
+  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
+  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
+  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
+  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
+  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
+  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
+  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &114589401326038762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7539,6 +7632,31 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114958362264483676}
   cat: {fileID: 212954492946025114}
+  eatingSounds:
+  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
+  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
+  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
+  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
+  hissingSounds:
+  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
+  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
+  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
+  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
+  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
+  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
+  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
+  meowingSounds:
+  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
+  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
+  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
+  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
+  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
+  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
+  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
+  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
+  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
+  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &114645769834200814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7551,7 +7669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.83823526, g: 0.78552675, b: 0.07396196, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114651271688573776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7564,7 +7684,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114670397942072444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7748,7 +7870,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0, g: 0.6911765, b: 0.14776872, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114807831866593868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7760,8 +7884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  GlowColor: {r: 0.87931037, g: 1, b: 0.125, a: 0}
+  NeutralColor: {r: 1, g: 1, b: 1, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 1
 --- !u!114 &114812672761122238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7870,7 +7996,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.83823526, g: 0.78552675, b: 0.07396196, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114866699240158438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7984,7 +8112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.3897059, g: 0.28457224, b: 0.008596462, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114926895569690954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8071,7 +8201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114958362264483676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8096,8 +8228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 1, b: 1, a: 0}
+  GlowColor: {r: 0.87931037, g: 1, b: 0.125, a: 0}
+  NeutralColor: {r: 1, g: 1, b: 1, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 1
 --- !u!114 &114964569821637522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8143,7 +8277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.7647059, g: 0, b: 0, a: 0}
+  NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
+  doNotDisableInUpdate: 0
 --- !u!114 &114990090462795666
 MonoBehaviour:
   m_ObjectHideFlags: 1
