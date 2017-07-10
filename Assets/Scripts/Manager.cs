@@ -40,6 +40,8 @@ public class Manager : MonoBehaviour {
         }
     }
 
+    public Sprite[] cats;
+
     public enum GameState {
         TitleScreen,
         Playing,

@@ -52,5 +52,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipies: []
-  difficultySetting: {fileID: 0}
-  currentState: 0
+  difficultySetting: {fileID: 11400000, guid: d43322d7543b7514eb07d38d389a582d, type: 2}
+  cats:
+  - {fileID: 21300000, guid: 7c6b314507acbad429146ca25ec235b4, type: 3}
+  - {fileID: 21300000, guid: de132f6703e2a9947838f86a7b15d1c7, type: 3}
+  - {fileID: 21300000, guid: a76f9831a7cd6f6418002f4224dbb381, type: 3}
+  - {fileID: 21300000, guid: e54362fa39ac61145855b34fba867f6b, type: 3}
+  - {fileID: 21300000, guid: d8b47636121200e45912591935884001, type: 3}
+  - {fileID: 21300000, guid: 4425202675da2904bbcf85c85f674d01, type: 3}
+  - {fileID: 21300000, guid: 472be9b55918f4446adb86bf30ffef31, type: 3}
+  - {fileID: 21300000, guid: 52432a2d9e7771249a5ebe5611ec8b38, type: 3}
+  - {fileID: 21300000, guid: 7fd04ae589d418d438c6e29ab1989020, type: 3}
+  - {fileID: 21300000, guid: 9e3f66023211ee84ea08bc178c646680, type: 3}
+  - {fileID: 21300000, guid: 5857d9d615e9d68469396e0d1110d6a9, type: 3}
+  - {fileID: 21300000, guid: c480c461a0efcf1409c81b1700ec8919, type: 3}
+  - {fileID: 21300000, guid: 5960dda02742b8d4b8f4d33daa3b1715, type: 3}
+  - {fileID: 21300000, guid: c480e3c8b9f5893479a9adae2976b363, type: 3}
+  - {fileID: 21300000, guid: df0c64c71eb578e4297240c4558847ec, type: 3}
