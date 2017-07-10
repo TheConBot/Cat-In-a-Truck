@@ -30,34 +30,36 @@ public class PawMovement : MonoBehaviour {
     }
 
     private void Update() {
-        // if the left mouse button is being held down
-        // move the paw foward to the object it is over
-        // if it's not, move the paw back to neutral
-        float getPawZ = GetPawZ();
-        pawZ = (Input.GetMouseButton(0)) ? getPawZ : getPawZ - neutralPawZOffset;
+        if (Manager.instance.CurrentState == Manager.GameState.Playing) {
+            // if the left mouse button is being held down
+            // move the paw foward to the object it is over
+            // if it's not, move the paw back to neutral
+            float getPawZ = GetPawZ();
+            pawZ = (Input.GetMouseButton(0)) ? getPawZ : getPawZ - neutralPawZOffset;
 
-        // this matches the paw to the mouse cursor (generally)
-        SetWorldPawPosition();
+            // this matches the paw to the mouse cursor (generally)
+            SetWorldPawPosition();
 
-        pawArm.eulerAngles = new Vector3(-GetPawRotation('y'), GetPawRotation('x'), pawArm.rotation.z);
+            pawArm.eulerAngles = new Vector3(-GetPawRotation('y'), GetPawRotation('x'), pawArm.rotation.z);
 
-        // get item clicked
-        if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
-            RaycastHit clickedCollider = GetClickedObject();
-            if (clickedCollider.collider != null) {
-                Container clickedContainer = clickedCollider.transform.gameObject.GetComponent<Container>();
-                OrderSlip orderSlip = null;
-                if (clickedContainer != null) {
-                    InteractWithContainer(clickedContainer);
+            // get item clicked
+            if (Input.GetMouseButtonDown(0) && (getPawZ != startingPawZ)) {
+                RaycastHit clickedCollider = GetClickedObject();
+                if (clickedCollider.collider != null) {
+                    Container clickedContainer = clickedCollider.transform.gameObject.GetComponent<Container>();
+                    OrderSlip orderSlip = null;
+                    if (clickedContainer != null) {
+                        InteractWithContainer(clickedContainer);
+                    }
+                    else if((orderSlip = clickedCollider.transform.GetComponent<OrderSlip>()) != null) {
+                        orderSlip.TakeOrder();
+                    }
+                    // click action things here!!!
                 }
-                else if((orderSlip = clickedCollider.transform.GetComponent<OrderSlip>()) != null) {
-                    orderSlip.TakeOrder();
-                }
-                // click action things here!!!
             }
-        }
-        if (heldIngredient != null) {
-          heldIngredient.gameObject.transform.position = pawTransform.position;
+            if (heldIngredient != null) {
+              heldIngredient.gameObject.transform.position = pawTransform.position;
+            }
         }
     }
 
