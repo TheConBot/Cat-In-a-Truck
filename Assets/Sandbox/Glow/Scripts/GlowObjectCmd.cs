@@ -32,7 +32,11 @@ public class GlowObjectCmd : MonoBehaviour
 		enabled = true;
 	}
 
-	private void OnMouseExit()
+    private void OnDisable() {
+        _currentColor = Color.black;
+    }
+
+    private void OnMouseExit()
 	{
 		_targetColor = Color.black;
 		enabled = true;
