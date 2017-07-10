@@ -463,8 +463,7 @@ Prefab:
         type: 2}
       propertyPath: difficultySetting
       value: 
-      objectReference: {fileID: 11400000, guid: d43322d7543b7514eb07d38d389a582d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 939036423b3320b47befef04fb099d23, type: 2}
   m_IsPrefabParent: 0
