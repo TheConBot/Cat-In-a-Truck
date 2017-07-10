@@ -54,7 +54,7 @@ public class PlateContainer : Container {
 
     public void RemoveChildrenFromPlate() {
         foreach (Transform child in transform) {
-            if (transform.GetComponent<Ingredient>() != null) {
+            if (child.GetComponent<Ingredient>() != null) {
                 child.gameObject.SetActive(false);
                 child.SetParent(Manager.instance.transform);
             }
@@ -74,6 +74,9 @@ public class PlateContainer : Container {
         if (requiredIngredient != null)
         {
             requiredIngredients.Remove(requiredIngredient);
+            if (ingredient is LiquidIngredient) {
+                ingredient.gameObject.SetActive(false);
+            }
             scoreToGive += SCORE_PER_INGREDIENT;
             Debug.Log("Correct! " + requiredIngredients.Count + " left!");
             if (requiredIngredients.Count == 0)
