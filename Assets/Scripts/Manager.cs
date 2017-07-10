@@ -37,11 +37,14 @@ public class Manager : MonoBehaviour {
         }
 
         set {
+            cash.Play();
             difficultySetting = value;
         }
     }
 
     public Sprite[] cats;
+    public AudioSource buzz;
+    public AudioSource cash;
 
     public enum GameState {
         TitleScreen,
@@ -89,6 +92,7 @@ public class Manager : MonoBehaviour {
         }
 
         currentState = GameState.NewHighscore;
+        buzz.Play();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("HighScore");
     }
