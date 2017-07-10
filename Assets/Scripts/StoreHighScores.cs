@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoreHighScores : MonoBehaviour {
 
@@ -84,6 +85,10 @@ public class StoreHighScores : MonoBehaviour {
       Debug.Log(info.score);
     }
   }
+
+    public void LoadScene(string level) {
+        SceneManager.LoadScene(level);
+    }
 
 }
 
