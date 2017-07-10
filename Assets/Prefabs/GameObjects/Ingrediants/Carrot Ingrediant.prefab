@@ -2045,5 +2045,18 @@ MonoBehaviour:
   cutRawTex: {fileID: 2800000, guid: 09d6b46f58e53a64082de890f2bf6aab, type: 3}
   cutFriedTex: {fileID: 2800000, guid: dd20369555531a44c98bee43b160bfe6, type: 3}
   cutSteamedTex: {fileID: 2800000, guid: 3afc550a574cbe74880c75c923eceb90, type: 3}
-  wholeTexChange: {fileID: 1247282489904484}
-  cutTexChange: {fileID: 1990889874645634}
+  wholeTexChange:
+  - {fileID: 1247282489904484}
+  cutTexChange:
+  - {fileID: 1990889874645634}
+  - {fileID: 1404864717561206}
+  - {fileID: 1253757679119896}
+  - {fileID: 1005551719962506}
+  - {fileID: 1291741241985950}
+  - {fileID: 1254229663938882}
+  - {fileID: 1813404020290064}
+  - {fileID: 1177664578950010}
+  - {fileID: 1992237019712726}
+  - {fileID: 1453816548486324}
+  - {fileID: 1863153082021396}
+  - {fileID: 1098519315717896}

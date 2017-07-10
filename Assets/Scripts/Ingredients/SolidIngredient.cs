@@ -48,7 +48,7 @@ public class SolidIngredient : Ingredient {
     private GameObject wholeObject, cutObject;
     public Texture wholeRawTex, wholeFriedTex, wholeSteamedTex;
     public Texture cutRawTex, cutFriedTex, cutSteamedTex;
-    public GameObject wholeTexChange, cutTexChange;
+    public GameObject[] wholeTexChange, cutTexChange;
 
     private void OnEnable()
     {
@@ -60,15 +60,9 @@ public class SolidIngredient : Ingredient {
         SetColors(Color.white);
     }
 
-    private void SetColors(Color color) {
-        wholeTexChange.GetComponent<Renderer>().material.color = color;
-        cutTexChange.GetComponent<Renderer>().material.color = color;
-    }
-
     private void SetTextures() {
         Texture whole = null;
         Texture cut = null;
-
         switch (cookState) {
             case CookState.Fried:
                 whole = wholeFriedTex;
@@ -83,8 +77,22 @@ public class SolidIngredient : Ingredient {
                 cut = cutRawTex;
                 break;
         }
-        wholeTexChange.GetComponent<Renderer>().material.mainTexture = whole;
-        cutTexChange.GetComponent<Renderer>().material.mainTexture = cut;
+
+        foreach (GameObject go in wholeTexChange) {
+            go.GetComponent<Renderer>().material.mainTexture = whole;
+        }
+        foreach(GameObject go in cutTexChange) {
+            go.GetComponent<Renderer>().material.mainTexture = cut;
+        }
+    }
+    
+    private void SetColors(Color color) {
+        foreach (GameObject go in wholeTexChange) {
+            go.GetComponent<Renderer>().material.color = color;
+        }
+        foreach (GameObject go in cutTexChange) {
+            go.GetComponent<Renderer>().material.color = color;
+        }
     }
 
     public void Cut() {
