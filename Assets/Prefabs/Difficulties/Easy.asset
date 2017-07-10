@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Easy
   m_EditorClassIdentifier: 
   roundTime: 2
-  maxRecipieIngrediants: 3
-  ticketTime: 3
+  maxRecipieIngrediants: 2
+  ticketTime: 60
