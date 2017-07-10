@@ -36,7 +36,7 @@ public class OrderSlip : MonoBehaviour {
     private void SetActiveSoft(bool setState) {
         slipMesh.enabled = setState;
         slipCollider.enabled = setState;
-
+        GetComponent<GlowObjectCmd>().SetVisible(setState);
         if (setState) {
             SetCatSprite(setState);
         }
