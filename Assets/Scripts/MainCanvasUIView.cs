@@ -14,6 +14,10 @@ public class MainCanvasUIView : MonoBehaviour {
     [SerializeField]
     private Text score;
 
+    private void Start() {
+        ToggleMenu(0);
+    }
+
     public void ToggleMenu(int open = -1) {
         if (open == -1) {
             open = (int)mainGroup.alpha;
@@ -32,17 +36,21 @@ public class MainCanvasUIView : MonoBehaviour {
         float time = Manager.instance.RoundTime;
         float m = 0;
         float s = 0;
-        m = time % 60;
-        s = time - (m * 60); 
+        m = Mathf.Ceil(time / 60);
+        s = time % 60;
+        string sStr = s + "";
+        if (s < 10) {
+            sStr = "0" + s;
+        }
         if (m > 0) {
-            timer.text = m + ":" + s;
+            timer.text = m + ":" + sStr;
         } else {
-            timer.text = s + "";
+            timer.text = sStr + "";
         }
     }
 
     public void UpdateScore() {
-        score.text = Manager.instance.RoundScore + "";
+        score.text = "$" + Manager.instance.RoundScore;
     }
 
 

@@ -55,8 +55,15 @@ public class Manager : SingletonMonoBehaviour<Manager> {
         recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
     }
 
+    public void StartRound() {
+        if (currentState != GameState.Playing) {
+            currentState = GameState.Playing;
+            StartCoroutine(StartRoundTimer());
+        }
+    }
+
     private IEnumerator StartRoundTimer() {
-        roundTime = difficultySetting.roundTime;
+        roundTime = difficultySetting.roundTime * 60;
         while (roundTime > 0) {
             yield return new WaitForSeconds(1);
             roundTime--;

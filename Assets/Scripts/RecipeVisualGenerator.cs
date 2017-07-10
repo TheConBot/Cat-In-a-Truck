@@ -36,7 +36,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
   private void Start() {
     steps = StoreSteps();
 
-    ToggleMenu(0);
+    ToggleMenu(1);
     IncrementRecipe(0);
   }
 
