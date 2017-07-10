@@ -61,6 +61,7 @@ public class OrderSlip : MonoBehaviour {
 
     public IEnumerator TicketRespawn() {
         SetCatSprite(false);
+        foodBoat.RemoveChildrenFromPlate();
         yield return new WaitForSeconds(5);
         audioSource.clip = meowingSounds[rand.Next(0, meowingSounds.Length)];
         audioSource.Play();
@@ -79,7 +80,6 @@ public class OrderSlip : MonoBehaviour {
         audioSource.clip = hissingSounds[rand.Next(0, hissingSounds.Length)];
         audioSource.Play();
 
-        foodBoat.RemoveChildrenFromPlate();
         foodBoat.gameObject.SetActive(false);
     }
 }
