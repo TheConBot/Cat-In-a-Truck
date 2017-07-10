@@ -13,6 +13,8 @@ public class MainMenuFunctions : MonoBehaviour {
     }
 
     public void LoadScene(string level) {
+        Manager.instance.GenerateRecipes();
+
         SceneManager.LoadScene(level);
     }
 

@@ -64,6 +64,9 @@ public class Manager : MonoBehaviour {
             // Furthermore we make sure that we don't destroy between scenes
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void GenerateRecipes() {
         recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
     }
 

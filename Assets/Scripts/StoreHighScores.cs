@@ -65,7 +65,6 @@ public class StoreHighScores : MonoBehaviour {
             highScores.Add(jsonObj);
           }
         }
-        Debug.Log(i + " : " + sLine);
       }
     }
 
@@ -81,8 +80,6 @@ public class StoreHighScores : MonoBehaviour {
       topScoresText.text += info.score + " ";
       topScoresText.text += "(" + info.text + ")";
       topScoresText.text += "\n";
-      Debug.Log(info.name);
-      Debug.Log(info.score);
     }
   }
 
