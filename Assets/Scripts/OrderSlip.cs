@@ -13,11 +13,14 @@ public class OrderSlip : MonoBehaviour {
     private BoxCollider slipCollider;
     private float ticketTimer;
 
-    private void Awake() {
+    public SpriteRenderer cat;
+
+    private void Start() {
         foodBoat.LinkedSlip = this;
         foodBoat.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
+        SetCatSprite(true);
     }
 
     public void TakeOrder() {
@@ -33,9 +36,21 @@ public class OrderSlip : MonoBehaviour {
     private void SetActiveSoft(bool setState) {
         slipMesh.enabled = setState;
         slipCollider.enabled = setState;
+
+        if (setState) {
+            SetCatSprite(setState);
+        }
+    }
+
+    private void SetCatSprite(bool setMode) {
+        if (setMode) {
+            cat.sprite = Manager.instance.cats[Random.Range(0, Manager.instance.cats.Length)];
+        }
+        cat.enabled = setMode;
     }
 
     public IEnumerator TicketRespawn() {
+        SetCatSprite(false);
         yield return new WaitForSeconds(5);
         SetActiveSoft(true);
     }
