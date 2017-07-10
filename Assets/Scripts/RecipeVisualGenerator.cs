@@ -110,7 +110,6 @@ public class RecipeVisualGenerator : MonoBehaviour {
 
       } else if (r.ingredients[i] is LiquidRecipieIngredient) {
         LiquidRecipieIngredient lri = r.ingredients[i] as LiquidRecipieIngredient;
-        Debug.Log(lri.GetLiquidType);
         images[imageIndex].sprite = liquidSprites[(int)lri.GetLiquidType];
         images[imageIndex].gameObject.SetActive(true);
 

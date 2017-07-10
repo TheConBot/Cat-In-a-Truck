@@ -2,19 +2,21 @@
 using System.Collections;
 using UnityEngine;
 
-public class Manager : SingletonMonoBehaviour<Manager> {
+public class Manager : MonoBehaviour {
 
-	public List<Recipie> recipies;
+    public static Manager instance { get; private set; }
+
+    public List<Recipie> recipies;
 
     private float roundTime;
-    public float RoundTime { 
-		get {
-			return roundTime; 
-		}
-		set {
-			roundTime = value; 
-		}
-	}
+    public float RoundTime {
+        get {
+            return roundTime;
+        }
+        set {
+            roundTime = value;
+        }
+    }
 
     private int roundScore;
     public int RoundScore {
@@ -29,29 +31,39 @@ public class Manager : SingletonMonoBehaviour<Manager> {
     [SerializeField]
     private Difficulty difficultySetting;
     public Difficulty DifficultySetting {
-      get {
-        return difficultySetting;
-      }
+        get {
+            return difficultySetting;
+        }
 
-      set {
-        difficultySetting = value;
-      }
+        set {
+            difficultySetting = value;
+        }
     }
 
-  public enum GameState{
-		TitleScreen,
-		Playing,
-		NewHighscore
-	}
-	private GameState currentState = GameState.TitleScreen;
+    public enum GameState {
+        TitleScreen,
+        Playing,
+        NewHighscore
+    }
+    private GameState currentState = GameState.TitleScreen;
     public GameState CurrentState {
         get {
             return currentState;
         }
     }
 
-  override public void Awake() {
-        base.Awake();
+    public void Awake() {
+        if (instance != null && instance != this) {
+            // Destroy if another Gamemanager already exists
+            Destroy(gameObject);
+        }
+        else {
+
+            // Here we save our singleton instance
+            instance = this;
+            // Furthermore we make sure that we don't destroy between scenes
+            DontDestroyOnLoad(gameObject);
+        }
         recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants);
     }
 
