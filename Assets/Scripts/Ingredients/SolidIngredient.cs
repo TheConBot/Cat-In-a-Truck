@@ -46,11 +46,53 @@ public class SolidIngredient : Ingredient {
     private CookState cookState;
     [SerializeField]
     private GameObject wholeObject, cutObject;
+    public Texture wholeRawTex, wholeFriedTex, wholeSteamedTex;
+    public Texture cutRawTex, cutFriedTex, cutSteamedTex;
+    public GameObject[] wholeTexChange, cutTexChange;
 
     private void OnEnable()
     {
         cookState = CookState.Raw;
         isCut = false;
+        wholeObject.SetActive(true);
+        cutObject.SetActive(false);
+        SetTextures();
+        SetColors(Color.white);
+    }
+
+    private void SetTextures() {
+        Texture whole = null;
+        Texture cut = null;
+        switch (cookState) {
+            case CookState.Fried:
+                whole = wholeFriedTex;
+                cut = cutFriedTex;
+                break;
+            case CookState.Steamed:
+                whole = wholeSteamedTex;
+                cut = cutSteamedTex;
+                break;
+            default:
+                whole = wholeRawTex;
+                cut = cutRawTex;
+                break;
+        }
+
+        foreach (GameObject go in wholeTexChange) {
+            go.GetComponent<Renderer>().material.mainTexture = whole;
+        }
+        foreach(GameObject go in cutTexChange) {
+            go.GetComponent<Renderer>().material.mainTexture = cut;
+        }
+    }
+    
+    private void SetColors(Color color) {
+        foreach (GameObject go in wholeTexChange) {
+            go.GetComponent<Renderer>().material.color = color;
+        }
+        foreach (GameObject go in cutTexChange) {
+            go.GetComponent<Renderer>().material.color = color;
+        }
     }
 
     public void Cut() {
@@ -68,6 +110,7 @@ public class SolidIngredient : Ingredient {
             return;
         }
         cookState = CookState.Fried;
+        SetTextures();
     }
 
     public void Steam() {
@@ -76,11 +119,13 @@ public class SolidIngredient : Ingredient {
             return;
         }
         cookState = CookState.Steamed;
+        SetTextures();
     }
 
     public void Ruin()
     {
         cookState = CookState.Ruined;
+        SetColors(Color.black);
     }
 
     public SolidIngredient(SolidType st)
