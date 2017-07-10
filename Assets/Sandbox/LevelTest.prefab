@@ -284,7 +284,6 @@ GameObject:
   - component: {fileID: 4722113444003700}
   - component: {fileID: 33068985451097950}
   - component: {fileID: 23831466051286328}
-  - component: {fileID: 114221077631888586}
   m_Layer: 0
   m_Name: Food Container
   m_TagString: Untagged
@@ -1021,7 +1020,6 @@ GameObject:
   - component: {fileID: 114903831530614906}
   - component: {fileID: 114396519532007378}
   - component: {fileID: 114118752514271294}
-  - component: {fileID: 82229424229418516}
   m_Layer: 0
   m_Name: Sweet Sause Pot
   m_TagString: Untagged
@@ -1253,7 +1251,6 @@ GameObject:
   - component: {fileID: 114829327021339062}
   - component: {fileID: 65762329794486002}
   - component: {fileID: 114583115319123598}
-  - component: {fileID: 82496257552195648}
   m_Layer: 0
   m_Name: Spicy Sause Pot
   m_TagString: Untagged
@@ -2544,26 +2541,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863557167423534}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.6529166, y: 0.27147728, z: 0.27147728, w: 0.6529166}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4224575065886772}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 45.154003}
 --- !u!4 &4483751642485996
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524806774549564}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.6122865, y: 0.35370222, z: 0.35370222, w: 0.6122865}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4291523453626478}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 60.028004}
 --- !u!4 &4491317308378606
 Transform:
   m_ObjectHideFlags: 1
@@ -2609,13 +2606,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352651075137822}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.4141099, y: 0.5731606, z: 0.5731606, w: 0.4141099}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4568777516724052}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 108.30401}
 --- !u!4 &4531755346189890
 Transform:
   m_ObjectHideFlags: 1
@@ -2958,13 +2955,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158236291227528}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.32907656, y: 0.62586635, z: 0.62586635, w: 0.32907656}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4064520392226368}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 124.53001}
 --- !u!4 &4733539333418312
 Transform:
   m_ObjectHideFlags: 1
@@ -3761,7 +3758,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 19227c9293dc3a24d972aba9d3f53563, type: 2}
+  - {fileID: 2100000, guid: c82907b6ac9a41b4d88f19136481e424, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4113,7 +4110,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98f7b88a7f26b4a828ec4863697cc2e4, type: 2}
+  - {fileID: 2100000, guid: 50128ee795e60f64aa87d41dbc954c46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5959,166 +5956,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82229424229418516
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541428231919456}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a999f3e3af04f234b8adda6a7ba6cd2e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!82 &82496257552195648
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685170544194368}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a999f3e3af04f234b8adda6a7ba6cd2e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!82 &82629035078265546
 AudioSource:
   m_ObjectHideFlags: 1
@@ -6128,7 +5965,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c887d58933dc9f84e8618cf6da8ae505, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6136,7 +5973,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 103
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6288,7 +6125,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9a74f68474b3489429c741df023191a6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6368,7 +6205,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 217e4e8e54a751c47b6ca13e1884f958, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6869,31 +6706,6 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114773631444373816}
   cat: {fileID: 212047487575404716}
-  eatingSounds:
-  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
-  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
-  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
-  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
-  hissingSounds:
-  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
-  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
-  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
-  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
-  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
-  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
-  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
-  meowingSounds:
-  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
-  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
-  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
-  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
-  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
-  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
-  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
-  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
-  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
-  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &114096251806241902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6926,7 +6738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0.57048696, g: 0, b: 0.66176474, a: 0}
+  GlowColor: {r: 0.7471007, g: 0.42528114, b: 0.83823526, a: 0}
   NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
   doNotDisableInUpdate: 0
@@ -6944,31 +6756,6 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114829675264573604}
   cat: {fileID: 212731561887082898}
-  eatingSounds:
-  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
-  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
-  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
-  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
-  hissingSounds:
-  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
-  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
-  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
-  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
-  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
-  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
-  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
-  meowingSounds:
-  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
-  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
-  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
-  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
-  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
-  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
-  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
-  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
-  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
-  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &114136321014227204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7067,19 +6854,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114221077631888586
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1158236291227528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8ec0fb3ff2a5454e8863609a58514d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlowColor: {r: 0, g: 1, b: 0.006896496, a: 1}
-  LerpFactor: 10
 --- !u!114 &114245027937392768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7512,7 +7286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0.57048696, g: 0, b: 0.66176474, a: 0}
+  GlowColor: {r: 0.7471007, g: 0.42528114, b: 0.83823526, a: 0}
   NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
   doNotDisableInUpdate: 0
@@ -7530,31 +7304,6 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114867512467399528}
   cat: {fileID: 212796536423039122}
-  eatingSounds:
-  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
-  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
-  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
-  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
-  hissingSounds:
-  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
-  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
-  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
-  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
-  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
-  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
-  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
-  meowingSounds:
-  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
-  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
-  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
-  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
-  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
-  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
-  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
-  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
-  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
-  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &114589401326038762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7632,31 +7381,6 @@ MonoBehaviour:
   recipie: {fileID: 0}
   foodBoat: {fileID: 114958362264483676}
   cat: {fileID: 212954492946025114}
-  eatingSounds:
-  - {fileID: 8300000, guid: 68c22bdcf09e80141844dc9b4ab6af4b, type: 3}
-  - {fileID: 8300000, guid: ae99f87ede1894e4d90501c27ac19164, type: 3}
-  - {fileID: 8300000, guid: 61a183bbdaa8e5748804b2328ebd08a7, type: 3}
-  - {fileID: 8300000, guid: 7bdac9ff47c9e49468a892aafe175eed, type: 3}
-  hissingSounds:
-  - {fileID: 8300000, guid: aa7644c5a6542f445b7e227466668d20, type: 3}
-  - {fileID: 8300000, guid: 201bb76e65b734f41a83be2e6888d70e, type: 3}
-  - {fileID: 8300000, guid: 66db0dbba2c53d9458e92160cb379045, type: 3}
-  - {fileID: 8300000, guid: fc759ba1b2987bb40b38a6c015926fdc, type: 3}
-  - {fileID: 8300000, guid: 70346fa6beab2d545b97e83ee55fd867, type: 3}
-  - {fileID: 8300000, guid: 4853b8c3c3fbb554f8afa63b7cb7d9d9, type: 3}
-  - {fileID: 8300000, guid: 49d2ed5e83e8f33469b6109dbb42d3de, type: 3}
-  meowingSounds:
-  - {fileID: 8300000, guid: de7fd490e84c5214ca121d3d875ff3d5, type: 3}
-  - {fileID: 8300000, guid: e8bc2a5bf53c7fe4cbed4ccc060e8ff0, type: 3}
-  - {fileID: 8300000, guid: feb650dce0c58ed46baa25cf3ee4c4b1, type: 3}
-  - {fileID: 8300000, guid: 66762d74022263d4e915dada3c6d2b3a, type: 3}
-  - {fileID: 8300000, guid: 8fb0bf6a2cb299f438d93fc81ab50962, type: 3}
-  - {fileID: 8300000, guid: be6597031a92fe24f8b853d036395a5a, type: 3}
-  - {fileID: 8300000, guid: c1fcedae67b1999429b52826145556d3, type: 3}
-  - {fileID: 8300000, guid: 10849b9f2638f8f4d9f149569dba3dcd, type: 3}
-  - {fileID: 8300000, guid: 2063cc47a91312c4f9fc5085dcc89f3c, type: 3}
-  - {fileID: 8300000, guid: 3a13e371b5abf134cab29346af10cc60, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &114645769834200814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7869,7 +7593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0, g: 0.6911765, b: 0.14776872, a: 0}
+  GlowColor: {r: 0.6911765, g: 0.47190675, b: 0, a: 0}
   NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
   doNotDisableInUpdate: 0
@@ -8111,7 +7835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0.3897059, g: 0.28457224, b: 0.008596462, a: 0}
+  GlowColor: {r: 0.83823526, g: 0.78552675, b: 0.07396196, a: 0}
   NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
   doNotDisableInUpdate: 0
@@ -8276,7 +8000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0.7647059, g: 0, b: 0, a: 0}
+  GlowColor: {r: 0.3152033, g: 0.6045669, b: 0.8088235, a: 0}
   NeutralColor: {r: 0, g: 0, b: 0, a: 1}
   LerpFactor: 10
   doNotDisableInUpdate: 0
