@@ -5,9 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
 
-    public static Manager instance { get; private set; }
+    public static Manager Instance { get; private set; }
 
-    public List<Recipie> recipies;
+    private List<Recipie> recipies;
+    public List<Recipie> Recipies {
+        get {
+            if(recipies == null) {
+                recipies = new List<Recipie>();
+            }
+            return recipies;
+        }
+
+        set {
+            if (recipies == null) {
+                recipies = new List<Recipie>();
+            }
+            recipies = value;
+        }
+    }
 
     private float roundTime;
     public float RoundTime {
@@ -26,9 +41,11 @@ public class Manager : MonoBehaviour {
         }
 
         set {
+            cashSound.Play();
             roundScore = value;
         }
     }
+
     [SerializeField]
     private Difficulty difficultySetting;
     public Difficulty DifficultySetting {
@@ -37,15 +54,10 @@ public class Manager : MonoBehaviour {
         }
 
         set {
-            cash.Play();
+            cashSound.Play();
             difficultySetting = value;
         }
     }
-
-    public Sprite[] cats;
-    public AudioSource buzz;
-    public AudioSource cash;
-    public AudioSource ten;
 
     public enum GameState {
         TitleScreen,
@@ -59,22 +71,28 @@ public class Manager : MonoBehaviour {
         }
     }
 
+    public Sprite[] catSprites;
+    public AudioSource buzzerSound;
+    public AudioSource cashSound;
+    public AudioSource tenSound;
+
+
     public void Awake() {
-        if (instance != null && instance != this) {
+        if (Instance != null && Instance != this) {
             // Destroy if another Gamemanager already exists
             Destroy(gameObject);
         }
         else {
 
             // Here we save our singleton instance
-            instance = this;
+            Instance = this;
             // Furthermore we make sure that we don't destroy between scenes
             DontDestroyOnLoad(gameObject);
         }
     }
 
     public void GenerateRecipes() {
-        recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants, difficultySetting.recipieAmount);
+        Recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants, difficultySetting.recipieAmount);
     }
 
     public void StartRound() {
@@ -87,7 +105,6 @@ public class Manager : MonoBehaviour {
     private void LoadScene(string sceneName) {
         StopAllCoroutines();
         SceneManager.LoadScene(sceneName);
-
     }
 
     private IEnumerator StartRoundTimer() {
@@ -97,11 +114,11 @@ public class Manager : MonoBehaviour {
             yield return new WaitForSeconds(1);
             roundTime--;
             if(roundTime == 10) {
-                ten.Play();
+                tenSound.Play();
             }
         }
         currentState = GameState.NewHighscore;
-        buzz.Play();
+        buzzerSound.Play();
         yield return new WaitForSeconds(1);
         LoadScene("HighScore");
     }

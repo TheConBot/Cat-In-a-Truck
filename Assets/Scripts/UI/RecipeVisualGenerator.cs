@@ -35,8 +35,10 @@ public class RecipeVisualGenerator : MonoBehaviour {
 
     private void Start() {
         steps = StoreSteps();
-
         ToggleMenu(1);
+        if (Manager.Instance.Recipies.Count == 0) {
+            Manager.Instance.GenerateRecipes();
+        }
         IncrementRecipe(0);
     }
 
@@ -63,7 +65,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
 
     public void IncrementRecipe(int index) {
         bookIndex += index;
-        int count = Manager.instance.recipies.Count;
+        int count = Manager.Instance.Recipies.Count;
         if (bookIndex < 0) {
             bookIndex = count - 1;
         }
@@ -72,10 +74,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
         }
 
         pageNumber.text = (bookIndex + 1) + "/" + count;
-        if(Manager.instance.recipies.Count == 0) {
-            Manager.instance.GenerateRecipes();
-        }
-        CreateRecipeVisual(Manager.instance.recipies[bookIndex]);
+        CreateRecipeVisual(Manager.Instance.Recipies[bookIndex]);
     }
 
     public void ToggleMenu(int open = -1) {
@@ -86,8 +85,8 @@ public class RecipeVisualGenerator : MonoBehaviour {
         mainContainerGroup.interactable = (open == 1);
         mainContainerGroup.blocksRaycasts = (open == 1);
 
-        if (open == 0 && Manager.instance.CurrentState != Manager.GameState.Playing) {
-            Manager.instance.StartRound();
+        if (open == 0 && Manager.Instance.CurrentState != Manager.GameState.Playing) {
+            Manager.Instance.StartRound();
         }
     }
 

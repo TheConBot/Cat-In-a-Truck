@@ -30,7 +30,7 @@ public class PawMovement : MonoBehaviour {
     }
 
     private void Update() {
-        if (Manager.instance.CurrentState == Manager.GameState.Playing) {
+        if (Manager.Instance.CurrentState == Manager.GameState.Playing) {
             // if the left mouse button is being held down
             // move the paw foward to the object it is over
             // if it's not, move the paw back to neutral

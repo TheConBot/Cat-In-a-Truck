@@ -33,7 +33,7 @@ public class MainCanvasUIView : MonoBehaviour {
     }
 
     public void UpdateTimer() {
-        float time = Manager.instance.RoundTime;
+        float time = Manager.Instance.RoundTime;
         float m = 0;
         float s = 0;
         m = Mathf.Floor(time / 60);
@@ -50,7 +50,7 @@ public class MainCanvasUIView : MonoBehaviour {
     }
 
     public void UpdateScore() {
-        score.text = "$" + Manager.instance.RoundScore;
+        score.text = "$" + Manager.Instance.RoundScore;
     }
 
 

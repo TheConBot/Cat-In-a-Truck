@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 0.5
     m_BakeResolution: 0.5
     m_TextureWidth: 256
@@ -86,9 +86,9 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 56bda14e3e2db0845b44172d73a1f76b,
+  m_LightingDataAsset: {fileID: 112000090, guid: 56bda14e3e2db0845b44172d73a1f76b,
     type: 2}
-  m_ShadowMaskMode: 0
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -714,7 +714,7 @@ Prefab:
     - target: {fileID: 224427415985468374, guid: 22834223b4c37254583b8f08dbd44f0e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -183
       objectReference: {fileID: 0}
     - target: {fileID: 224257668022401998, guid: 22834223b4c37254583b8f08dbd44f0e,
         type: 2}
@@ -734,7 +734,7 @@ Prefab:
     - target: {fileID: 224257668022401998, guid: 22834223b4c37254583b8f08dbd44f0e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -366
       objectReference: {fileID: 0}
     - target: {fileID: 224429583830958290, guid: 22834223b4c37254583b8f08dbd44f0e,
         type: 2}
@@ -754,7 +754,7 @@ Prefab:
     - target: {fileID: 224429583830958290, guid: 22834223b4c37254583b8f08dbd44f0e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -549
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22834223b4c37254583b8f08dbd44f0e, type: 2}

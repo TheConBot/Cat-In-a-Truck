@@ -22,7 +22,7 @@ public class StoreHighScores : MonoBehaviour {
 
     public void Start() {
         if (yourScore != null) {
-            yourScore.text = "Your Score: " + Manager.instance.RoundScore;
+            yourScore.text = "Your Score: " + Manager.Instance.RoundScore;
         }
         GetHighScores();
     }
@@ -33,7 +33,7 @@ public class StoreHighScores : MonoBehaviour {
             return;
         }
         nameEntry.interactable = false;
-        StoreHighScore(nameEntry.text, Manager.instance.RoundScore, Manager.instance.DifficultySetting.name);
+        StoreHighScore(nameEntry.text, Manager.Instance.RoundScore, Manager.Instance.DifficultySetting.name);
         nameEntry.text = String.Empty;
         GetHighScores();
     }

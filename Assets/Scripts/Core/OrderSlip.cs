@@ -34,7 +34,7 @@ public class OrderSlip : MonoBehaviour {
     }
 
     public void TakeOrder() {
-        recipie = Manager.instance.recipies[Random.Range(0, Manager.instance.recipies.Count)];
+        recipie = Manager.Instance.Recipies[Random.Range(0, Manager.Instance.Recipies.Count)];
         foodBoat.Recipie = recipie;
         foodBoat.gameObject.SetActive(true);
         ticketUIView = foodBoat.GetComponentInChildren<TicketUIView>();
@@ -54,7 +54,7 @@ public class OrderSlip : MonoBehaviour {
 
     private void SetCatSprite(bool setMode) {
         if (setMode) {
-            cat.sprite = Manager.instance.cats[Random.Range(0, Manager.instance.cats.Length)];
+            cat.sprite = Manager.Instance.catSprites[Random.Range(0, Manager.Instance.catSprites.Length)];
         }
         cat.enabled = setMode;
     }
@@ -68,7 +68,7 @@ public class OrderSlip : MonoBehaviour {
     }
 
     public IEnumerator TicketCountdown() {
-        float initialTime = Manager.instance.DifficultySetting.ticketTime;
+        float initialTime = Manager.Instance.DifficultySetting.ticketTime;
         ticketTimer = initialTime;
         while(ticketTimer > 0) {
             yield return new WaitForSeconds(Time.deltaTime);

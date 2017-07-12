@@ -53,7 +53,7 @@ public class PlateContainer : Container {
         foreach (Transform child in transform) {
             if (child.GetComponent<Ingredient>() != null) {
                 child.gameObject.SetActive(false);
-                child.SetParent(Manager.instance.transform);
+                child.SetParent(Manager.Instance.transform);
             }
         }
     }
@@ -79,7 +79,7 @@ public class PlateContainer : Container {
                 Debug.Log("You got them all!");
                 linkedSlip.audioSource.clip = linkedSlip.eatingSounds[linkedSlip.rand.Next(0, linkedSlip.eatingSounds.Length)];
                 linkedSlip.audioSource.Play();
-                Manager.instance.RoundScore += scoreToGive;
+                Manager.Instance.RoundScore += scoreToGive;
                 RemoveChildrenFromPlate();
                 ResetSlip();
                 gameObject.SetActive(false);
