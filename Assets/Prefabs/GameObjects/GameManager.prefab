@@ -463,12 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb804964910f52488f445460fc35da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shufflePlaylist: 1
-  songs:
-  - {fileID: 8300000, guid: b477eb8fa433f3842b94a985b1cdd930, type: 3}
-  - {fileID: 8300000, guid: 887d9c46b79040b46a82452bb5c554a4, type: 3}
-  - {fileID: 8300000, guid: 15e715e9a62c379478c846bed1633609, type: 3}
-  - {fileID: 8300000, guid: e0ecf5d7ef8b2554b80ece27addd1b1f, type: 3}
+  shufflePlaylist: 0
+  songs: []
 --- !u!114 &114608135414995464
 MonoBehaviour:
   m_ObjectHideFlags: 1
