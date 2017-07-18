@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class Manager : MonoBehaviour {
 
     public static Manager Instance { get; private set; }
@@ -41,7 +42,7 @@ public class Manager : MonoBehaviour {
         }
 
         set {
-            cashSound.Play();
+            generalSoundSource.PlayOneShot(cashRegisterSound);
             roundScore = value;
         }
     }
@@ -54,28 +55,37 @@ public class Manager : MonoBehaviour {
         }
 
         set {
-            cashSound.Play();
+            generalSoundSource.PlayOneShot(cashRegisterSound);
             difficultySetting = value;
         }
     }
+    [SerializeField]
+    private HighScoresManager highScoresManager;
 
-    public enum GameState {
-        TitleScreen,
-        Playing,
-        NewHighscore
-    }
-    private GameState currentState = GameState.TitleScreen;
-    public GameState CurrentState {
+    private List<PlayerInfo> highScoreInfo;
+    public List<PlayerInfo> HighScoreInfo {
         get {
-            return currentState;
+            return highScoreInfo;
+        }
+
+        set {
+            highScoreInfo = value;
         }
     }
+    [HideInInspector]
+    public bool gameInputEnabled;
 
+    [Header("Sprites")]
     public Sprite[] catSprites;
-    public AudioSource buzzerSound;
-    public AudioSource cashSound;
-    public AudioSource tenSound;
 
+    private AudioSource generalSoundSource;
+    [Header("Sound Effects")]
+    public AudioClip buzzerSound;
+    public AudioClip cashRegisterSound;
+    public AudioClip tenSecondWarningSound;
+    public AudioClip[] meowingSounds;
+    public AudioClip[] hissingSounds;
+    public AudioClip[] eatingSounds;
 
     public void Awake() {
         if (Instance != null && Instance != this) {
@@ -89,22 +99,22 @@ public class Manager : MonoBehaviour {
             // Furthermore we make sure that we don't destroy between scenes
             DontDestroyOnLoad(gameObject);
         }
+        highScoresManager = GetComponent<HighScoresManager>();
+        generalSoundSource = GetComponent<AudioSource>();
+        RefreshHighScores();
     }
 
-    public void GenerateRecipes() {
+    public void RefreshHighScores() {
+        HighScoreInfo = highScoresManager?.GetHighScores();
+    }
+
+    public void SetNewRecipies() {
         Recipies = RecipeGenerator.GenerateRecipies(difficultySetting.maxRecipieIngrediants, difficultySetting.recipieAmount);
     }
 
     public void StartRound() {
-        if (currentState != GameState.Playing) {
-            currentState = GameState.Playing;
-            StartCoroutine(StartRoundTimer());
-        }
-    }
-
-    private void LoadScene(string sceneName) {
-        StopAllCoroutines();
-        SceneManager.LoadScene(sceneName);
+        //Check to make sure round hasn't already started
+        StartCoroutine(StartRoundTimer());
     }
 
     private IEnumerator StartRoundTimer() {
@@ -114,12 +124,24 @@ public class Manager : MonoBehaviour {
             yield return new WaitForSeconds(1);
             roundTime--;
             if(roundTime == 10) {
-                tenSound.Play();
+                generalSoundSource.PlayOneShot(tenSecondWarningSound);
             }
         }
-        currentState = GameState.NewHighscore;
-        buzzerSound.Play();
+        generalSoundSource.PlayOneShot(buzzerSound);
         yield return new WaitForSeconds(1);
-        LoadScene("HighScore");
+        LoadScene(2);
+    }
+
+    public void LoadScene(int sceneIndex) {
+        Cursor.visible = true;
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void StoreHighScore(string name, int score, string difficulty) {
+        if (name.IndexOf("*") != -1) {
+            name = name.Replace("*", "");
+        }
+        string url = HighScoresManager.API_URL_BASE + HighScoresAPIKey.privateKey + "/add/" + name + "/" + score + "/0/" + difficulty;
+        highScoresManager.SetHighScore(url);
     }
 }

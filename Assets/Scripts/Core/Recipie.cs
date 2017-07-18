@@ -4,8 +4,7 @@ using System;
 public class Recipie
 {
     public string displayName;
-    public const int INGREDIENT_MAX_AMOUNT = 4;
-    public RecipieIngredient[] ingredients = new RecipieIngredient[INGREDIENT_MAX_AMOUNT];
+    public List<RecipieIngredient> ingredients;
 }
 
 public static class RecipeGenerator {
@@ -25,22 +24,9 @@ public static class RecipeGenerator {
 
         for (int i = 0; i < recipieAmount; i++) {
 
-            Recipie recipe = new Recipie();
+            Recipie recipie = new Recipie();
+            recipie.ingredients = new List<RecipieIngredient>();
             int amountOfIngredients = ingredientsPerRecipie;
-
-            // set liquid ingredient
-            int liquidIngredient = randomGenNumber.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
-            recipe.ingredients[amountOfIngredients - 1] = new LiquidRecipieIngredient((LiquidIngredient.LiquidType)liquidIngredient);
-
-            LiquidRecipieIngredient lri = recipe.ingredients[amountOfIngredients - 1] as LiquidRecipieIngredient;
-
-            string liquidNameChunk = string.Empty;
-            if (lri.GetLiquidType == LiquidIngredient.LiquidType.Sweet) {
-                liquidNameChunk = sauceSweetWords[randomGenNumber.Next(0, sauceSweetWords.Length)];
-            }
-            else {
-                liquidNameChunk = sauceSpicyWords[randomGenNumber.Next(0, sauceSpicyWords.Length)];
-            }
 
             // set solid ingredients
             for (int j = 0; j < amountOfIngredients - 1; j++) {
@@ -48,13 +34,12 @@ public static class RecipeGenerator {
                 int randCookState = randomGenNumber.Next(0, 3);
                 bool randCutState = Convert.ToBoolean(randomGenNumber.Next(0, 2));
 
-                SolidRecipieIngredient _ingredient = new SolidRecipieIngredient((SolidIngredient.SolidType)randSolidIngredient, (SolidIngredient.CookState)randCookState, randCutState);
-                recipe.ingredients[j] = _ingredient;
+                SolidRecipieIngredient solidIngredient = new SolidRecipieIngredient((SolidIngredient.SolidType)randSolidIngredient, (SolidIngredient.CookState)randCookState, randCutState);
+                recipie.ingredients.Add(solidIngredient);
             }
 
-            SolidRecipieIngredient sri = recipe.ingredients[0] as SolidRecipieIngredient;
+            SolidRecipieIngredient sri = recipie.ingredients[0] as SolidRecipieIngredient;
             SolidIngredient.SolidType sriType = sri.GetSolidType;
-
             string solidNameChunk = string.Empty;
             if (sriType == SolidIngredient.SolidType.Broccoli) {
                 solidNameChunk = broccoliWords[randomGenNumber.Next(0, broccoliWords.Length)];
@@ -69,9 +54,24 @@ public static class RecipeGenerator {
                 solidNameChunk = fishWords[randomGenNumber.Next(0, fishWords.Length)];
             }
 
-            recipe.displayName = $"{liquidNameChunk} {solidNameChunk} {flavorWords[randomGenNumber.Next(0, flavorWords.Length)]}";
+            // set liquid ingredient
+            int randLiquidIngredient = randomGenNumber.Next(0, Enum.GetNames(typeof(LiquidIngredient.LiquidType)).Length);
+            LiquidRecipieIngredient liquidIngredient = new LiquidRecipieIngredient((LiquidIngredient.LiquidType)randLiquidIngredient);
+            recipie.ingredients.Add(liquidIngredient);
 
-            recipies.Add(recipe);
+            LiquidRecipieIngredient lri = recipie.ingredients[amountOfIngredients - 1] as LiquidRecipieIngredient;
+
+            string liquidNameChunk = string.Empty;
+            if (lri.GetLiquidType == LiquidIngredient.LiquidType.Sweet) {
+                liquidNameChunk = sauceSweetWords[randomGenNumber.Next(0, sauceSweetWords.Length)];
+            }
+            else {
+                liquidNameChunk = sauceSpicyWords[randomGenNumber.Next(0, sauceSpicyWords.Length)];
+            }
+
+            recipie.displayName = $"{liquidNameChunk} {solidNameChunk} {flavorWords[randomGenNumber.Next(0, flavorWords.Length)]}";
+
+            recipies.Add(recipie);
         }
         return recipies;
     }

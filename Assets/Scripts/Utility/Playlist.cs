@@ -19,20 +19,17 @@ public class Playlist : MonoBehaviour {
         {
             songs = ShuffleSongs(songs);
         }
-        StartCoroutine(PlayList(songs));
+        StartCoroutine(PlayPlaylist(songs));
     }
 
-    private IEnumerator PlayList(List<AudioClip> songs)
+    private IEnumerator PlayPlaylist(List<AudioClip> songs)
     {
         while (true)
         {
             for (int i = 0; i < songs.Count; i++)
             {
                 audioSource.PlayOneShot(songs[i]);
-                while (audioSource.isPlaying)
-                {
-                    yield return null;
-                }
+                yield return new WaitForSeconds(songs[i].length);
             }
             yield return null;
         }

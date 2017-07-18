@@ -37,7 +37,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
         steps = StoreSteps();
         ToggleMenu(1);
         if (Manager.Instance.Recipies.Count == 0) {
-            Manager.Instance.GenerateRecipes();
+            Manager.Instance.SetNewRecipies();
         }
         IncrementRecipe(0);
     }
@@ -82,10 +82,13 @@ public class RecipeVisualGenerator : MonoBehaviour {
             open = (int)mainContainerGroup.alpha;
         }
         mainContainerGroup.alpha = open;
-        mainContainerGroup.interactable = (open == 1);
-        mainContainerGroup.blocksRaycasts = (open == 1);
+        bool isOpen = (open == 1);
+        mainContainerGroup.interactable = isOpen;
+        mainContainerGroup.blocksRaycasts = isOpen;
+        Manager.Instance.gameInputEnabled = !isOpen;
+        Cursor.visible = isOpen;
 
-        if (open == 0 && Manager.Instance.CurrentState != Manager.GameState.Playing) {
+        if (open == 0) {
             Manager.Instance.StartRound();
         }
     }
@@ -93,7 +96,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
     public void CreateRecipeVisual(Recipie r) {
         titleText.text = r.displayName;
 
-        for (int i = 0; i < r.ingredients.Length; i++) {
+        for (int i = 0; i < r.ingredients.Count; i++) {
             List<Image> images = GetImages(steps[i]);
 
             int imageIndex = 0;
@@ -110,7 +113,7 @@ public class RecipeVisualGenerator : MonoBehaviour {
                     imageIndex++;
                 }
 
-                if ((int)sri.GetCookState > 0) {
+                if (sri.GetCookState > 0) {
                     images[imageIndex].sprite = cookstateSprites[(int)sri.GetCookState];
                     images[imageIndex].gameObject.SetActive(true);
                 }

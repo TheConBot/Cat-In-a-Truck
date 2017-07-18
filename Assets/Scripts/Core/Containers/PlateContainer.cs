@@ -2,18 +2,12 @@
 using UnityEngine;
 
 public class PlateContainer : Container {
-    private Recipie recipie;
+
     private OrderSlip linkedSlip;
     private List<RecipieIngredient> requiredIngredients;
     private int scoreToGive;
     public const int SCORE_PER_INGREDIENT = 100;
     public AudioSource addNoise;
-
-    public Recipie Recipie {
-        set {
-            recipie = value;
-        }
-    }
 
     public OrderSlip LinkedSlip {
         set {
@@ -21,33 +15,32 @@ public class PlateContainer : Container {
         }
     }
 
-    private void OnEnable() {
-        //Debug Stuff
-        if (recipie == null) {
-            Debug.LogWarning("No Recipie attatched to " + DisplayName + ".");
-            return;
-        }
-        requiredIngredients = new List<RecipieIngredient>(recipie.ingredients);
-        requiredIngredients.RemoveAll(s => s == null);
-        foreach (RecipieIngredient ingredient in requiredIngredients) {
-            if (ingredient is SolidRecipieIngredient) {
-                SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
-                Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
-            }
-            else if (ingredient is LiquidRecipieIngredient) {
-                LiquidRecipieIngredient liquidIngredient = ingredient as LiquidRecipieIngredient;
-                Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
+    public List<RecipieIngredient> RequiredIngredients {
+        set {
+            requiredIngredients = value;
+            if (requiredIngredients != null) {
+                requiredIngredients.RemoveAll(s => s == null);
             }
         }
-
-        //Stuff that needs to stay
-        scoreToGive = 0;
     }
 
-    private void ResetSlip() {
-        linkedSlip.StopAllCoroutines();
-        linkedSlip.StartCoroutine(linkedSlip.TicketRespawn());
-    }
+    //private void OnEnable() {
+    //    Debug Stuff
+    //    if (recipie == null) {
+    //        Debug.LogWarning("No Recipie attatched to " + DisplayName + ".");
+    //        return;
+    //    }
+    //    foreach (RecipieIngredient ingredient in requiredIngredients) {
+    //        if (ingredient is SolidRecipieIngredient) {
+    //            SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
+    //            Debug.Log("Solid Type: " + solidIngredient.GetSolidType + ", Cook State: " + solidIngredient.GetCookState + ", Is Cut: " + solidIngredient.IsCut);
+    //        }
+    //        else if (ingredient is LiquidRecipieIngredient) {
+    //            LiquidRecipieIngredient liquidIngredient = ingredient as LiquidRecipieIngredient;
+    //            Debug.Log("Liquid Type: " + liquidIngredient.GetLiquidType);
+    //        }
+    //    }
+    //}
 
     public void RemoveChildrenFromPlate() {
         foreach (Transform child in transform) {
@@ -56,6 +49,10 @@ public class PlateContainer : Container {
                 child.SetParent(Manager.Instance.transform);
             }
         }
+    }
+
+    public void ResetPlate() {
+        scoreToGive = 0;
     }
 
     override public void AddToContainer(Ingredient ingredient) {
@@ -74,23 +71,18 @@ public class PlateContainer : Container {
                 ingredient.gameObject.SetActive(false);
             }
             scoreToGive += SCORE_PER_INGREDIENT;
-            Debug.Log("Correct! " + requiredIngredients.Count + " left!");
             if (requiredIngredients.Count == 0) {
-                Debug.Log("You got them all!");
-                linkedSlip.audioSource.clip = linkedSlip.eatingSounds[linkedSlip.rand.Next(0, linkedSlip.eatingSounds.Length)];
-                linkedSlip.audioSource.Play();
+                linkedSlip.PlayCatSound(Manager.Instance.eatingSounds[linkedSlip.rand.Next(0, Manager.Instance.eatingSounds.Length)]);
                 Manager.Instance.RoundScore += scoreToGive;
                 RemoveChildrenFromPlate();
-                ResetSlip();
+                linkedSlip.ResetSlip();
                 gameObject.SetActive(false);
             }
         }
         else {
-            Debug.Log("Wrong!");
-            linkedSlip.audioSource.clip = linkedSlip.hissingSounds[linkedSlip.rand.Next(0, linkedSlip.hissingSounds.Length)];
-            linkedSlip.audioSource.Play();
+            linkedSlip.PlayCatSound(Manager.Instance.hissingSounds[linkedSlip.rand.Next(0, Manager.Instance.hissingSounds.Length)]);
             RemoveChildrenFromPlate();
-            ResetSlip();
+            linkedSlip.ResetSlip();
             gameObject.SetActive(false);
         }
     }

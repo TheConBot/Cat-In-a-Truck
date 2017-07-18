@@ -1,33 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class OrderSlip : MonoBehaviour {
     [HideInInspector]
     public Recipie recipie;
-    public PlateContainer foodBoat;
+    public PlateContainer plateContainer;
+    public System.Random rand = new System.Random();
 
     private TicketUIView ticketUIView;
-
     private MeshRenderer slipMesh;
     private BoxCollider slipCollider;
     private float ticketTimer;
+    private AudioSource catSoundSource;
+    private IEnumerator countdown;
 
     public SpriteRenderer cat;
 
-    public AudioClip[] eatingSounds;
-    public AudioClip[] hissingSounds;
-    public AudioClip[] meowingSounds;
-
-    [HideInInspector]
-    public AudioSource audioSource;
-
-    public System.Random rand = new System.Random();
-
     private void Start() {
-        audioSource = GetComponent<AudioSource>();
-        foodBoat.LinkedSlip = this;
-        foodBoat.gameObject.SetActive(false);
+        countdown = StartSlipTimer();
+        catSoundSource = GetComponent<AudioSource>();
+        plateContainer.LinkedSlip = this;
+        plateContainer.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
         SetCatSprite(true);
@@ -35,12 +29,12 @@ public class OrderSlip : MonoBehaviour {
 
     public void TakeOrder() {
         recipie = Manager.Instance.Recipies[Random.Range(0, Manager.Instance.Recipies.Count)];
-        foodBoat.Recipie = recipie;
-        foodBoat.gameObject.SetActive(true);
-        ticketUIView = foodBoat.GetComponentInChildren<TicketUIView>();
+        plateContainer.RequiredIngredients = recipie.ingredients;
+        plateContainer.gameObject.SetActive(true);
+        ticketUIView = plateContainer.GetComponentInChildren<TicketUIView>();
         ticketUIView.SetTitle(recipie.displayName);
         SetActiveSoft(false);
-        StartCoroutine(TicketCountdown());
+        StartCoroutine(countdown);
     }
 
     private void SetActiveSoft(bool setState) {
@@ -59,15 +53,23 @@ public class OrderSlip : MonoBehaviour {
         cat.enabled = setMode;
     }
 
-    public IEnumerator TicketRespawn() {
+    public void ResetSlip() {
+        StopCoroutine(countdown);
+        StartCoroutine(RespawnSlip());
+    }
+
+    public void PlayCatSound(AudioClip clip) {
+        catSoundSource.PlayOneShot(clip);
+    }
+
+    public IEnumerator RespawnSlip() {
         SetCatSprite(false);
         yield return new WaitForSeconds(5);
-        audioSource.clip = meowingSounds[rand.Next(0, meowingSounds.Length)];
-        audioSource.Play();
+        PlayCatSound(Manager.Instance.meowingSounds[rand.Next(0, Manager.Instance.meowingSounds.Length)]);
         SetActiveSoft(true);
     }
 
-    public IEnumerator TicketCountdown() {
+    public IEnumerator StartSlipTimer() {
         float initialTime = Manager.Instance.DifficultySetting.ticketTime;
         ticketTimer = initialTime;
         while(ticketTimer > 0) {
@@ -75,11 +77,9 @@ public class OrderSlip : MonoBehaviour {
             ticketUIView.SetTimer(ticketTimer, initialTime);
             ticketTimer -= Time.deltaTime;
         }
-
-        audioSource.clip = hissingSounds[rand.Next(0, hissingSounds.Length)];
-        audioSource.Play();
-        foodBoat.RemoveChildrenFromPlate();
-        foodBoat.gameObject.SetActive(false);
-        StartCoroutine(TicketRespawn());
+        PlayCatSound(Manager.Instance.hissingSounds[rand.Next(0, Manager.Instance.hissingSounds.Length)]);
+        plateContainer.RemoveChildrenFromPlate();
+        plateContainer.gameObject.SetActive(false);
+        ResetSlip();
     }
 }

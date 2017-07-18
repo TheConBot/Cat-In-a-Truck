@@ -109,11 +109,17 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &209543242 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114958362264483676, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2147202302}
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
 --- !u!114 &278563161 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114608135414995464, guid: 939036423b3320b47befef04fb099d23,
     type: 2}
-  m_PrefabInternal: {fileID: 1536530727}
+  m_PrefabInternal: {fileID: 1711272098}
   m_Script: {fileID: 11500000, guid: cf3ce00c4da55294dbee163769341159, type: 3}
 --- !u!1001 &327428512
 Prefab:
@@ -157,6 +163,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c42607872582cdb4f96b80ae25ec2de8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &366162814 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114867512467399528, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2147202302}
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
 --- !u!1001 &892686734
 Prefab:
   m_ObjectHideFlags: 0
@@ -759,7 +771,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22834223b4c37254583b8f08dbd44f0e, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1536530727
+--- !u!114 &1198384397 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114829675264573604, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2147202302}
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
+--- !u!1001 &1711272098
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -797,6 +815,11 @@ Prefab:
     - target: {fileID: 4559153168666856, guid: 939036423b3320b47befef04fb099d23, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82305723578409070, guid: 939036423b3320b47befef04fb099d23,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 939036423b3320b47befef04fb099d23, type: 2}
@@ -885,6 +908,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c1a99c4b1baf4728a0660ede8a989aa, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2121756612 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114773631444373816, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2147202302}
+  m_Script: {fileID: 11500000, guid: 88ee098c98a39e04e841583b162daca0, type: 3}
 --- !u!1001 &2147202302
 Prefab:
   m_ObjectHideFlags: 0
@@ -995,6 +1024,90 @@ Prefab:
         type: 2}
       propertyPath: m_Color.r
       value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784331382994052, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172364311229826, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183642936676314, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428591239908944, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873407029092672, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Food Boat-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879481738990986, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Food Boat-4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057984098649646, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Food Boat-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208131421865292, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Food Boat-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105000717500134, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Slip-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250237899094526, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Slip-4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970726167622426, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Slip-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440170130130192, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Slip-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114127919757709414, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+        type: 2}
+      propertyPath: plateContainer
+      value: 
+      objectReference: {fileID: 1198384397}
+    - target: {fileID: 114096006509091982, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+        type: 2}
+      propertyPath: plateContainer
+      value: 
+      objectReference: {fileID: 2121756612}
+    - target: {fileID: 114641198493319178, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+        type: 2}
+      propertyPath: plateContainer
+      value: 
+      objectReference: {fileID: 209543242}
+    - target: {fileID: 114583758115582366, guid: 7ba5a713919f9a04cb3e7be2f5a126e4,
+        type: 2}
+      propertyPath: plateContainer
+      value: 
+      objectReference: {fileID: 366162814}
+    - target: {fileID: 1741461766973894, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Cat-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795168064376598, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Cat-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147097279580176, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Cat-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636964203088270, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_Name
+      value: Cat-4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
