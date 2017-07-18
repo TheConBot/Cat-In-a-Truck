@@ -59,7 +59,6 @@ public class Manager : MonoBehaviour {
             difficultySetting = value;
         }
     }
-    [SerializeField]
     private HighScoresManager highScoresManager;
 
     private List<PlayerInfo> highScoreInfo;
