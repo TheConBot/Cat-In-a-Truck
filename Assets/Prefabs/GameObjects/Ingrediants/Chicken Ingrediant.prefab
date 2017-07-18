@@ -231,12 +231,12 @@ MonoBehaviour:
   cookState: 0
   wholeObject: {fileID: 1712147586432328}
   cutObject: {fileID: 1883601458906232}
-  wholeRawTex: {fileID: 2800000, guid: 597d515fe19889340b6219b10a97e984, type: 3}
-  wholeFriedTex: {fileID: 2800000, guid: ae7da09ece651964fbcb5cbb35dc8d57, type: 3}
-  wholeSteamedTex: {fileID: 2800000, guid: 53576bd9f3571a94abfe0b4b2f83867e, type: 3}
-  cutRawTex: {fileID: 2800000, guid: 1d5c12baf4b9352469b9cbdec38db9fd, type: 3}
-  cutFriedTex: {fileID: 2800000, guid: afb22cc29ba52714ea3218b6f4efc97e, type: 3}
-  cutSteamedTex: {fileID: 2800000, guid: 8aee3f60ab67fa049b4bd1cdb459f022, type: 3}
+  wholeRawTex: {fileID: 2800000, guid: 0bf57c4e7be5da940b41e38bd8809e13, type: 3}
+  wholeFriedTex: {fileID: 2800000, guid: 3b152c569a941d344af0d136ef646541, type: 3}
+  wholeSteamedTex: {fileID: 2800000, guid: 1b760dcd7dc9e4048bcf7112e237ab34, type: 3}
+  cutRawTex: {fileID: 2800000, guid: 4d3ee488e8c9a1e4f80116688bc01feb, type: 3}
+  cutFriedTex: {fileID: 2800000, guid: 0fb8321f4cb44e5468dd63d02a4b2150, type: 3}
+  cutSteamedTex: {fileID: 2800000, guid: cbe5ef9442a5e1a418b89b22ffd2327d, type: 3}
   wholeTexChange:
   - {fileID: 1712147586432328}
   cutTexChange:
