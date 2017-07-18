@@ -74,6 +74,7 @@ public class Manager : MonoBehaviour {
     }
     [HideInInspector]
     public bool gameInputEnabled;
+    private bool gameStarted;
 
     [Header("Sprites")]
     public Sprite[] catSprites;
@@ -113,11 +114,14 @@ public class Manager : MonoBehaviour {
     }
 
     public void StartRound() {
-        //Check to make sure round hasn't already started
+        if (gameStarted) {
+            return;
+        }
         StartCoroutine(StartRoundTimer());
     }
 
     private IEnumerator StartRoundTimer() {
+        gameStarted = true;
         roundTime = difficultySetting.roundTime * 60;
         roundScore = 0;
         while (roundTime > 0) {
@@ -130,6 +134,7 @@ public class Manager : MonoBehaviour {
         generalSoundSource.PlayOneShot(buzzerSound);
         yield return new WaitForSeconds(1);
         LoadScene(2);
+        gameStarted = false;
     }
 
     public void LoadScene(int sceneIndex) {

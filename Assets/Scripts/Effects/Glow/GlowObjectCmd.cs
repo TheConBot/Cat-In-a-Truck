@@ -34,6 +34,9 @@ public class GlowObjectCmd : MonoBehaviour
 
     private void OnMouseEnter()
 	{
+        if (!Manager.Instance.gameInputEnabled) {
+            return;
+        }
 		_targetColor = GlowColor;
 		enabled = true;
 	}
