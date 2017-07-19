@@ -24,12 +24,7 @@ public class PlateContainer : Container {
         }
     }
 
-    //private void OnEnable() {
-    //    Debug Stuff
-    //    if (recipie == null) {
-    //        Debug.LogWarning("No Recipie attatched to " + DisplayName + ".");
-    //        return;
-    //    }
+    //private void OnEnable() {   
     //    foreach (RecipieIngredient ingredient in requiredIngredients) {
     //        if (ingredient is SolidRecipieIngredient) {
     //            SolidRecipieIngredient solidIngredient = ingredient as SolidRecipieIngredient;
@@ -43,11 +38,9 @@ public class PlateContainer : Container {
     //}
 
     public void RemoveChildrenFromPlate() {
-        foreach (Transform child in transform) {
-            if (child.GetComponent<Ingredient>() != null) {
+        foreach (Transform child in childLocation) {
                 child.gameObject.SetActive(false);
-                child.SetParent(Manager.Instance.transform);
-            }
+                child.SetParent(null);
         }
     }
 
@@ -58,19 +51,13 @@ public class PlateContainer : Container {
     override public void AddToContainer(Ingredient ingredient) {
         var requiredIngredient = GetMatchingRequiredIngredient(ingredient);
         addNoise.Play();
-        if (childLocation == null) {
-            ingredient.transform.SetParent(transform);
-        }
-        else {
-            ingredient.transform.SetParent(childLocation);
-        }
-        ingredient.transform.localPosition = Vector3.zero;
+        ChildIngredient(ingredient);
         if (requiredIngredient != null) {
             requiredIngredients.Remove(requiredIngredient);
             if (ingredient is LiquidIngredient) {
                 ingredient.gameObject.SetActive(false);
             }
-            scoreToGive += SCORE_PER_INGREDIENT;
+            scoreToGive += Mathf.RoundToInt((SCORE_PER_INGREDIENT + linkedSlip.TimeLeftInTicket) * Manager.Instance.DifficultySetting.scoreMultiplier);
             if (requiredIngredients.Count == 0) {
                 linkedSlip.PlayCatSound(Manager.Instance.eatingSounds[linkedSlip.rand.Next(0, Manager.Instance.eatingSounds.Length)]);
                 Manager.Instance.RoundScore += scoreToGive;

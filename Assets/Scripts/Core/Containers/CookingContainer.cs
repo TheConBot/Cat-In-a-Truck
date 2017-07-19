@@ -22,7 +22,10 @@ public class CookingContainer : Container {
     [Range(1, 60)]
     public float cookTime = 10, collectTime = 5;
 
+    private AudioSource cookingSource;
+
     private void Start() {
+        cookingSource = GetComponent<AudioSource>();
         ToggleStatus(0);
     }
 
@@ -56,7 +59,7 @@ public class CookingContainer : Container {
 
 
         SetStatus("Cooking");
-        StartCoroutine(PlayAudio());
+        cookingSource.Play();
         float _cookTime = cookTime;
         Debug.Log(_cookTime);
         while (_cookTime > 0) {
@@ -64,7 +67,7 @@ public class CookingContainer : Container {
             SetTimer(_cookTime, cookTime);
             _cookTime -= Time.deltaTime;
         }
-        gameObject.GetComponent<AudioSource>().Stop();
+        cookingSource.Stop();
         switch (cookOption) {
             case CookOptions.Cut:
                 ingredient.Cut();
@@ -116,11 +119,4 @@ public class CookingContainer : Container {
         mainGroup.interactable = (open == 1);
         mainGroup.blocksRaycasts = (open == 1);
     }
-
-    public IEnumerator PlayAudio() {
-        gameObject.GetComponent<AudioSource>().Play();
-        yield return null;
-    }
-
-
 }

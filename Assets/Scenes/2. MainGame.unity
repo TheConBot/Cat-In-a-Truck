@@ -806,6 +806,22 @@ Prefab:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 1879481738990986, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873407029092672, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057984098649646, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208131421865292, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ba5a713919f9a04cb3e7be2f5a126e4, type: 2}
   m_IsPrefabParent: 0

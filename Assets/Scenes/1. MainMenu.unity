@@ -1490,6 +1490,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 82793209430715728, guid: 939036423b3320b47befef04fb099d23,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 82305723578409070, guid: 939036423b3320b47befef04fb099d23,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82793209430715728, guid: 939036423b3320b47befef04fb099d23,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82305723578409070, guid: 939036423b3320b47befef04fb099d23,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 939036423b3320b47befef04fb099d23, type: 2}
   m_IsPrefabParent: 0

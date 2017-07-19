@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decaebbc096fbe9408770571bf384990, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
-  roundTime: 4
   maxRecipieIngrediants: 4
-  recipieAmount: 9
-  ticketTime: 30
+  recipieAmount: 8
+  ticketTime: 45
+  scoreMultiplier: 1.5

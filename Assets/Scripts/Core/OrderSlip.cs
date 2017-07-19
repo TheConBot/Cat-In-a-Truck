@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(AudioSource))]
 public class OrderSlip : MonoBehaviour {
@@ -17,23 +18,29 @@ public class OrderSlip : MonoBehaviour {
 
     public SpriteRenderer cat;
 
+    public float TimeLeftInTicket {
+        get {
+            return ticketTimer;
+        }
+    }
+
     private void Start() {
-        countdown = StartSlipTimer();
-        catSoundSource = GetComponent<AudioSource>();
         plateContainer.LinkedSlip = this;
         plateContainer.gameObject.SetActive(false);
         slipMesh = GetComponent<MeshRenderer>();
         slipCollider = GetComponent<BoxCollider>();
-        SetCatSprite(true);
+        catSoundSource = GetComponent<AudioSource>();
+        SetCatSpriteActive(true);
     }
 
     public void TakeOrder() {
         recipie = Manager.Instance.Recipies[Random.Range(0, Manager.Instance.Recipies.Count)];
-        plateContainer.RequiredIngredients = recipie.ingredients;
+        plateContainer.RequiredIngredients = new List<RecipieIngredient>(recipie.ingredients);
         plateContainer.gameObject.SetActive(true);
         ticketUIView = plateContainer.GetComponentInChildren<TicketUIView>();
         ticketUIView.SetTitle(recipie.displayName);
         SetActiveSoft(false);
+        countdown = StartSlipTimer();
         StartCoroutine(countdown);
     }
 
@@ -42,11 +49,11 @@ public class OrderSlip : MonoBehaviour {
         slipCollider.enabled = setState;
         GetComponent<GlowObjectCmd>().SetVisible(setState);
         if (setState) {
-            SetCatSprite(setState);
+            SetCatSpriteActive(setState);
         }
     }
 
-    private void SetCatSprite(bool setMode) {
+    private void SetCatSpriteActive(bool setMode) {
         if (setMode) {
             cat.sprite = Manager.Instance.catSprites[Random.Range(0, Manager.Instance.catSprites.Length)];
         }
@@ -63,7 +70,7 @@ public class OrderSlip : MonoBehaviour {
     }
 
     public IEnumerator RespawnSlip() {
-        SetCatSprite(false);
+        SetCatSpriteActive(false);
         yield return new WaitForSeconds(5);
         PlayCatSound(Manager.Instance.meowingSounds[rand.Next(0, Manager.Instance.meowingSounds.Length)]);
         SetActiveSoft(true);
@@ -74,8 +81,8 @@ public class OrderSlip : MonoBehaviour {
         ticketTimer = initialTime;
         while(ticketTimer > 0) {
             yield return new WaitForSeconds(Time.deltaTime);
-            ticketUIView.SetTimer(ticketTimer, initialTime);
             ticketTimer -= Time.deltaTime;
+            ticketUIView.SetTimer(ticketTimer, initialTime);
         }
         PlayCatSound(Manager.Instance.hissingSounds[rand.Next(0, Manager.Instance.hissingSounds.Length)]);
         plateContainer.RemoveChildrenFromPlate();

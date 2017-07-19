@@ -121,7 +121,7 @@ public class Manager : MonoBehaviour {
 
     private IEnumerator StartRoundTimer() {
         gameStarted = true;
-        roundTime = difficultySetting.roundTime * 60;
+        roundTime = difficultySetting.maxRecipieIngrediants * 60;
         roundScore = 0;
         while (roundTime > 0) {
             yield return new WaitForSeconds(1);
@@ -131,6 +131,7 @@ public class Manager : MonoBehaviour {
             }
         }
         generalSoundSource.PlayOneShot(buzzerSound);
+        gameInputEnabled = false;
         yield return new WaitForSeconds(1);
         LoadScene(2);
         gameStarted = false;

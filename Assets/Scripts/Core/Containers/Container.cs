@@ -36,12 +36,16 @@ public abstract class Container : MonoBehaviour {
             return;
         }
         ingredientInContainer = ingredient;
+        ChildIngredient(ingredient);
+    }
+
+    protected void ChildIngredient(Ingredient ingredient) {
         if (childLocation == null) {
-            ingredientInContainer.transform.SetParent(transform);
+            ingredient.transform.SetParent(transform);
         }
         else {
-            ingredientInContainer.transform.SetParent(childLocation);
+            ingredient.transform.SetParent(childLocation);
         }
-        ingredientInContainer.transform.localPosition = Vector3.zero;
+        ingredient.transform.localPosition = Vector3.zero;
     }
 }
