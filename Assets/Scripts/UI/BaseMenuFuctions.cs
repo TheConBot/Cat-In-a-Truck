@@ -5,7 +5,7 @@ public abstract class BaseMenuFuctions : MonoBehaviour {
     [SerializeField]
     protected Text highScoresText;
 
-    private void Start() {
+    virtual protected void Start() {
         if (Manager.Instance.HighScoreInfo != null) {
             DisplayTopScores();
         }

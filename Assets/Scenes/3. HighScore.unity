@@ -1021,7 +1021,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 32, y: -32}
-  m_SizeDelta: {x: 871.39, y: 112.6}
+  m_SizeDelta: {x: 1025, y: 115}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &994304360
 MonoBehaviour:
@@ -1044,10 +1044,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 501598ad2e7b7490eb52912e4143ca27, type: 3}
-    m_FontSize: 72
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 86
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Your High Score
+  m_Text: 'Your Score: 0'
 --- !u!222 &994304361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1168,9 +1168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388077979e4b1944f8ce540389534d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScoresText: {fileID: 1758430603}
   inputGroup: {fileID: 375396331}
   nameEntry: {fileID: 1218705999}
-  highScoresText: {fileID: 1758430603}
+  yourScoreText: {fileID: 994304360}
 --- !u!1 &1007153224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,8 +1950,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: HighScoreEntry
+      - m_Target: {fileID: 995776324}
+        m_MethodName: SubmitHighScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

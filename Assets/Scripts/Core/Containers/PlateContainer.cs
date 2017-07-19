@@ -38,9 +38,10 @@ public class PlateContainer : Container {
     //}
 
     public void RemoveChildrenFromPlate() {
-        foreach (Transform child in childLocation) {
-                child.gameObject.SetActive(false);
-                child.SetParent(null);
+        for (int i = childLocation.transform.childCount - 1; i >= 0; i--) {
+            var child = childLocation.transform.GetChild(i);
+            child.gameObject.SetActive(false);
+            child.SetParent(null);
         }
     }
 

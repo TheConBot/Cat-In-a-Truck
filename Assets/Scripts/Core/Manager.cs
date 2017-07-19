@@ -34,7 +34,7 @@ public class Manager : MonoBehaviour {
             roundTime = value;
         }
     }
-
+    [SerializeField]
     private int roundScore;
     public int RoundScore {
         get {
@@ -79,10 +79,8 @@ public class Manager : MonoBehaviour {
     public Sprite[] catSprites;
 
     private AudioSource generalSoundSource;
-    [Header("Sound Effects")]
-    public AudioClip buzzerSound;
-    public AudioClip cashRegisterSound;
-    public AudioClip tenSecondWarningSound;
+    [Header("Sound Effects"), SerializeField]
+    private AudioClip buzzerSound, cashRegisterSound, tenSecondWarningSound;
     public AudioClip[] meowingSounds;
     public AudioClip[] hissingSounds;
     public AudioClip[] eatingSounds;
@@ -147,6 +145,6 @@ public class Manager : MonoBehaviour {
             name = name.Replace("*", "");
         }
         string url = HighScoresManager.API_URL_BASE + HighScoresAPIKey.privateKey + "/add/" + name + "/" + score + "/0/" + difficulty;
-        highScoresManager.SetHighScore(url);
+        highScoresManager.PostHighScore(url);
     }
 }

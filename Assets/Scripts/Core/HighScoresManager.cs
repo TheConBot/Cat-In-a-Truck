@@ -14,8 +14,7 @@ public class HighScoresManager : MonoBehaviour {
         //Only get the top 10
         string url = API_URL_BASE + HighScoresAPIKey.privateKey + "/json/10/";
 
-        WebRequest wrGETURL = WebRequest.Create(url);
-        Stream objStream = wrGETURL.GetResponse().GetResponseStream();
+        Stream objStream = WebRequest.Create(url).GetResponse().GetResponseStream();
         StreamReader objReader = new StreamReader(objStream);
 
         string sLine = "";
@@ -43,8 +42,8 @@ public class HighScoresManager : MonoBehaviour {
         return highScores;
     }
 
-    public void SetHighScore(string url) {
-        WebRequest.Create(url);
+    public void PostHighScore(string url) {
+        WebRequest.Create(url).GetResponse();
     }
 }
 
